@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: radial-gradient(1200px 600px at 80% -10%, rgba(52, 231, 228, 0.08), transparent 60%),
+    radial-gradient(900px 500px at 0% 0%, rgba(139, 123, 255, 0.08), transparent 55%), #06070d;
+  color: #e6e8ef;
+  font-feature-settings: "tnum" 1, "cv01" 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .glass {
+    @apply rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl shadow-card;
+  }
+  .glass-hover {
+    @apply transition-colors hover:border-white/10 hover:bg-white/[0.04];
+  }
+  .stat-label {
+    @apply text-[11px] uppercase tracking-widest text-white/40;
+  }
+  .stat-value {
+    @apply text-2xl font-semibold tracking-tight text-white;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium;
+  }
+  .th {
+    @apply px-3 py-2 text-left text-[11px] font-medium uppercase tracking-wider text-white/40;
+  }
+  .td {
+    @apply px-3 py-2.5 text-sm text-white/80 border-t border-white/[0.05];
+  }
+  .navlink {
+    @apply flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-white/55 transition-colors hover:bg-white/[0.04] hover:text-white;
+  }
+  .navlink-active {
+    @apply bg-white/[0.06] text-white shadow-glow;
+  }
+}
+
+/* thin scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}

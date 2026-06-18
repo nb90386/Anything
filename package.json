@@ -1,0 +1,48 @@
+{
+  "name": "polyalpha-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PolyAlpha Lab — autonomous Polymarket paper-trading research system (paper trading only, not financial advice).",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "db:seed": "tsx scripts/seed.ts",
+    "runner": "tsx scripts/runner.ts",
+    "tick": "tsx scripts/tick.ts"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.59.0",
+    "better-sqlite3": "^11.3.0",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "next": "^14.2.35",
+    "pg": "^8.13.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.12.7",
+    "tailwind-merge": "^2.5.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^22.7.4",
+    "@types/pg": "^8.11.10",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
