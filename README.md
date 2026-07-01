@@ -67,6 +67,31 @@ No `.env` file is required to run the demo. See [`.env.example`](.env.example) f
 
 ---
 
+## Deploying
+
+The app deploys to Vercel with zero configuration:
+
+1. Push this repo to GitHub (already done if you're reading this on GitHub).
+2. Go to [vercel.com/new](https://vercel.com/new), import the repo, and click **Deploy**. No environment variables
+   are required for the default mock engine.
+
+**How the data layer works on Vercel:** the app uses SQLite (`better-sqlite3`), which needs a writable file. Vercel's
+deployment bundle is read-only except for `/tmp`, so `src/lib/db/index.ts` detects the `VERCEL` environment variable
+(set automatically by the platform) and points the database at `/tmp/data/clm.db` there instead of the project
+folder. The root layout calls `ensureSeeded()` on every request, which is a cheap no-op once the 25 sample contracts
+are loaded, so the first request to a cold serverless instance seeds itself automatically; no manual seed step is
+needed after deploying.
+
+The tradeoff: `/tmp` is ephemeral per serverless instance, not a shared persistent disk. Within one warm instance
+(what a single visitor clicks through in one session), everything, including uploads, approvals, and marking
+leakage findings recovered, works and persists normally. Across cold starts or different instances, it resets back
+to the clean 25-contract seed. For a click-through portfolio demo this is a feature, not a bug: the link always
+opens clean. For a version with a real shared database, point `DATA_DIR` at a hosted Postgres/Turso/LibSQL instance
+instead, or deploy to a platform with a persistent disk (Railway, Render, Fly.io) where the unmodified local-file
+behavior just works.
+
+---
+
 ## Routes
 
 | Route | What it shows |
@@ -211,9 +236,10 @@ See [`docs/testing/test-summary.md`](docs/testing/test-summary.md) for the full 
 
 ## Known limitations
 
-- **SQLite is file-based**, so this demo is built for local/single-instance use. Swapping to Postgres/Supabase is a
-  contained change (see `docs/architecture/system-design.md` for the upgrade path); the repository layer already
-  isolates all SQL behind `src/lib/db/repo.ts`.
+- **SQLite is file-based**, so this demo is built for local/single-instance use. On Vercel this means the database
+  lives in ephemeral `/tmp` and resets on cold start; see [Deploying](#deploying) above for the full explanation.
+  Swapping to Postgres/Supabase is a contained change (see `docs/architecture/system-design.md` for the upgrade
+  path); the repository layer already isolates all SQL behind `src/lib/db/repo.ts`.
 - **No real authentication.** The role switcher in the top bar is a lightweight, client-side demo affordance, not an
   access-control system. See `docs/architecture/security-model.md` for what real enterprise auth (SSO/SAML, RBAC,
   audit logging) would require.

@@ -3,7 +3,10 @@ import fs from "node:fs";
 import path from "node:path";
 import { SCHEMA_SQL } from "./schema";
 
-const DATA_DIR = path.join(process.cwd(), "data");
+// Serverless platforms (Vercel, and similar) ship a read-only deployment bundle;
+// only /tmp is writable there. Traditional Node hosts (local dev, Railway, Render,
+// Fly, Docker) can write directly next to the project, which also survives restarts.
+const DATA_DIR = process.env.VERCEL ? "/tmp/data" : path.join(process.cwd(), "data");
 const DB_PATH = path.join(DATA_DIR, "clm.db");
 
 declare global {

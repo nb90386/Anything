@@ -3,6 +3,7 @@ import path from "node:path";
 import { SEED_CONTRACTS } from "@/data/manifest";
 import { addAmendmentVersion, ingestContract } from "./ingest";
 import { insertApproval, insertLeakageOpportunity, insertStandardClause, listContracts, wipeAllData, wipeStandardClauses } from "./db/repo";
+import { isSeeded } from "./db";
 import { STANDARD_CLAUSE_LIBRARY } from "./risk/standard-clauses-data";
 import { detectCrossContractLeakage } from "./revenue/leakage";
 
@@ -84,4 +85,14 @@ export async function seedDatabase(): Promise<{ count: number }> {
   }
 
   return { count: SEED_CONTRACTS.length };
+}
+
+// On serverless platforms /tmp starts empty on every cold start, so the demo
+// data has to be seeded on first request in that instance's lifetime rather
+// than once via a CLI script. isSeeded() is a cheap COUNT query, so this is a
+// no-op on every request after the first within a warm instance.
+export async function ensureSeeded(): Promise<void> {
+  if (!isSeeded()) {
+    await seedDatabase();
+  }
 }
