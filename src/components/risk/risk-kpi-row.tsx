@@ -26,7 +26,7 @@ function KpiCard({
     <Card className="p-5">
       <div className="flex items-center gap-3">
         <div className={cn("flex h-9 w-9 shrink-0 items-center justify-center rounded-lg", toneClasses)}>
-          <Icon className="h-4.5 w-4.5" />
+          <Icon className="h-4 w-4" />
         </div>
         <p className="text-xs font-medium uppercase tracking-wide text-ink-400 dark:text-ink-500">{label}</p>
       </div>
