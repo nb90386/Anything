@@ -1,138 +1,149 @@
-import { commandCenter, EXPERIMENT_DAYS } from "@/lib/queries";
-import { Card, Stat, Badge, SectionTitle, ProgressBar, Empty } from "@/components/ui";
-import { EquityChart } from "@/components/charts";
-import { ExperimentControls } from "@/components/controls";
-import { STRATEGY_META, type StrategyId } from "@/lib/types";
-import { usd, pct, tone, timeAgo } from "@/lib/format";
+import Link from "next/link";
+import {
+  ArrowRight,
+  BarChart3,
+  FileSearch,
+  GitCompareArrows,
+  MessagesSquare,
+  ShieldAlert,
+  Sparkles,
+  UserCheck,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { LandingNav } from "@/components/landing/landing-nav";
+import { HeroPreviewCard } from "@/components/landing/hero-preview-card";
+import { FadeIn } from "@/components/landing/fade-in";
 
-export const dynamic = "force-dynamic";
+const FEATURES = [
+  {
+    icon: FileSearch,
+    title: "Contract ingestion & parsing",
+    description: "Upload PDF, DOCX, or plain text. Clauses are segmented and classified into 14 legal categories automatically.",
+  },
+  {
+    icon: ShieldAlert,
+    title: "Risk extraction",
+    description: "A rule-based analysis engine flags uncapped liability, one-sided indemnification, auto-renewal traps, and more — with a recommendation for each.",
+  },
+  {
+    icon: GitCompareArrows,
+    title: "Amendment diffing",
+    description: "Compare any two versions of a contract side by side, with clause-level change tracking.",
+  },
+  {
+    icon: BarChart3,
+    title: "BusinessIQ-style insights",
+    description: "Turn a contract portfolio into commercial intelligence: spend by department, renewal exposure, risk concentration, cycle time.",
+  },
+  {
+    icon: MessagesSquare,
+    title: "AI chat over your contracts",
+    description: "Ask natural-language questions about any contract and get answers grounded in — and citing — the actual clauses.",
+  },
+  {
+    icon: UserCheck,
+    title: "Role-based views & approvals",
+    description: "Switch between Legal, Sales, Finance, and Procurement perspectives, and simulate multi-step approval workflows.",
+  },
+];
 
-export default async function CommandCenter() {
-  const { exp, pf, equity, strategies, baselines, health } = await commandCenter();
-  const bankroll = exp?.starting_bankroll ?? 10000;
-  const beat = pf && baselines ? baselines.filter((b) => pf.total_return_pct > b.ret).length : 0;
-  const dayProgress = exp ? Math.min(1, (Date.now() - new Date(exp.start_at).getTime()) / (EXPERIMENT_DAYS * 86400000)) : 0;
-
+export default function LandingPage() {
   return (
-    <div className="space-y-6">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-semibold tracking-tight text-white">Command Center</h1>
-          <p className="mt-1 text-sm text-white/45">
-            {exp ? (
-              <>
-                Experiment <span className="font-mono text-white/70">{exp.id.slice(0, 12)}</span> ·{" "}
-                <Badge color={exp.status === "RUNNING" ? "green" : exp.status === "PAUSED" ? "amber" : "slate"}>{exp.status}</Badge> · Day{" "}
-                {exp.current_day}/{EXPERIMENT_DAYS}
-              </>
-            ) : (
-              "No experiment yet — start a 7-day autonomous paper-trading run."
-            )}
-          </p>
-        </div>
-        <ExperimentControls status={exp?.status ?? null} />
-      </div>
+    <div className="min-h-screen bg-white dark:bg-ink-950">
+      <LandingNav />
 
-      {!exp ? (
-        <Empty>
-          Press <span className="text-neon-green">Start 7-Day Experiment</span>, then <span className="text-white/70">Run Tick Now</span> (or wire the
-          cron) to begin generating signals and paper trades.
-        </Empty>
-      ) : (
-        <>
-          {/* KPI row */}
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
-            <Stat label="Portfolio Value" value={usd(pf?.total_value ?? bankroll)} sub={`from ${usd(bankroll)}`} />
-            <Stat label="Total Return" value={pct(pf?.total_return_pct ?? 0)} sub={pf ? (pf.total_return_pct >= 0 ? "in the green" : "in the red") : "—"} subTone={pf?.total_return_pct ?? 0} />
-            <Stat label="Realized P/L" value={usd(pf?.realized_pl ?? 0)} subTone={pf?.realized_pl ?? 0} sub="closed trades" />
-            <Stat label="Unrealized P/L" value={usd(pf?.unrealized_pl ?? 0)} subTone={pf?.unrealized_pl ?? 0} sub={`${pf?.open_positions ?? 0} open`} />
-            <Stat label="Win Rate" value={pct(pf?.win_rate ?? 0, 1)} sub="of closed trades" />
-            <Stat label="Max Drawdown" value={pct(pf?.max_drawdown_pct ?? 0)} subTone={-1} sub={`Sharpe-like ${pf?.sharpe_like ?? 0}`} />
-          </div>
-
-          <div className="grid gap-6 lg:grid-cols-3">
-            {/* Equity curve */}
-            <Card className="lg:col-span-2">
-              <SectionTitle title="Equity Curve" desc="Mark-to-market portfolio value (conservative exit pricing)" right={<Badge color="cyan">Exposure {pct(pf?.exposure_pct ?? 0, 1)}</Badge>} />
-              {equity.length > 1 ? <EquityChart data={equity} baseline={bankroll} /> : <Empty>Collecting snapshots… run a few ticks.</Empty>}
-            </Card>
-
-            {/* Experiment progress + health */}
-            <div className="space-y-4">
-              <Card>
-                <SectionTitle title="Experiment Progress" />
-                <div className="mb-2 flex justify-between text-xs text-white/50">
-                  <span>Day {exp.current_day} of {EXPERIMENT_DAYS}</span>
-                  <span>{pct(dayProgress, 0)}</span>
-                </div>
-                <ProgressBar value={dayProgress} color="violet" />
-                <div className="mt-3 text-xs text-white/40">
-                  Started {timeAgo(exp.start_at)} · ends {new Date(exp.planned_end_at).toLocaleDateString()}
-                </div>
-              </Card>
-              <Card>
-                <SectionTitle title="System Health" />
-                <div className="space-y-2 text-sm">
-                  <Row label="Last tick" value={health.lastTick ? <Badge color={health.lastTick.ok ? "green" : "red"}>{timeAgo(health.lastTick.created_at)}</Badge> : <Badge color="slate">none</Badge>} />
-                  <Row label="Total ticks" value={<span className="text-white/70">{health.tickCount}</span>} />
-                  <Row label="Data freshness" value={health.staleMin == null ? <Badge color="slate">—</Badge> : <Badge color={health.staleMin > 20 ? "amber" : "green"}>{health.staleMin.toFixed(0)}m old</Badge>} />
-                  <Row label="Recent warnings" value={<span className={tone(-(health.errors.length))}>{health.errors.length}</span>} />
-                </div>
-              </Card>
+      <section className="relative overflow-hidden">
+        <div
+          className="pointer-events-none absolute inset-0 -z-10 opacity-60"
+          style={{
+            backgroundImage:
+              "radial-gradient(600px circle at 15% 10%, rgb(58 99 240 / 0.12), transparent 60%), radial-gradient(500px circle at 85% 20%, rgb(58 99 240 / 0.08), transparent 60%)",
+          }}
+        />
+        <div className="mx-auto max-w-6xl px-6 pb-20 pt-20 sm:pt-28">
+          <FadeIn className="mx-auto max-w-3xl text-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 dark:border-brand-500/30 dark:bg-brand-500/10 dark:text-brand-300">
+              <Sparkles className="h-3.5 w-3.5" />
+              Independent portfolio demo — inspired by the CLM product space
+            </span>
+            <h1 className="mt-6 text-4xl font-semibold tracking-tight text-ink-950 dark:text-white sm:text-6xl">
+              Turn a pile of contracts into
+              <span className="bg-gradient-to-r from-brand-500 to-brand-700 bg-clip-text text-transparent"> commercial intelligence.</span>
+            </h1>
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-ink-500 dark:text-ink-400">
+              A working AI-powered Contract Lifecycle Management copilot — upload a contract, get a risk briefing in
+              seconds, track every obligation, diff every amendment, and see your whole portfolio the way legal, sales,
+              finance, and procurement each need to.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Button asChild size="lg" className="group">
+                <Link href="/dashboard">
+                  Enter the demo
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="/upload">Try it on your own contract</Link>
+              </Button>
             </div>
-          </div>
+          </FadeIn>
 
-          <div className="grid gap-6 lg:grid-cols-2">
-            {/* Strategy leaderboard */}
-            <Card>
-              <SectionTitle title="Strategy Leaderboard" desc="By realized P/L · live weights from self-learning" />
-              <div className="space-y-2">
-                {strategies.map((s) => (
-                  <div key={s.strategy} className="flex items-center gap-3">
-                    <div className="w-40 shrink-0 truncate text-sm text-white/80">{STRATEGY_META[s.strategy as StrategyId]?.label ?? s.strategy}</div>
-                    <div className="flex-1"><ProgressBar value={s.weight} color={s.enabled ? "cyan" : "amber"} /></div>
-                    <div className="w-12 text-right text-xs text-white/40">{pct(s.weight, 0)}</div>
-                    <div className={`w-20 text-right text-sm ${tone(s.realized_pl)}`}>{usd(s.realized_pl)}</div>
-                    <div className="w-14 text-right text-xs text-white/40">{s.wins}/{s.trades}</div>
+          <FadeIn delay={0.15} className="mt-16">
+            <HeroPreviewCard />
+          </FadeIn>
+        </div>
+      </section>
+
+      <section className="border-t border-ink-100 bg-ink-25 py-20 dark:border-ink-800 dark:bg-ink-900/40">
+        <div className="mx-auto max-w-6xl px-6">
+          <FadeIn className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-semibold tracking-tight text-ink-950 dark:text-white">
+              Everything a modern CLM needs to prove out
+            </h2>
+            <p className="mt-3 text-ink-500 dark:text-ink-400">
+              Every feature below is fully wired — real parsing, a real (offline, deterministic) analysis engine, a
+              real SQLite-backed data model, and a documented path to swap in Claude or GPT.
+            </p>
+          </FadeIn>
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {FEATURES.map((f, i) => (
+              <FadeIn key={f.title} delay={0.05 * i}>
+                <div className="h-full rounded-xl2 border border-ink-100 bg-white p-6 shadow-card transition-shadow hover:shadow-elevated dark:border-ink-800 dark:bg-ink-900">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-50 text-brand-600 dark:bg-brand-500/15 dark:text-brand-300">
+                    <f.icon className="h-5 w-5" />
                   </div>
-                ))}
-              </div>
-            </Card>
-
-            {/* Baselines */}
-            <Card>
-              <SectionTitle title="Beating the Baselines?" desc={`PolyAlpha return ${pct(pf?.total_return_pct ?? 0)} · beating ${beat}/${baselines.length}`} right={<Badge color={beat >= 6 ? "green" : beat >= 4 ? "amber" : "red"}>{beat}/{baselines.length}</Badge>} />
-              <div className="space-y-1.5">
-                <BaselineRow label="◆ PolyAlpha (ensemble)" ret={pf?.total_return_pct ?? 0} highlight />
-                {baselines.map((b) => (
-                  <BaselineRow key={b.id} label={b.label} ret={b.ret} beaten={(pf?.total_return_pct ?? 0) > b.ret} />
-                ))}
-              </div>
-            </Card>
+                  <h3 className="text-[15px] font-semibold text-ink-900 dark:text-white">{f.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-ink-500 dark:text-ink-400">{f.description}</p>
+                </div>
+              </FadeIn>
+            ))}
           </div>
-        </>
-      )}
-    </div>
-  );
-}
+        </div>
+      </section>
 
-function Row({ label, value }: { label: string; value: React.ReactNode }) {
-  return (
-    <div className="flex items-center justify-between">
-      <span className="text-white/45">{label}</span>
-      {value}
-    </div>
-  );
-}
+      <section className="py-20">
+        <FadeIn className="mx-auto max-w-2xl px-6 text-center">
+          <h2 className="text-3xl font-semibold tracking-tight text-ink-950 dark:text-white">See it live in under a minute</h2>
+          <p className="mt-3 text-ink-500 dark:text-ink-400">
+            Ten pre-loaded contracts, a flagged high-risk SaaS agreement, an amendment ready to diff, and a portfolio
+            dashboard already populated — no setup required.
+          </p>
+          <Button asChild size="lg" className="mt-8">
+            <Link href="/dashboard">
+              Open the dashboard
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
+        </FadeIn>
+      </section>
 
-function BaselineRow({ label, ret, highlight, beaten }: { label: string; ret: number; highlight?: boolean; beaten?: boolean }) {
-  return (
-    <div className={`flex items-center justify-between rounded-lg px-2 py-1.5 ${highlight ? "bg-neon-cyan/10" : ""}`}>
-      <span className={`text-sm ${highlight ? "font-semibold text-neon-cyan" : "text-white/70"}`}>{label}</span>
-      <div className="flex items-center gap-2">
-        {!highlight && <span className={`text-[10px] ${beaten ? "text-neon-green" : "text-neon-red"}`}>{beaten ? "beaten" : "ahead"}</span>}
-        <span className={`w-16 text-right text-sm ${tone(ret)}`}>{pct(ret)}</span>
-      </div>
+      <footer className="border-t border-ink-100 py-8 dark:border-ink-800">
+        <div className="mx-auto max-w-6xl px-6 text-center text-xs text-ink-400">
+          Built as an independent internship-portfolio project inspired by the public Contract Lifecycle Management
+          (CLM) product category. Not affiliated with, endorsed by, or built in partnership with Malbek Inc. or any
+          other CLM vendor.
+        </div>
+      </footer>
     </div>
   );
 }

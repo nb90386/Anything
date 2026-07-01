@@ -1,0 +1,39 @@
+STATEMENT OF WORK — SYSTEMS INTEGRATION SERVICES (DRAFT)
+
+This Statement of Work is entered into by and between Northwind Analytics, Inc. ("Company") and Redwood Systems Integrators ("Counterparty") as of July 1, 2026 (the "Effective Date"), currently under negotiation.
+
+1. SCOPE OF WORK
+
+Counterparty shall design and implement an integration layer connecting Company's platform to Counterparty's ERP system, including API development, data synchronization, and end-to-end testing.
+
+2. DELIVERABLES
+
+Counterparty shall deliver a working integration environment no later than December 1, 2026, along with technical documentation and a knowledge-transfer session for Company's engineering team.
+
+3. FEES
+
+The total fixed fee for this engagement is $310,000, payable in three installments tied to milestone acceptance. Company shall pay the initial mobilization invoice no later than August 1, 2026.
+
+4. INTELLECTUAL PROPERTY
+
+All work product created under this Statement of Work shall be the sole and exclusive property of Counterparty upon creation, including all source code, documentation, and integration configurations, and Company receives only a limited license to use the delivered integration.
+
+5. TERM AND TERMINATION
+
+This engagement continues until deliverable acceptance, currently estimated at five (5) months from the Effective Date. Either party may terminate for uncured material breach following thirty (30) days' written notice.
+
+6. LIMITATION OF LIABILITY
+
+Each party's aggregate liability shall not exceed the total fees paid under this Statement of Work, except for confidentiality breaches or willful misconduct.
+
+7. CONFIDENTIALITY
+
+Each party shall protect the other's confidential technical and business information using reasonable care and shall not disclose it without written consent.
+
+8. WARRANTY
+
+Counterparty warrants that the delivered integration will perform substantially in accordance with the agreed specifications for ninety (90) days following final acceptance.
+
+9. GOVERNING LAW
+
+This Statement of Work is governed by the laws of the State of Delaware.

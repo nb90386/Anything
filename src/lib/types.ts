@@ -1,176 +1,188 @@
-/** Domain types for PolyAlpha Lab. Paper trading only. Not financial advice. */
+// Core domain types for the Contract Intelligence Copilot.
+// These mirror the SQLite schema in src/lib/db/schema.ts.
 
-export type StrategyId =
-  | "TOP_TRADER_CONSENSUS"
-  | "SMART_WALLET_MOMENTUM"
-  | "ORDERBOOK_IMBALANCE"
-  | "MOMENTUM_BREAKOUT"
-  | "MEAN_REVERSION"
-  | "RESOLUTION_DRIFT"
-  | "CROSS_MARKET_CONSISTENCY"
-  | "LIQUIDITY_SPREAD_FADE"
-  | "NEWS_EVENT_REACTION"
-  | "ENSEMBLE";
+export type Role = "legal" | "sales" | "finance" | "procurement" | "executive";
 
-export const STRATEGIES: StrategyId[] = [
-  "TOP_TRADER_CONSENSUS",
-  "SMART_WALLET_MOMENTUM",
-  "ORDERBOOK_IMBALANCE",
-  "MOMENTUM_BREAKOUT",
-  "MEAN_REVERSION",
-  "RESOLUTION_DRIFT",
-  "CROSS_MARKET_CONSISTENCY",
-  "LIQUIDITY_SPREAD_FADE",
-  "NEWS_EVENT_REACTION",
-];
+export type ContractType =
+  | "MSA"
+  | "NDA"
+  | "SaaS Subscription"
+  | "Procurement"
+  | "Data Processing Agreement"
+  | "Reseller Agreement"
+  | "Statement of Work"
+  | "Employment"
+  | "Amendment";
 
-export const STRATEGY_META: Record<StrategyId, { label: string; short: string }> = {
-  TOP_TRADER_CONSENSUS: { label: "Top-Trader Consensus", short: "Consensus" },
-  SMART_WALLET_MOMENTUM: { label: "Smart-Wallet Momentum", short: "SmartWallet" },
-  ORDERBOOK_IMBALANCE: { label: "Order-Book Imbalance", short: "BookImbal" },
-  MOMENTUM_BREAKOUT: { label: "Momentum / Breakout", short: "Momentum" },
-  MEAN_REVERSION: { label: "Mean Reversion", short: "MeanRev" },
-  RESOLUTION_DRIFT: { label: "Resolution Drift", short: "ResDrift" },
-  CROSS_MARKET_CONSISTENCY: { label: "Cross-Market Consistency", short: "CrossMkt" },
-  LIQUIDITY_SPREAD_FADE: { label: "Liquidity / Spread Fade", short: "SpreadFade" },
-  NEWS_EVENT_REACTION: { label: "News / Event Reaction", short: "NewsReact" },
-  ENSEMBLE: { label: "Ensemble Meta-Strategy", short: "Ensemble" },
-};
+export type ContractStatus =
+  | "draft"
+  | "in_review"
+  | "negotiation"
+  | "pending_approval"
+  | "executed"
+  | "expired"
+  | "terminated";
 
-export type Side = "YES" | "NO";
+export type Department = "Legal" | "Sales" | "Finance" | "Procurement" | "IT" | "HR";
 
-export interface NormalizedMarket {
-  id: string; // conditionId or gamma id
-  question: string;
-  slug: string;
-  category: string;
-  yesTokenId: string | null;
-  noTokenId: string | null;
-  active: boolean;
-  closed: boolean;
-  endDate: string | null;
-  volume: number;
-  liquidity: number;
-  // microstructure snapshot
-  yesPrice: number | null; // midpoint of YES [0..1]
-  bestBid: number | null;
-  bestAsk: number | null;
-  spread: number | null;
-  source: string;
-  dataQuality: number; // 0..1
-}
+export type RiskLevel = "low" | "medium" | "high" | "critical";
 
-export interface OrderBookLevel {
-  price: number;
-  size: number;
-}
-export interface NormalizedBook {
-  tokenId: string;
-  bids: OrderBookLevel[];
-  asks: OrderBookLevel[];
-  bestBid: number | null;
-  bestAsk: number | null;
-  midpoint: number | null;
-  spread: number | null;
-  bidDepth: number;
-  askDepth: number;
-  source: string;
-  dataQuality: number;
-}
+export type ClauseCategory =
+  | "liability"
+  | "indemnification"
+  | "termination"
+  | "payment"
+  | "confidentiality"
+  | "intellectual_property"
+  | "governing_law"
+  | "service_level"
+  | "renewal"
+  | "data_privacy"
+  | "non_compete"
+  | "force_majeure"
+  | "warranty"
+  | "assignment"
+  | "other";
 
-export interface PricePoint {
-  t: number; // unix seconds
-  p: number; // price [0..1]
-}
+export type ObligationType = "payment" | "deliverable" | "renewal_notice" | "reporting" | "audit" | "insurance";
+export type ObligationStatus = "upcoming" | "due_soon" | "overdue" | "complete";
+export type ObligationParty = "us" | "counterparty";
 
-export interface StrategySignal {
-  strategy: StrategyId;
-  marketId: string;
-  side: Side;
-  score: number; // 0..1 raw strategy conviction
-  confidence: number; // 0..1
-  evidence: Record<string, unknown>;
-  rationale: string;
-}
+export type ApprovalStatus = "pending" | "approved" | "rejected" | "skipped";
 
-export interface EnsembleSignal {
-  marketId: string;
-  side: Side;
-  ensembleScore: number; // 0..1 weighted blend
-  contributions: { strategy: StrategyId; weight: number; score: number }[];
-  eligible: boolean;
-  reasons: string[]; // accept/reject reasons
-  topStrategy: StrategyId;
-}
-
-export type PositionStatus = "OPEN" | "CLOSED";
-export type ExitReason =
-  | "MARKET_RESOLVED"
-  | "STOP_LOSS"
-  | "TAKE_PROFIT"
-  | "TRAILING_STOP"
-  | "SIGNAL_DECAY"
-  | "STALE_DATA"
-  | "LIQUIDITY_GONE"
-  | "STRATEGY_DISABLED"
-  | "EXPERIMENT_END"
-  | "MANUAL";
-
-export interface PaperPosition {
+export interface Contract {
   id: string;
-  experiment_id: string;
-  strategy: StrategyId | "ENSEMBLE";
-  market_id: string;
-  question: string;
-  category: string;
-  side: Side;
-  status: PositionStatus;
-  entry_price: number;
-  shares: number;
-  cost: number; // entry_price * shares (paper USD deployed)
-  entry_spread: number;
-  entry_slippage: number;
-  entry_liquidity: number;
-  signal_score: number;
-  risk_score: number;
-  peak_value: number;
-  stop_price: number;
-  take_price: number;
-  current_price: number | null;
-  current_value: number | null;
-  unrealized_pl: number | null;
-  realized_pl: number | null;
-  exit_price: number | null;
-  exit_reason: ExitReason | null;
-  evidence: string; // JSON
-  opened_at: string;
-  closed_at: string | null;
-  source: string;
+  title: string;
+  counterparty: string;
+  type: ContractType;
+  status: ContractStatus;
+  department: Department;
+  ownerName: string;
+  value: number;
+  currency: string;
+  effectiveDate: string; // ISO date
+  expirationDate: string | null;
+  autoRenew: boolean;
+  renewalNoticeDays: number | null;
+  riskScore: number; // 0-100, higher = riskier
+  fileName: string | null;
+  source: "sample" | "upload";
+  createdAt: string;
+  updatedAt: string;
 }
 
-export interface PortfolioSnapshot {
-  experiment_id: string;
-  ts: string;
-  cash: number;
-  open_value: number;
-  total_value: number;
-  realized_pl: number;
-  unrealized_pl: number;
-  open_positions: number;
-  exposure_pct: number;
-  total_return_pct: number;
-  max_drawdown_pct: number;
-  win_rate: number;
-  sharpe_like: number;
-}
-
-export interface ExperimentRun {
+export interface ContractVersion {
   id: string;
-  status: "RUNNING" | "PAUSED" | "COMPLETED";
-  starting_bankroll: number;
-  start_at: string;
-  planned_end_at: string;
-  ended_at: string | null;
-  current_day: number;
-  source: string;
+  contractId: string;
+  versionNumber: number;
+  label: string; // e.g. "Original", "Amendment 1"
+  content: string;
+  changeSummary: string | null;
+  createdAt: string;
+  createdBy: string;
+}
+
+export interface Clause {
+  id: string;
+  contractId: string;
+  versionId: string;
+  category: ClauseCategory;
+  heading: string;
+  text: string;
+  riskLevel: RiskLevel;
+  riskNote: string | null;
+  order: number;
+}
+
+export interface RiskFinding {
+  id: string;
+  contractId: string;
+  clauseId: string | null;
+  title: string;
+  description: string;
+  severity: RiskLevel;
+  category: ClauseCategory;
+  recommendation: string;
+}
+
+export interface Obligation {
+  id: string;
+  contractId: string;
+  description: string;
+  party: ObligationParty;
+  type: ObligationType;
+  dueDate: string | null;
+  status: ObligationStatus;
+}
+
+export interface ApprovalStep {
+  id: string;
+  contractId: string;
+  stepOrder: number;
+  approverRole: Role;
+  approverName: string;
+  status: ApprovalStatus;
+  decidedAt: string | null;
+  comment: string | null;
+}
+
+export interface ActivityEntry {
+  id: string;
+  contractId: string;
+  actor: string;
+  action: string;
+  detail: string | null;
+  createdAt: string;
+}
+
+export interface ContractSummary {
+  overview: string;
+  keyTerms: { label: string; value: string }[];
+  highlights: string[];
+}
+
+export interface ChatMessage {
+  id: string;
+  role: "user" | "assistant";
+  content: string;
+  createdAt: string;
+  citedClauseIds?: string[];
+}
+
+export interface ContractWithDetails extends Contract {
+  versions: ContractVersion[];
+  clauses: Clause[];
+  risks: RiskFinding[];
+  obligations: Obligation[];
+  approvals: ApprovalStep[];
+  activity: ActivityEntry[];
+  summary: ContractSummary;
+}
+
+export interface PortfolioInsights {
+  totalContracts: number;
+  totalValue: number;
+  currency: string;
+  avgCycleTimeDays: number;
+  riskDistribution: Record<RiskLevel, number>;
+  statusDistribution: Record<ContractStatus, number>;
+  valueByDepartment: { department: Department; value: number }[];
+  valueByType: { type: ContractType; value: number }[];
+  upcomingRenewals: { contractId: string; title: string; expirationDate: string; value: number; autoRenew: boolean }[];
+  overdueObligations: { contractId: string; contractTitle: string; obligation: Obligation }[];
+  approvalsPending: number;
+  highRiskContracts: { contractId: string; title: string; riskScore: number }[];
+  monthlyExecutedValue: { month: string; value: number; count: number }[];
+  topCounterpartiesByValue: { counterparty: string; value: number; count: number }[];
+}
+
+export interface SearchResult {
+  contractId: string;
+  title: string;
+  counterparty: string;
+  type: ContractType;
+  status: ContractStatus;
+  score: number;
+  snippet: string;
+  matchedClauseIds: string[];
 }

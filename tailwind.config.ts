@@ -3,50 +3,70 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   darkMode: "class",
   content: [
-    "./src/app/**/*.{ts,tsx}",
-    "./src/components/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   theme: {
     extend: {
-      colors: {
-        base: {
-          900: "#06070d",
-          850: "#0a0c16",
-          800: "#0e1120",
-          700: "#141829",
-          600: "#1c2236",
-        },
-        neon: {
-          cyan: "#34e7e4",
-          green: "#3ee08f",
-          violet: "#8b7bff",
-          pink: "#ff5ca8",
-          amber: "#ffb547",
-          red: "#ff5470",
-        },
-      },
       fontFamily: {
-        mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
+      },
+      colors: {
+        brand: {
+          50: "#eef4ff",
+          100: "#dbe6fe",
+          200: "#bed0fd",
+          300: "#91b1fb",
+          400: "#5e89f7",
+          500: "#3a63f0",
+          600: "#2745e4",
+          700: "#2136c9",
+          800: "#212fa2",
+          900: "#212c80",
+          950: "#161a4d",
+        },
+        ink: {
+          25: "#fbfcfe",
+          50: "#f6f8fb",
+          100: "#eef1f6",
+          200: "#dfe4ec",
+          300: "#c6cddb",
+          400: "#9aa4b8",
+          500: "#707d94",
+          600: "#525f77",
+          700: "#3d4760",
+          800: "#262e42",
+          900: "#161b29",
+          950: "#0b0e17",
+        },
+        risk: {
+          low: "#16a34a",
+          medium: "#d97706",
+          high: "#dc2626",
+          critical: "#991b1b",
+        },
       },
       boxShadow: {
-        glow: "0 0 0 1px rgba(255,255,255,0.04), 0 8px 40px -12px rgba(52,231,228,0.25)",
-        card: "0 1px 0 0 rgba(255,255,255,0.04) inset, 0 20px 60px -30px rgba(0,0,0,0.8)",
+        card: "0 1px 2px 0 rgb(15 23 42 / 0.04), 0 1px 3px 0 rgb(15 23 42 / 0.06)",
+        elevated: "0 4px 12px -2px rgb(15 23 42 / 0.08), 0 2px 4px -2px rgb(15 23 42 / 0.04)",
+        popover: "0 12px 32px -8px rgb(15 23 42 / 0.18), 0 4px 8px -4px rgb(15 23 42 / 0.08)",
       },
-      backgroundImage: {
-        grid: "linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)",
+      borderRadius: {
+        xl2: "1.125rem",
       },
       keyframes: {
-        pulseDot: {
-          "0%,100%": { opacity: "1" },
-          "50%": { opacity: "0.35" },
+        "fade-in": {
+          from: { opacity: "0", transform: "translateY(4px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
         },
         shimmer: {
-          "100%": { transform: "translateX(100%)" },
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
         },
       },
       animation: {
-        pulseDot: "pulseDot 1.6s ease-in-out infinite",
-        shimmer: "shimmer 1.5s infinite",
+        "fade-in": "fade-in 0.35s ease-out",
+        shimmer: "shimmer 1.8s linear infinite",
       },
     },
   },

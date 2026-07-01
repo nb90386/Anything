@@ -1,0 +1,43 @@
+INDEPENDENT CONSULTING AGREEMENT
+
+This Agreement is entered into by and between Northwind Analytics, Inc. ("Company") and Dana Whitfield Consulting LLC ("Counterparty") as of June 15, 2026 (the "Effective Date").
+
+1. SERVICES
+
+Counterparty shall provide fractional data-science advisory services to Company for approximately twenty (20) hours per week, as directed by Company's VP of Analytics.
+
+2. ONBOARDING COMPLIANCE
+
+Consultant shall submit an onboarding compliance report within thirty (30) days of the Effective Date, confirming completion of Company's security awareness and confidentiality training.
+
+3. TERM AND TERMINATION
+
+This Agreement continues for twelve (12) months from the Effective Date. Either party may terminate for convenience upon fifteen (15) days' written notice.
+
+4. FEES
+
+Company shall pay Counterparty a monthly retainer of $8,000, invoiced in arrears and due within fifteen (15) days of receipt.
+
+5. INDEPENDENT CONTRACTOR STATUS
+
+Counterparty is an independent contractor and not an employee, partner, or agent of Company. Counterparty is solely responsible for its own taxes, benefits, and insurance.
+
+6. CONFIDENTIALITY
+
+Counterparty shall protect Company's confidential information using reasonable care and shall not disclose it during or after the engagement, except as required by law.
+
+7. INTELLECTUAL PROPERTY
+
+All work product created by Counterparty in the course of this engagement is a work made for hire and shall be owned by Company upon creation, to the extent permitted by law, and Counterparty assigns all remaining right, title, and interest to Company.
+
+8. NON-SOLICITATION
+
+During the Term and for twelve (12) months thereafter, Counterparty shall not solicit Company's employees or clients with whom Counterparty had material contact during the engagement.
+
+9. LIMITATION OF LIABILITY
+
+Each party's aggregate liability shall not exceed the total fees paid to Counterparty in the preceding twelve (12) months, except for confidentiality breaches.
+
+10. GOVERNING LAW
+
+This Agreement is governed by the laws of the State of New York.

@@ -3,73 +3,92 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --surface: 255 255 255;
+  --surface-muted: 246 248 251;
+  --surface-elevated: 255 255 255;
+  --border-subtle: 223 228 236;
+  --text-primary: 11 14 23;
+  --text-secondary: 82 95 119;
+  --ring: 58 99 240;
 }
 
-html,
+.dark {
+  --surface: 11 14 23;
+  --surface-muted: 15 19 30;
+  --surface-elevated: 21 26 40;
+  --border-subtle: 38 46 66;
+  --text-primary: 246 248 251;
+  --text-secondary: 154 164 184;
+  --ring: 94 137 247;
+}
+
+* {
+  border-color: rgb(var(--border-subtle));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: radial-gradient(1200px 600px at 80% -10%, rgba(52, 231, 228, 0.08), transparent 60%),
-    radial-gradient(900px 500px at 0% 0%, rgba(139, 123, 255, 0.08), transparent 55%), #06070d;
-  color: #e6e8ef;
-  font-feature-settings: "tnum" 1, "cv01" 1;
-  -webkit-font-smoothing: antialiased;
+  background: rgb(var(--surface-muted));
+  color: rgb(var(--text-primary));
+  font-family: var(--font-sans);
 }
 
-@layer components {
-  .glass {
-    @apply rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl shadow-card;
-  }
-  .glass-hover {
-    @apply transition-colors hover:border-white/10 hover:bg-white/[0.04];
-  }
-  .stat-label {
-    @apply text-[11px] uppercase tracking-widest text-white/40;
-  }
-  .stat-value {
-    @apply text-2xl font-semibold tracking-tight text-white;
-  }
-  .chip {
-    @apply inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium;
-  }
-  .th {
-    @apply px-3 py-2 text-left text-[11px] font-medium uppercase tracking-wider text-white/40;
-  }
-  .td {
-    @apply px-3 py-2.5 text-sm text-white/80 border-t border-white/[0.05];
-  }
-  .navlink {
-    @apply flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-white/55 transition-colors hover:bg-white/[0.04] hover:text-white;
-  }
-  .navlink-active {
-    @apply bg-white/[0.06] text-white shadow-glow;
-  }
+::selection {
+  background-color: rgb(var(--ring) / 0.25);
 }
 
-/* thin scrollbars */
-::-webkit-scrollbar {
+/* Thin, unobtrusive scrollbars for a premium feel */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--border-subtle)) transparent;
+}
+*::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--border-subtle));
+  border-radius: 9999px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .skeleton {
-  position: relative;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.04);
+  background: linear-gradient(
+    90deg,
+    rgb(var(--border-subtle) / 0.4) 25%,
+    rgb(var(--border-subtle) / 0.7) 37%,
+    rgb(var(--border-subtle) / 0.4) 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
 }
-.skeleton::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  transform: translateX(-100%);
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
-  animation: shimmer 1.5s infinite;
+
+.prose-contract {
+  white-space: pre-wrap;
+  line-height: 1.7;
 }
-@keyframes shimmer {
-  100% {
-    transform: translateX(100%);
-  }
+
+.diff-add {
+  background-color: rgb(22 163 74 / 0.14);
+  color: rgb(21 128 61);
+  text-decoration: none;
+}
+.dark .diff-add {
+  color: rgb(74 222 128);
+}
+.diff-remove {
+  background-color: rgb(220 38 38 / 0.14);
+  color: rgb(185 28 28);
+  text-decoration: line-through;
+}
+.dark .diff-remove {
+  color: rgb(248 113 113);
 }

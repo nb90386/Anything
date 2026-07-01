@@ -1,0 +1,47 @@
+RESELLER AGREEMENT
+
+This Agreement is entered into by and between Northwind Analytics, Inc. ("Company") and Bright Path Distribution ("Counterparty") as of February 1, 2025 (the "Effective Date").
+
+1. APPOINTMENT
+
+Company appoints Counterparty as a non-exclusive reseller of Company's analytics products in the territory described in Exhibit A, and Counterparty accepts such appointment subject to the terms of this Agreement.
+
+2. TERM AND TERMINATION
+
+This Agreement has an initial term of twelve (12) months from the Effective Date. Either party may terminate for uncured material breach following thirty (30) days' written notice.
+
+3. PRICING AND PAYMENT
+
+Counterparty shall purchase products at the wholesale price schedule set forth in Exhibit B and resell at prices of its choosing. Reseller shall remit the final True-Up payment no later than March 1, 2026.
+
+4. NON-COMPETE
+
+During the Term and for five (5) years thereafter, Reseller shall not engage in any business anywhere in the world that competes with Company's Products, including development, marketing, or distribution of competing analytics platforms.
+
+5. MARKETING OBLIGATIONS
+
+Counterparty shall use commercially reasonable efforts to market and promote Company's products, including maintaining a trained sales staff and participating in joint marketing programs as mutually agreed.
+
+6. LIMITATION OF LIABILITY
+
+Each party's aggregate liability shall not exceed the total fees paid by Counterparty in the preceding twelve (12) months, except for breaches of Section 4 (Non-Compete) or confidentiality obligations.
+
+7. INTELLECTUAL PROPERTY
+
+Counterparty is granted a limited, non-exclusive license to use Company's trademarks solely in connection with marketing and reselling Company's products during the Term.
+
+8. CONFIDENTIALITY
+
+Each party shall protect the other's confidential and proprietary information using reasonable care and shall not disclose it to third parties without written consent.
+
+9. WARRANTY
+
+Company warrants that its products will perform substantially in accordance with their published documentation for ninety (90) days from delivery.
+
+10. GOVERNING LAW
+
+This Agreement is governed by the laws of the State of Illinois.
+
+11. ASSIGNMENT
+
+Neither party may assign this Agreement without the prior written consent of the other party, except in connection with a merger or sale of substantially all assets.

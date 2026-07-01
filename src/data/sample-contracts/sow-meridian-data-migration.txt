@@ -1,0 +1,31 @@
+STATEMENT OF WORK NO. 1 — DATA MIGRATION
+
+This Statement of Work is entered into by and between Northwind Analytics, Inc. ("Company") and Meridian Logistics Corp. ("Counterparty") as of January 10, 2026 (the "Effective Date"), issued under the Master Services Agreement dated January 15, 2025.
+
+1. SCOPE OF WORK
+
+Company shall migrate Counterparty's legacy warehouse-management data into the Northwind Analytics platform, including data mapping, cleansing, transformation, and validation across four (4) source systems.
+
+2. DELIVERABLES AND MILESTONES
+
+Vendor shall deliver Milestone 1 (Data Mapping) no later than August 15, 2026. Milestone 2 (Migration and Validation) shall be delivered within sixty (60) days of Milestone 1 acceptance.
+
+3. FEES
+
+The total fixed fee for this Statement of Work is $180,000. The mobilization fee is non-refundable and is due prior to completion of Milestone 1, due no later than July 20, 2026. The remaining balance is due upon final acceptance.
+
+4. ACCEPTANCE
+
+Counterparty shall have ten (10) business days to review each deliverable and either accept it or provide written feedback describing any deficiencies, which Company shall remedy before resubmission.
+
+5. CHANGE MANAGEMENT
+
+Any changes to scope, timeline, or fees must be documented in a written change order signed by both parties before Company is obligated to perform the additional work.
+
+6. TERM
+
+This Statement of Work commences on the Effective Date and continues until all deliverables are accepted, currently estimated to conclude by October 10, 2026.
+
+7. INCORPORATION
+
+This Statement of Work incorporates by reference the terms of the Master Services Agreement between the parties dated January 15, 2025, including its limitation of liability, confidentiality, and indemnification provisions.

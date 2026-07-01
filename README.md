@@ -1,153 +1,171 @@
-# PolyAlpha Lab
+# Contract Intelligence Copilot
 
-**Autonomous Polymarket paper-trading research system.**
+**An independent, AI-powered Contract Lifecycle Management (CLM) portfolio demo.**
 
-> ⚠️ **Research tool only. Paper trading only. Not financial advice.**
-> No real funds. No private keys. No wallet signing. No CLOB order placement. No authenticated endpoints.
-> Uses only **public, read-only** Polymarket data.
-
-PolyAlpha Lab runs a fully autonomous 7-day experiment that tests whether a portfolio of
-prediction-market strategies can produce positive **risk-adjusted** returns on Polymarket —
-entirely with $10,000 of paper money. It ingests public market/trader/order-book data,
-generates signals from 9 strategy families, blends them with a self-learning ensemble,
-sizes positions with hard-capped fractional Kelly, paper-trades them with conservative
-fills, marks to market, compares against 8 baselines, and writes daily + final reports.
+> Built as an internship-portfolio project inspired by the public CLM product category (Malbek, Ironclad, Icertis,
+> DocuSign CLM, Conga, Agiloft, Sirion, LinkSquares, SpotDraft, and others). **This project is not affiliated with,
+> endorsed by, or built in partnership with Malbek Inc. or any other CLM vendor.** No proprietary code, data, or
+> branding from any vendor was used — all sample contracts, UI, and code are original.
 
 ---
 
-## What you get
+## What this is
 
-- **Live premium dashboard** (10 pages): Command Center, Live Signals, Open Positions,
-  Closed Trades, Strategy Lab, Smart Wallets, Market Intelligence, Risk Center, Reports,
-  System Health.
-- **Autonomous runner** that resumes entirely from database state (crash/restart safe).
-- **Real Polymarket public API client** (Gamma / CLOB / Data API) with retries + backoff.
-- **9 strategies + ensemble meta-strategy** with dynamic, slowly-learned weights.
-- **Risk engine** with fractional Kelly, hard position/exposure/category caps, no leverage.
-- **8 baselines** to prove (or disprove) edge.
-- **Self-learning** via Bayesian win-rate posteriors with anti-overfitting guards.
-- **Zero-config local run** (SQLite) and **production Postgres/Supabase** with one env switch.
+A real, working CLM application — not a static mockup. Upload a contract (PDF/DOCX/TXT) or pick from ten pre-loaded
+sample agreements, and the app will:
+
+- Segment and classify every clause into 14 legal categories
+- Flag risky language (uncapped liability, one-sided indemnification, auto-renewal traps, broad non-competes, missing
+  breach-notification language, and more) with a plain-English recommendation for each
+- Extract obligations (payments, renewal notices, reporting, audits, insurance, deliverables) with due dates and
+  live overdue/due-soon/upcoming status
+- Diff any two versions of a contract word-by-word (built for amendment tracking)
+- Simulate a multi-step approval workflow (Legal → Finance → Executive)
+- Roll a whole portfolio up into a "BusinessIQ"-style commercial-intelligence dashboard
+- Answer natural-language questions about a specific contract, citing the actual clauses it used
+- Search across the entire contract repository by relevance, not just exact string match
+- Export a clean, board-ready executive report per contract
+
+All of this works **immediately, offline, with zero API keys** — the analysis engine is a deterministic, rule-based
+"mock AI" (regex/keyword clause classification, heuristic risk detection, date-aware obligation extraction, and
+retrieval-based chat). It is a genuine implementation, not canned responses — see
+[`src/lib/ai/mock/`](src/lib/ai/mock/). A clean provider interface (see [`src/lib/ai/provider.ts`](src/lib/ai/provider.ts))
+lets you swap in real Anthropic Claude or OpenAI calls with one environment variable — see
+[Plugging in a real LLM](#plugging-in-a-real-llm) below.
 
 ---
 
-## Quick start (zero config, local)
+## Quick start
+
+Requires Node.js 20+.
 
 ```bash
 npm install
-npm run db:migrate     # creates ./data/polyalpha.db (SQLite)
-npm run db:seed 6      # start an experiment + run 6 ticks to populate the dashboard
-npm run dev            # http://localhost:3000
+npm run db:seed     # creates ./data/clm.db (SQLite) and loads 10 sample contracts
+npm run dev         # http://localhost:3000
 ```
 
-Then open the dashboard, press **Run Tick Now** a few times (or run the continuous runner):
+Open the site, click **Enter the demo**, and explore. Use **Reset demo data** in the top bar at any time to restore
+the original sample dataset (handy after playing with uploads or approvals).
+
+No `.env` file is required to run the demo. See [`.env.example`](.env.example) for optional configuration.
+
+---
+
+## Tech stack
+
+| Layer | Choice | Why |
+|---|---|---|
+| Framework | Next.js 14 (App Router, React Server Components) | Fast, modern, industry-standard; server components let pages read SQLite directly with zero client-side data-fetching boilerplate |
+| Language | TypeScript, `strict: true` | Type safety across the whole data model, from DB rows to UI props |
+| Styling | Tailwind CSS v3 + hand-built component library (`src/components/ui/`) | Full control over a premium, consistent design system without a heavyweight UI framework dependency |
+| Animation | Framer Motion | Subtle, tasteful entrance/hover polish |
+| Database | SQLite via `better-sqlite3` | Zero-config, zero-external-services, synchronous (simple, no ORM ceremony); see [Known limitations](#known-limitations) for the Postgres upgrade path |
+| Parsing | `pdf-parse`, `mammoth` | Real PDF and DOCX text extraction |
+| Diffing | `diff` | Real word-level version comparison |
+| Search | Hand-rolled TF-IDF + cosine similarity (`src/lib/text-search.ts`) | Real relevance ranking with zero external vector-DB dependency |
+| Charts | Recharts | Portfolio and BusinessIQ visualizations |
+| Testing | Vitest (unit) + Playwright (e2e) | See [Testing](#testing) |
+
+---
+
+## Project structure
+
+```
+src/
+  app/
+    page.tsx                    marketing landing page
+    (app)/                      main app, wrapped in sidebar + topbar
+      dashboard/                portfolio command center
+      contracts/                repository list, detail, and version-diff view
+      insights/                 "BusinessIQ" commercial-intelligence dashboard
+      approvals/                approval workflow queue
+      upload/                   contract ingestion (file or pasted text)
+      search/                   cross-repository search
+    api/                        route handlers (chat, approvals, export, upload, demo reset)
+  components/
+    ui/                         hand-built design system primitives (Button, Card, Table, Tabs, ...)
+    layout/                     sidebar, topbar, mobile nav, app shell
+    contracts/                  contract-specific UI (badges, chat panel, tabs)
+    dashboard/ insights/ landing/  page-specific components
+  data/
+    sample-contracts/           10 original, realistic sample contracts (plain text)
+    manifest.ts                 seed metadata for each sample contract
+  lib/
+    types.ts                    the whole domain model
+    db/                         SQLite schema + typed repository layer
+    ai/                         the analysis-engine abstraction + deterministic mock engine + LLM provider stubs
+    ingest.ts                   turns raw text into a persisted contract (clauses, risks, obligations)
+    insights.ts                 portfolio-wide aggregation for the dashboard/BusinessIQ
+    search.ts                   cross-repository relevance search
+    text-search.ts              TF-IDF vectorization + cosine similarity
+    validation.ts                zod schemas for all API inputs
+scripts/
+  seed.ts  reset.ts             CLI wrappers around src/lib/seed.ts
+tests/
+  unit/                         Vitest unit tests (36 tests, pure-function coverage of the AI engine)
+  e2e/                          Playwright end-to-end smoke tests
+docs/
+  research/                     Malbek + CLM market research report
+  product/                      vision, PRD, personas, journeys, roadmap, demo script
+  architecture/                 system design, security model, data model, API spec
+```
+
+---
+
+## Plugging in a real LLM
+
+The mock engine is the default and requires nothing. To use a real model instead:
 
 ```bash
-npm run runner         # ticks every TICK_MINUTES (default 10) forever, resumes from DB
+cp .env.example .env.local
 ```
 
-> **Note on this build environment:** outbound network egress to `*.polymarket.com` is blocked
-> here, so ingestion automatically falls back to a clearly-labeled **SAMPLE dataset**
-> (`source="sample"`, purple banner in the UI). Deploy to Vercel / your machine (open egress)
-> and it uses **live** Polymarket data with no code change.
+Then set:
+
+```bash
+AI_PROVIDER=anthropic
+ANTHROPIC_API_KEY=sk-ant-...
+# or
+AI_PROVIDER=openai
+OPENAI_API_KEY=sk-...
+# OpenAI-compatible gateways (e.g. OpenRouter) work too via OPENAI_BASE_URL
+```
+
+The factory in [`src/lib/ai/index.ts`](src/lib/ai/index.ts) picks the engine at runtime; every call site
+(`ingestContract`, the chat API route) is written against the shared `AnalysisEngine` interface, so nothing else in
+the app needs to change. **No API key is committed anywhere in this repository.**
 
 ---
 
-## Architecture
+## Testing
 
-```
-Next.js 14 (App Router, RSC) ── premium dashboard (Tailwind glass UI, Recharts)
-        │
-        ├── /api/cron/tick   ← Vercel Cron / external scheduler (CRON_SECRET)
-        ├── /api/control      ← start / pause / resume experiment
-        │
-   tick() orchestrator (src/lib/engine/experiment.ts)
-        │  fully resumable from DB on every call
-        ▼
-   ingest → strategies(9) → ensemble → risk sizing → paper fills →
-   mark-to-market/exits → baselines(8) → portfolio snapshot →
-   self-learning → daily/final reports → heartbeat
-        │
-        ▼
-   DB adapter (src/lib/db) ── SQLite (default) | Postgres/Supabase (DB_DRIVER=postgres)
+```bash
+npm run typecheck   # tsc --noEmit, strict mode, zero errors
+npm run lint         # eslint (next/core-web-vitals + next/typescript)
+npm test             # vitest — 36 unit tests covering clause segmentation, classification,
+                      # risk heuristics, obligation extraction, text search, and the end-to-end
+                      # mock-engine ingestion pipeline
+npm run test:e2e     # playwright — smoke tests for the full demo flow (see tests/e2e/)
 ```
 
-| Layer | File(s) |
-|---|---|
-| Config + risk guardrails | `src/lib/config.ts` |
-| DB adapter + portable schema | `src/lib/db/` |
-| Polymarket client (retry/backoff/health) | `src/lib/poly/` |
-| Ingestion (+ sample fallback) | `src/lib/ingest.ts` |
-| Strategies | `src/lib/engine/strategies.ts` |
-| Ensemble + gates | `src/lib/engine/ensemble.ts` |
-| Risk sizing + caps | `src/lib/engine/risk.ts` |
-| Paper trading + P/L | `src/lib/engine/paper.ts` |
-| Baselines | `src/lib/engine/baselines.ts` |
-| Self-learning | `src/lib/engine/learning.ts` |
-| Reports | `src/lib/engine/reports.ts` |
-| Orchestrator / runner | `src/lib/engine/experiment.ts`, `scripts/runner.ts` |
-
-See **RESEARCH.md** for verified API endpoints/schemas and the quant/microstructure background.
+See [`docs/testing/test-summary.md`](docs/testing/test-summary.md) for the full test report.
 
 ---
 
-## Strategies
+## Known limitations
 
-1. **Top-Trader Consensus** — ≥3 quality traders aligned, ≥2 same side, net of opposition.
-2. **Smart-Wallet Momentum** — net PnL-weighted positioning of profitable wallets.
-3. **Order-Book Imbalance** — bid/ask depth imbalance, thin-market guarded.
-4. **Momentum / Breakout** — EMA5 vs EMA20 + slope, avoids price extremes.
-5. **Mean Reversion** — fades z-score moves ≥1.8σ with widening spreads.
-6. **Resolution Drift** — confident outcomes near resolution with tight spreads.
-7. **Cross-Market Consistency** — narrow(subset) vs broad(superset) probability gaps.
-8. **Liquidity / Spread Fade** — abnormally wide spreads with depth to exit.
-9. **News / Event Reaction** — proxy: large single-step jump reversal (no scraping).
-10. **Ensemble** — dynamic-weight blend with conflict penalty + entry gates.
-
-**Entry gates:** active market, fresh data (<20m), valid price, spread ≤6¢, liquidity ≥$2k,
-non-extreme price, ensemble score ≥0.55, risk checks pass.
-**Exit rules:** resolution, −15% stop, +25% take-profit, trailing stop after +15%,
-stale data, liquidity gone, experiment end. **Conservative pricing**: buy the ask, sell the
-bid, else midpoint ± slippage penalty.
-
-## Risk
-
-`$10k` bankroll · default 0.5% / strong 1.0% / exceptional 1.5% · **hard cap 2.0%** per
-position · max open exposure 35% · per-category 12% · correlated 15% · **fractional Kelly
-(0.25×) hard-capped** · **no leverage** (impossible — cash-settled paper shares). These caps
-live in `src/lib/config.ts`'s `RISK` and the self-learning engine can never relax them.
-
-## Self-learning (anti-overfitting)
-
-Beta(α,β) posteriors with a weak prior; decisions use the **lower** confidence bound, not the
-point estimate; EMA-smoothed weight moves (≤20%/update) bounded `[2%, 28%]`; the prior
-dominates below the minimum sample size; only realized (point-in-time) results are used.
-
-## Baselines
-
-No-trade cash · random eligible · equal-weight consensus · best-wallet copy · momentum-only ·
-mean-reversion-only · buy-&-hold all signals · midpoint naive entry. The Command Center shows
-exactly how many PolyAlpha is beating.
-
----
-
-## Production deploy (Vercel + Supabase)
-
-1. **Supabase**: create a project, run `supabase/migrations/0001_init.sql` (SQL editor).
-2. **Vercel**: import the repo. Set env vars:
-   - `DB_DRIVER=postgres`
-   - `DATABASE_URL=postgres://...@db.<project>.supabase.co:5432/postgres`
-   - `CRON_SECRET=<long random string>`
-   - (optional) `STARTING_BANKROLL`, `ALLOW_SAMPLE_FALLBACK=false` for strict-live.
-3. Deploy. `vercel.json` registers a cron hitting `/api/cron/tick` every 10 minutes.
-4. Open the dashboard → **Start 7-Day Experiment**. It now runs unattended; each cron tick
-   refreshes data, trades, learns, and writes reports. Restarting changes nothing — state is
-   in Postgres.
-
-**Alternative runner** (VPS/pm2/systemd, no Vercel cron): `TICK_MINUTES=10 npm run runner`.
-
-### Environment variables
-
-See `.env.example`. Defaults run locally on SQLite with sample fallback and no secrets.
+- **SQLite is file-based**, so this demo is built for local/single-instance use. Swapping to Postgres/Supabase is a
+  contained change (see `docs/architecture/system-design.md` for the upgrade path) — the repository layer already
+  isolates all SQL behind `src/lib/db/repo.ts`.
+- **No real authentication.** The role switcher in the top bar is a lightweight, client-side demo affordance, not an
+  access-control system. See `docs/architecture/security-model.md` for what real enterprise auth (SSO/SAML, RBAC,
+  audit logging) would require.
+- **The mock AI engine is rule-based, not a language model.** It is genuinely functional (see the test suite), but it
+  will miss nuance a real LLM would catch. It exists so the whole app works instantly, offline, for free — and to
+  prove the extraction logic is real and inspectable rather than a black box.
+- **Version diffing compares two stored versions**, not a live redline/track-changes editor.
+- See `docs/product/feature-roadmap.md` for the "Next" and "Later" roadmap.
 
 ---
 
@@ -155,37 +173,18 @@ See `.env.example`. Defaults run locally on SQLite with sample fallback and no s
 
 | Command | Purpose |
 |---|---|
-| `npm run db:migrate` | create/upgrade schema |
-| `npm run db:seed [n]` | start experiment + run `n` ticks |
-| `npm run tick` | run one tick |
-| `npm run runner` | continuous autonomous loop |
-| `npm test` | unit tests (vitest) |
-| `npm run typecheck` | TS check |
-| `npm run build` | production build |
+| `npm run dev` | start the dev server |
+| `npm run build` / `npm start` | production build/serve |
+| `npm run db:seed` | wipe and reload the 10 sample contracts |
+| `npm run db:reset` | wipe all data (no reseed) |
+| `npm run typecheck` | TypeScript strict check |
+| `npm run lint` | ESLint |
+| `npm test` | Vitest unit tests |
+| `npm run test:e2e` | Playwright end-to-end tests |
 
 ---
 
-## Known limitations
+## License / usage
 
-- **Single-week sample size is small** — per-strategy verdicts are low-confidence by nature.
-  This is surfaced honestly in the final report.
-- **News/Event strategy is a price-jump proxy**, not real news ingestion (no scraping).
-- **Cross-market consistency** uses keyword heuristics to pair broad/narrow markets, not a
-  formal logical model of market relationships.
-- **Sample mode** figures are synthetic and clearly labeled; only live deployments produce
-  real metrics.
-- Resolution outcomes are marked at last conservative price (markets resolve outside the
-  window); no oracle of final settlement is assumed.
-
-## Version 2 roadmap
-
-- 4–8 week windows for meaningful confidence intervals.
-- True walk-forward refit with held-out validation splits.
-- Real historical fills/volume deltas for book + news strategies.
-- Explicit correlated-resolution modeling beyond category proxies.
-- Monte Carlo bootstrap of the trade sequence to bound equity-curve uncertainty.
-- Redis/Upstash caching + Sentry wiring (stubs present).
-
----
-
-Built as an autonomous research lab. **Paper trading only. Not financial advice.**
+This is a personal portfolio project shared for demonstration purposes. Sample contract text is original and
+fictional. Do not use it as legal advice or as a template for real contracts.
