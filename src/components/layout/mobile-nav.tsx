@@ -3,17 +3,38 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BarChart3, FileText, LayoutDashboard, Menu, Search, UploadCloud, UserCheck, X } from "lucide-react";
+import {
+  FileBarChart,
+  FileText,
+  GitCompareArrows,
+  LayoutDashboard,
+  Menu,
+  MessagesSquare,
+  PlayCircle,
+  Radar,
+  Search,
+  Settings,
+  TrendingDown,
+  UploadCloud,
+  UserCheck,
+  X,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/copilot", label: "AI Copilot", icon: MessagesSquare },
+  { href: "/risk-radar", label: "Risk Radar", icon: Radar },
+  { href: "/revenue-leakage", label: "Revenue Leakage", icon: TrendingDown },
+  { href: "/clause-drift", label: "Clause Drift", icon: GitCompareArrows },
   { href: "/contracts", label: "Contracts", icon: FileText },
   { href: "/search", label: "Search", icon: Search },
-  { href: "/insights", label: "BusinessIQ", icon: BarChart3 },
-  { href: "/approvals", label: "Approvals", icon: UserCheck },
   { href: "/upload", label: "Upload", icon: UploadCloud },
+  { href: "/approvals", label: "Approvals", icon: UserCheck },
+  { href: "/demo", label: "Guided Demo", icon: PlayCircle },
+  { href: "/report", label: "Executive Report", icon: FileBarChart },
+  { href: "/settings", label: "Settings", icon: Settings },
 ];
 
 export function MobileNav() {
@@ -28,7 +49,7 @@ export function MobileNav() {
       {open ? (
         <div className="fixed inset-0 z-50 flex">
           <div className="absolute inset-0 bg-ink-950/50" onClick={() => setOpen(false)} />
-          <div className="relative z-10 flex h-full w-64 flex-col bg-white p-4 dark:bg-ink-950">
+          <div className="relative z-10 flex h-full w-64 flex-col overflow-y-auto bg-white p-4 dark:bg-ink-950">
             <div className="mb-4 flex items-center justify-between">
               <span className="text-sm font-semibold text-ink-900 dark:text-white">Menu</span>
               <Button variant="ghost" size="icon" aria-label="Close navigation" onClick={() => setOpen(false)}>

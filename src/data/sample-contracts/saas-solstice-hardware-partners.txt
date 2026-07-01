@@ -1,0 +1,47 @@
+SAAS SUBSCRIPTION AGREEMENT
+
+This Agreement is entered into by and between Northwind Analytics, Inc. ("Company") and Solstice Hardware Partners ("Counterparty") as of March 1, 2026 (the "Effective Date").
+
+1. SUBSCRIPTION
+
+Company grants Counterparty a non-exclusive, non-transferable subscription to the Northwind Analytics inventory-intelligence module for the Term, subject to the applicable order form.
+
+2. TERM AND TERMINATION
+
+The initial term is twelve (12) months from the Effective Date. Either party may terminate for uncured material breach following thirty (30) days' written notice.
+
+3. FEES AND PAYMENT
+
+Counterparty shall pay the Annual Subscription Fee invoice no later than March 1, 2027. Invoices are due within thirty (30) days of receipt.
+
+4. LIMITATION OF LIABILITY
+
+Each party's aggregate liability shall not exceed the total fees paid by Counterparty in the preceding twelve (12) months, except for confidentiality breaches, IP infringement, or willful misconduct. Neither party is liable for indirect or consequential damages.
+
+5. SERVICE LEVEL COMMITMENTS
+
+Company shall use commercially reasonable efforts to maintain 99.5% platform availability, measured monthly, with scheduled maintenance excluded and communicated at least 48 hours in advance.
+
+6. AUTO-RENEWAL
+
+This Agreement shall automatically renew for successive twelve (12) month terms unless either party provides written notice of non-renewal at least thirty (30) days prior to the renewal date.
+
+7. INTELLECTUAL PROPERTY
+
+Company retains all right, title, and interest in the platform. Counterparty retains ownership of all inventory data uploaded to the platform.
+
+8. CONFIDENTIALITY
+
+Each party shall protect the other's confidential information using reasonable care and shall not disclose it without written consent, except as required by law.
+
+9. WARRANTY
+
+Company warrants that the platform will perform substantially in accordance with its published documentation, and will use commercially reasonable efforts to correct material non-conformities.
+
+10. GOVERNING LAW
+
+This Agreement is governed by the laws of the State of Arizona.
+
+11. ASSIGNMENT
+
+Neither party may assign this Agreement without the prior written consent of the other party, not to be unreasonably withheld, except in connection with a merger or sale of substantially all assets.

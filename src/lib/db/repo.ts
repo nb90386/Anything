@@ -4,11 +4,14 @@ import type {
   ActivityEntry,
   ApprovalStep,
   Clause,
+  ClauseDriftFinding,
   Contract,
   ContractVersion,
   ContractWithDetails,
+  LeakageOpportunity,
   Obligation,
   RiskFinding,
+  StandardClause,
 } from "../types";
 import { buildSummary } from "../ai";
 
@@ -102,6 +105,45 @@ function rowToApproval(r: any): ApprovalStep {
   };
 }
 
+function rowToStandardClause(r: any): StandardClause {
+  return {
+    id: r.id,
+    category: r.category,
+    title: r.title,
+    standardText: r.standard_text,
+    playbookPosition: r.playbook_position,
+  };
+}
+
+function rowToClauseDrift(r: any): ClauseDriftFinding {
+  return {
+    id: r.id,
+    contractId: r.contract_id,
+    clauseId: r.clause_id,
+    category: r.category,
+    driftScore: r.drift_score,
+    driftType: r.drift_type,
+    summary: r.summary,
+    standardClauseId: r.standard_clause_id,
+    standardClauseTitle: r.standard_clause_title ?? null,
+  };
+}
+
+function rowToLeakage(r: any): LeakageOpportunity {
+  return {
+    id: r.id,
+    contractId: r.contract_id,
+    category: r.category,
+    title: r.title,
+    description: r.description,
+    estimatedValue: r.estimated_value,
+    currency: r.currency,
+    confidence: r.confidence,
+    recommendedAction: r.recommended_action,
+    status: r.status,
+  };
+}
+
 function rowToActivity(r: any): ActivityEntry {
   return {
     id: r.id,
@@ -148,8 +190,10 @@ export function getClauses(contractId: string, versionId?: string): Clause[] {
   return rows.map(rowToClause);
 }
 
-export function getRisks(contractId: string): RiskFinding[] {
-  const rows = db.prepare("SELECT * FROM risks WHERE contract_id = ?").all(contractId);
+export function getRisks(contractId?: string): RiskFinding[] {
+  const rows = contractId
+    ? db.prepare("SELECT * FROM risks WHERE contract_id = ?").all(contractId)
+    : db.prepare("SELECT * FROM risks").all();
   return rows.map(rowToRisk);
 }
 
@@ -179,6 +223,76 @@ export function getActivity(contractId: string): ActivityEntry[] {
   return rows.map(rowToActivity);
 }
 
+export function getStandardClauses(): StandardClause[] {
+  const rows = db.prepare("SELECT * FROM standard_clauses ORDER BY category ASC").all();
+  return rows.map(rowToStandardClause);
+}
+
+export function getClauseDrift(contractId?: string): ClauseDriftFinding[] {
+  const rows = contractId
+    ? db
+        .prepare(
+          `SELECT d.*, s.title as standard_clause_title FROM clause_drift d
+           LEFT JOIN standard_clauses s ON s.id = d.standard_clause_id
+           WHERE d.contract_id = ? ORDER BY d.drift_score DESC`
+        )
+        .all(contractId)
+    : db
+        .prepare(
+          `SELECT d.*, s.title as standard_clause_title FROM clause_drift d
+           LEFT JOIN standard_clauses s ON s.id = d.standard_clause_id
+           ORDER BY d.drift_score DESC`
+        )
+        .all();
+  return rows.map(rowToClauseDrift);
+}
+
+export function getLeakageOpportunities(contractId?: string): LeakageOpportunity[] {
+  const rows = contractId
+    ? db.prepare("SELECT * FROM leakage_opportunities WHERE contract_id = ? ORDER BY estimated_value DESC").all(contractId)
+    : db.prepare("SELECT * FROM leakage_opportunities ORDER BY estimated_value DESC").all();
+  return rows.map(rowToLeakage);
+}
+
+export function insertStandardClause(input: Omit<StandardClause, "id">): StandardClause {
+  const id = randomUUID();
+  db.prepare(
+    `INSERT INTO standard_clauses (id, category, title, standard_text, playbook_position)
+     VALUES (@id, @category, @title, @standardText, @playbookPosition)`
+  ).run({ id, ...input });
+  return { ...input, id };
+}
+
+export function insertClauseDrift(input: Omit<ClauseDriftFinding, "id" | "standardClauseTitle">): ClauseDriftFinding {
+  const id = randomUUID();
+  db.prepare(
+    `INSERT INTO clause_drift (id, contract_id, clause_id, standard_clause_id, category, drift_score, drift_type, summary)
+     VALUES (@id, @contractId, @clauseId, @standardClauseId, @category, @driftScore, @driftType, @summary)`
+  ).run({ id, ...input });
+  return { ...input, id, standardClauseTitle: null };
+}
+
+export function insertLeakageOpportunity(input: Omit<LeakageOpportunity, "id">): LeakageOpportunity {
+  const id = randomUUID();
+  db.prepare(
+    `INSERT INTO leakage_opportunities (id, contract_id, category, title, description, estimated_value, currency, confidence, recommended_action, status)
+     VALUES (@id, @contractId, @category, @title, @description, @estimatedValue, @currency, @confidence, @recommendedAction, @status)`
+  ).run({ id, ...input });
+  return { ...input, id };
+}
+
+export function updateLeakageStatus(id: string, status: LeakageOpportunity["status"]): void {
+  db.prepare("UPDATE leakage_opportunities SET status = ? WHERE id = ?").run(status, id);
+}
+
+export function deleteLeakageForContract(contractId: string): void {
+  db.prepare("DELETE FROM leakage_opportunities WHERE contract_id = ?").run(contractId);
+}
+
+export function deleteClauseDriftForContract(contractId: string): void {
+  db.prepare("DELETE FROM clause_drift WHERE contract_id = ?").run(contractId);
+}
+
 export function getContractWithDetails(id: string): ContractWithDetails | null {
   const contract = getContract(id);
   if (!contract) return null;
@@ -188,9 +302,11 @@ export function getContractWithDetails(id: string): ContractWithDetails | null {
   const obligations = getObligations(id);
   const approvals = getApprovals(id);
   const activity = getActivity(id);
+  const leakage = getLeakageOpportunities(id);
+  const drift = getClauseDrift(id);
   const latest = versions[versions.length - 1];
   const summary = buildSummary(contract, clauses, risks, obligations, latest?.content ?? "");
-  return { ...contract, versions, clauses, risks, obligations, approvals, activity, summary };
+  return { ...contract, versions, clauses, risks, obligations, approvals, activity, summary, leakage, drift };
 }
 
 export function allObligationsWithContract(): { contract: Contract; obligation: Obligation }[] {
@@ -361,10 +477,18 @@ export function getChatHistory(contractId: string) {
   }));
 }
 
+/** Wipes portfolio data (contracts and everything derived from them). The
+ * standard_clauses playbook reference table is left intact since it is
+ * reference data, not portfolio data, and is reseeded separately. */
 export function wipeAllData(): void {
   db.exec(
     `DELETE FROM chat_messages; DELETE FROM activity; DELETE FROM approvals;
+     DELETE FROM leakage_opportunities; DELETE FROM clause_drift;
      DELETE FROM obligations; DELETE FROM risks; DELETE FROM clauses;
      DELETE FROM contract_versions; DELETE FROM contracts;`
   );
+}
+
+export function wipeStandardClauses(): void {
+  db.exec(`DELETE FROM standard_clauses;`);
 }

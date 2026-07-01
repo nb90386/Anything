@@ -1,0 +1,51 @@
+SAAS SUBSCRIPTION AGREEMENT
+
+This Agreement is entered into by and between Northwind Analytics, Inc. ("Company") and Pinnacle Insurance Holdings ("Counterparty") as of May 1, 2025 (the "Effective Date").
+
+1. SUBSCRIPTION AND ACCESS
+
+Counterparty grants Company a non-exclusive, non-transferable subscription to access the Pinnacle claims-analytics platform (the "Platform") for the Term, subject to the terms of this Agreement and the applicable order form.
+
+2. TERM AND TERMINATION
+
+The initial term is twelve (12) months from the Effective Date. Either party may terminate for uncured material breach following thirty (30) days' written notice.
+
+3. FEES AND PAYMENT
+
+Company shall pay each invoice within ninety (90) days of receipt, reflecting Counterparty's extended Net 90 payment terms. Overdue invoices accrue interest at 1.5% per month until paid in full. All fees are non-refundable once the annual term has commenced.
+
+4. LIMITATION OF LIABILITY
+
+Each party's aggregate liability shall not exceed the total fees paid by Company in the preceding twelve (12) months, except for confidentiality breaches, IP infringement, or willful misconduct.
+
+5. INDEMNIFICATION
+
+Each party shall indemnify, defend, and hold harmless the other party from third-party claims arising from the indemnifying party's breach, negligence, or violation of applicable law, subject to the liability cap in Section 4.
+
+6. CONFIDENTIALITY
+
+Each party shall protect the other's confidential information using reasonable care and shall not disclose it to third parties without consent, except as required by law.
+
+7. INTELLECTUAL PROPERTY
+
+The Platform, including all underlying software, algorithms, and documentation, is and remains the exclusive property of Counterparty. Company receives no ownership interest in the Platform or any derivative improvements.
+
+8. SERVICE LEVEL COMMITMENTS
+
+Counterparty will use commercially reasonable efforts to maintain 99.5% Platform availability, measured monthly, with service credits owed for shortfalls below the committed threshold.
+
+9. AUTO-RENEWAL
+
+This Agreement shall automatically renew for successive twelve (12) month terms at Counterparty's then-current list price unless Company provides notice at least sixty (60) days before the renewal date. Company must deliver written notice of non-renewal no later than March 1, 2026 to prevent automatic renewal for an additional twelve (12) month term.
+
+10. DATA HANDLING
+
+Company retains ownership of all data uploaded to the Platform. Counterparty shall delete Company data within thirty (30) days of termination upon written request.
+
+11. GOVERNING LAW
+
+This Agreement is governed by the laws of the State of Connecticut.
+
+12. ASSIGNMENT
+
+Counterparty may assign this Agreement without the prior written consent of Company to any affiliate or successor entity in connection with a corporate reorganization.

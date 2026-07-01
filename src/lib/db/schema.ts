@@ -93,6 +93,38 @@ CREATE TABLE IF NOT EXISTS chat_messages (
   created_at TEXT NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS standard_clauses (
+  id TEXT PRIMARY KEY,
+  category TEXT NOT NULL,
+  title TEXT NOT NULL,
+  standard_text TEXT NOT NULL,
+  playbook_position TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS clause_drift (
+  id TEXT PRIMARY KEY,
+  contract_id TEXT NOT NULL REFERENCES contracts(id) ON DELETE CASCADE,
+  clause_id TEXT NOT NULL REFERENCES clauses(id) ON DELETE CASCADE,
+  standard_clause_id TEXT REFERENCES standard_clauses(id) ON DELETE SET NULL,
+  category TEXT NOT NULL,
+  drift_score INTEGER NOT NULL,
+  drift_type TEXT NOT NULL,
+  summary TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS leakage_opportunities (
+  id TEXT PRIMARY KEY,
+  contract_id TEXT NOT NULL REFERENCES contracts(id) ON DELETE CASCADE,
+  category TEXT NOT NULL,
+  title TEXT NOT NULL,
+  description TEXT NOT NULL,
+  estimated_value REAL NOT NULL,
+  currency TEXT NOT NULL DEFAULT 'USD',
+  confidence TEXT NOT NULL,
+  recommended_action TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'open'
+);
+
 CREATE INDEX IF NOT EXISTS idx_versions_contract ON contract_versions(contract_id);
 CREATE INDEX IF NOT EXISTS idx_clauses_contract ON clauses(contract_id);
 CREATE INDEX IF NOT EXISTS idx_clauses_version ON clauses(version_id);
@@ -101,4 +133,6 @@ CREATE INDEX IF NOT EXISTS idx_obligations_contract ON obligations(contract_id);
 CREATE INDEX IF NOT EXISTS idx_approvals_contract ON approvals(contract_id);
 CREATE INDEX IF NOT EXISTS idx_activity_contract ON activity(contract_id);
 CREATE INDEX IF NOT EXISTS idx_chat_contract ON chat_messages(contract_id);
+CREATE INDEX IF NOT EXISTS idx_drift_contract ON clause_drift(contract_id);
+CREATE INDEX IF NOT EXISTS idx_leakage_contract ON leakage_opportunities(contract_id);
 `;

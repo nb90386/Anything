@@ -1,0 +1,51 @@
+DATA PROCESSING AGREEMENT
+
+This Agreement is entered into by and between Northwind Analytics, Inc. ("Company") and Nimbus Data Systems ("Counterparty") as of September 1, 2025 (the "Effective Date").
+
+1. SCOPE AND PURPOSE
+
+This Agreement governs Counterparty's processing of personal data on behalf of Company in connection with the managed infrastructure services described in the underlying services agreement, and forms part of that agreement.
+
+2. TERM
+
+This Agreement is effective as of the Effective Date and continues for twelve (12) months, after which it must be renewed in writing to remain in effect.
+
+3. DATA PROCESSING OBLIGATIONS
+
+Counterparty shall process personal data only on documented instructions from Company, shall maintain reasonable safeguards to protect personal data, and shall inform Company promptly in the event of a security incident affecting personal data. Counterparty shall ensure that personnel authorized to process personal data are subject to confidentiality obligations.
+
+4. SUBPROCESSORS
+
+Counterparty may engage subprocessors to process personal data provided it maintains a current list of subprocessors and imposes data protection obligations on each subprocessor no less protective than those in this Agreement.
+
+5. SECURITY MEASURES
+
+Counterparty shall implement appropriate technical and organizational measures, including encryption of personal data at rest and in transit, access controls, and regular security testing, to protect against unauthorized access, loss, or disclosure.
+
+6. ANNUAL SECURITY AUDIT
+
+Company reserves audit rights with respect to Counterparty's data handling practices and shall exercise such audit rights no later than March 1, 2026, covering the results of independent penetration testing and any remediation activities undertaken during the prior year.
+
+7. DATA SUBJECT RIGHTS
+
+Counterparty shall assist Company in responding to data subject requests, including access, correction, deletion, and portability requests, within a commercially reasonable timeframe.
+
+8. INTERNATIONAL TRANSFERS
+
+Any transfer of personal data outside the jurisdiction in which it was collected shall be subject to appropriate safeguards as required by applicable data protection law.
+
+9. LIMITATION OF LIABILITY
+
+Each party's aggregate liability under this Agreement shall not exceed the total fees paid by Company in the preceding twelve (12) months, except for violations of applicable data protection law.
+
+10. TERMINATION AND DATA RETURN
+
+Upon termination, Counterparty shall return or securely delete all personal data within thirty (30) days, unless retention is required by applicable law.
+
+11. GOVERNING LAW
+
+This Agreement is governed by the laws of the State of Washington.
+
+12. GENERAL AUDIT TERMS
+
+Any exercise of audit rights under Section 6 requires fifteen (15) business days' prior written notice and shall occur no more than once per twelve-month period.

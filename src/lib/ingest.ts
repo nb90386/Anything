@@ -2,17 +2,27 @@ import { getAnalysisEngine } from "./ai";
 import { assessClauseRisk, classifyCategory, computeRiskScore, findRisks } from "./ai/mock/classify";
 import { segmentContract } from "./ai/mock/segment";
 import { obligationStatus } from "./ai/mock/obligations";
+import { analyzeContractDrift } from "./risk/clause-drift";
+import { detectLeakage } from "./revenue/leakage";
 import {
+  deleteClauseDriftForContract,
+  deleteLeakageForContract,
+  getContract,
+  getObligations,
+  getRisks,
+  getStandardClauses,
   getVersions,
   insertActivity,
   insertClause,
+  insertClauseDrift,
   insertContract,
+  insertLeakageOpportunity,
   insertObligation,
   insertRisk,
   insertVersion,
   updateContractRisk,
 } from "./db/repo";
-import type { Clause, Contract, ContractStatus, ContractType, Department } from "./types";
+import type { Clause, Contract, ContractStatus, ContractType, Department, Obligation, RiskFinding } from "./types";
 
 export interface NewContractInput {
   title: string;
@@ -53,6 +63,38 @@ function backdatedCreatedAt(effectiveDate: string, type: ContractType): string {
   const d = new Date(`${effectiveDate}T00:00:00.000Z`);
   d.setUTCDate(d.getUTCDate() - cycleDays);
   return d.toISOString();
+}
+
+function persistLeakageAndDrift(contract: Contract, clauses: Clause[], risks: RiskFinding[], obligations: Obligation[]) {
+  const standardClauses = getStandardClauses();
+
+  const driftDrafts = analyzeContractDrift(clauses, standardClauses);
+  for (const d of driftDrafts) {
+    insertClauseDrift({
+      contractId: contract.id,
+      clauseId: d.clauseId,
+      category: d.category,
+      driftScore: d.driftScore,
+      driftType: d.driftType,
+      summary: d.summary,
+      standardClauseId: d.standardClauseId,
+    });
+  }
+
+  const leakageDrafts = detectLeakage(contract, clauses, risks, obligations);
+  for (const l of leakageDrafts) {
+    insertLeakageOpportunity({
+      contractId: contract.id,
+      category: l.category,
+      title: l.title,
+      description: l.description,
+      estimatedValue: l.estimatedValue,
+      currency: contract.currency,
+      confidence: l.confidence,
+      recommendedAction: l.recommendedAction,
+      status: "open",
+    });
+  }
 }
 
 export async function ingestContract(input: NewContractInput): Promise<Contract> {
@@ -105,9 +147,9 @@ export async function ingestContract(input: NewContractInput): Promise<Contract>
     })
   );
 
-  for (const r of result.risks) {
+  const risks: RiskFinding[] = result.risks.map((r) => {
     const clauseId = r.clauseIndex !== null ? (clauses[r.clauseIndex]?.id ?? null) : null;
-    insertRisk({
+    return insertRisk({
       contractId: contract.id,
       clauseId,
       title: r.title,
@@ -116,9 +158,9 @@ export async function ingestContract(input: NewContractInput): Promise<Contract>
       category: r.category,
       recommendation: r.recommendation,
     });
-  }
+  });
 
-  for (const o of result.obligations) {
+  const obligations: Obligation[] = result.obligations.map((o) =>
     insertObligation({
       contractId: contract.id,
       description: o.description,
@@ -126,8 +168,10 @@ export async function ingestContract(input: NewContractInput): Promise<Contract>
       type: o.type,
       dueDate: o.dueDate,
       status: obligationStatus(o.dueDate),
-    });
-  }
+    })
+  );
+
+  persistLeakageAndDrift(contract, clauses, risks, obligations);
 
   insertActivity({
     contractId: contract.id,
@@ -139,7 +183,7 @@ export async function ingestContract(input: NewContractInput): Promise<Contract>
   return contract;
 }
 
-/** Adds a new version (amendment) to an existing contract and re-classifies its clauses/risks. */
+/** Adds a new version (amendment) to an existing contract and re-classifies its clauses/risks/leakage/drift. */
 export function addAmendmentVersion(
   contractId: string,
   rawText: string,
@@ -182,10 +226,10 @@ export function addAmendmentVersion(
     })
   );
 
-  const risks = findRisks(clauseDrafts);
-  for (const r of risks) {
+  const riskDrafts = findRisks(clauseDrafts);
+  const risks: RiskFinding[] = riskDrafts.map((r) => {
     const clauseId = r.clauseIndex !== null ? (clauses[r.clauseIndex]?.id ?? null) : null;
-    insertRisk({
+    return insertRisk({
       contractId,
       clauseId,
       title: r.title,
@@ -194,9 +238,21 @@ export function addAmendmentVersion(
       category: r.category,
       recommendation: r.recommendation,
     });
-  }
+  });
 
-  updateContractRisk(contractId, computeRiskScore(risks));
+  updateContractRisk(contractId, computeRiskScore(riskDrafts));
+
+  // Recompute leakage and drift against the latest state (this version's clauses,
+  // the full accumulated risk/obligation picture), rather than accumulating stale
+  // findings from earlier versions.
+  deleteLeakageForContract(contractId);
+  deleteClauseDriftForContract(contractId);
+  const contract = getContract(contractId);
+  if (contract) {
+    const allObligations = getObligations(contractId);
+    const allRisks = getRisks(contractId);
+    persistLeakageAndDrift(contract, clauses, allRisks.length ? allRisks : risks, allObligations);
+  }
 
   insertActivity({
     contractId,

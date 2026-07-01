@@ -1,0 +1,51 @@
+SUPPLY AND PROCUREMENT AGREEMENT
+
+This Agreement is entered into by and between Northwind Analytics, Inc. ("Company") and Falcon Manufacturing Co. ("Counterparty") as of April 15, 2026 (the "Effective Date").
+
+1. SCOPE OF SUPPLY
+
+Counterparty shall supply precision sensor components to Company in accordance with purchase orders issued from time to time under this Agreement, each governed by the terms herein, renewing the supply relationship previously governed by the prior agreement dated April 1, 2024.
+
+2. TERM AND TERMINATION
+
+This Agreement continues for two (2) years from the Effective Date. Either party may terminate for uncured material breach following thirty (30) days' written notice, or for convenience upon ninety (90) days' written notice.
+
+3. PRICING AND PAYMENT
+
+Company shall pay each invoice no later than thirty (30) days after receipt, at a flat unit price consistent with the pricing schedule from the prior agreement. Overdue invoices accrue interest at 1% per month. The first purchase order payment is due no later than May 15, 2026.
+
+4. DELIVERY
+
+Counterparty shall deliver the first hardware shipment no later than June 1, 2026, in accordance with the delivery schedule set forth in the applicable purchase order.
+
+5. LIMITATION OF LIABILITY
+
+Each party's aggregate liability shall not exceed the total fees paid by Company in the preceding twelve (12) months, except for indemnification obligations, confidentiality breaches, or willful misconduct.
+
+6. WARRANTY
+
+Counterparty warrants that all components will be free from material defects for twelve (12) months from delivery and will conform to the specifications set forth in the applicable purchase order.
+
+7. INSURANCE
+
+Vendor shall maintain commercial general liability insurance and shall deliver a certificate of insurance no later than April 15, 2027, naming Company as an additional insured.
+
+8. INDEMNIFICATION
+
+Counterparty shall indemnify, defend, and hold harmless Company from third-party claims arising from defective components, subject to the liability cap in Section 5.
+
+9. CONFIDENTIALITY
+
+Each party shall protect the other's confidential business and pricing information using reasonable care and shall not disclose it without written consent.
+
+10. ASSIGNMENT
+
+Counterparty may assign this Agreement without the prior written consent of Company to any affiliate or successor entity resulting from a corporate reorganization.
+
+11. GOVERNING LAW
+
+This Agreement is governed by the laws of the State of Michigan.
+
+12. FORCE MAJEURE
+
+Neither party is liable for delays caused by events beyond its reasonable control, including natural disasters, supply chain disruption, or governmental action.

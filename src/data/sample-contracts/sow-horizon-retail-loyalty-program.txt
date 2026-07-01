@@ -1,0 +1,39 @@
+STATEMENT OF WORK NO. 3 - LOYALTY PROGRAM INTEGRATION (DRAFT)
+
+This Statement of Work is entered into by and between Northwind Analytics, Inc. ("Company") and Horizon Retail Group. ("Counterparty") as of June 1, 2026 (the "Effective Date"), currently under negotiation, issued under the Master Services Agreement dated September 1, 2024.
+
+1. SCOPE OF WORK
+
+Company shall integrate Counterparty's loyalty program data into the analytics platform, including member scoring models, redemption tracking, and a real-time rewards dashboard.
+
+2. DELIVERABLES
+
+Company shall deliver a working integration environment no later than January 15, 2027, along with technical documentation and a knowledge-transfer session for Counterparty's marketing team.
+
+3. FEES
+
+The total fixed fee for this engagement is $380,000, payable in three installments tied to milestone acceptance. Counterparty shall pay the initial mobilization invoice no later than July 15, 2026.
+
+4. TERMINATION
+
+Counterparty may terminate this Statement of Work immediately upon written notice if Company fails to meet two consecutive milestone deadlines.
+
+5. LIMITATION OF LIABILITY
+
+Each party's aggregate liability shall not exceed the total fees paid under this Statement of Work, except for confidentiality breaches or willful misconduct.
+
+6. CONFIDENTIALITY
+
+Each party shall protect the other's confidential technical and business information using reasonable care and shall not disclose it without written consent. Confidentiality obligations survive indefinitely, in perpetuity, with respect to member loyalty data models.
+
+7. WARRANTY
+
+Counterparty disclaims all warranties, express or implied, including merchantability and fitness for a particular purpose, with respect to the underlying loyalty program data supplied to Company.
+
+8. GOVERNING LAW
+
+This Statement of Work is governed by the laws of the State of Delaware.
+
+9. INCORPORATION
+
+This Statement of Work incorporates by reference the terms of the Master Services Agreement between the parties dated September 1, 2024.

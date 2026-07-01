@@ -1,0 +1,35 @@
+STATEMENT OF WORK NO. 2 - ANALYTICS PLATFORM ROLLOUT
+
+This Statement of Work is entered into by and between Northwind Analytics, Inc. ("Company") and Horizon Retail Group. ("Counterparty") as of February 1, 2026 (the "Effective Date"), issued under the Master Services Agreement dated September 1, 2024.
+
+1. SCOPE OF WORK
+
+Company shall roll out the full analytics platform across Counterparty's regional distribution centers, including dashboard configuration, data pipeline integration, and staff training for up to two hundred (200) users.
+
+2. DELIVERABLES AND MILESTONES
+
+Company shall deliver Milestone 1 (Pipeline Integration) no later than September 1, 2026. Milestone 2 (Dashboard Rollout and Training) shall be delivered within ninety (90) days of Milestone 1 acceptance.
+
+3. FEES
+
+The total fixed fee for this Statement of Work is $640,000. Company shall invoice the mobilization fee no later than August 1, 2026. The remaining balance is due upon final acceptance.
+
+4. INDEMNIFICATION
+
+Company shall indemnify, defend, and hold harmless Counterparty from any and all claims, regardless of fault, arising from Company's performance of this Statement of Work, including claims by Counterparty's own personnel or customers.
+
+5. ACCEPTANCE
+
+Counterparty shall have fifteen (15) business days to review each deliverable and either accept it or provide written feedback describing any deficiencies, which Company shall remedy before resubmission.
+
+6. CHANGE MANAGEMENT
+
+Any changes to scope, timeline, or fees must be documented in a written change order signed by both parties before Company is obligated to perform the additional work.
+
+7. TERM
+
+This Statement of Work commences on the Effective Date and continues until all deliverables are accepted, currently estimated to conclude by February 1, 2027.
+
+8. INCORPORATION
+
+This Statement of Work incorporates by reference the terms of the Master Services Agreement between the parties dated September 1, 2024, including its limitation of liability, confidentiality, and intellectual property provisions.

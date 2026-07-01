@@ -1,0 +1,51 @@
+MASTER SERVICES AGREEMENT
+
+This Agreement is entered into by and between Northwind Analytics, Inc. ("Company") and Quantum Bio Labs ("Counterparty") as of May 1, 2026 (the "Effective Date"), following the parties' prior mutual non-disclosure agreement dated January 15, 2026.
+
+1. DEFINITIONS
+
+"Services" means the data analytics, dashboarding, and consulting services described in one or more Statements of Work executed under this Agreement. "Confidential Information" has the meaning set forth in Section 6.
+
+2. TERM AND TERMINATION
+
+This Agreement commences on the Effective Date and continues for an initial term of three (3) years. Either party may terminate this Agreement for material breach if the breaching party fails to cure such breach within thirty (30) days after written notice describing the breach in reasonable detail. Upon termination, Company shall provide sixty (60) days of transition assistance at Counterparty's then-current rates.
+
+3. FEES AND PAYMENT
+
+Counterparty shall pay the fees set forth in each Statement of Work. Undisputed invoices are due within thirty (30) days of receipt. Late payments accrue interest at 1% per month, which the parties agree is a reasonable and customary rate.
+
+4. LIMITATION OF LIABILITY
+
+Each party's aggregate liability arising out of or related to this Agreement shall not exceed the total fees paid by Counterparty in the preceding twelve (12) months, except for breaches of Section 6 (Confidentiality), infringement of intellectual property rights, or a party's gross negligence or willful misconduct. Neither party shall be liable for indirect, incidental, or consequential damages.
+
+5. INDEMNIFICATION
+
+Each party shall indemnify, defend, and hold harmless the other party from third-party claims arising from the indemnifying party's breach, negligence, or violation of applicable law, subject to the liability cap in Section 4.
+
+6. CONFIDENTIALITY
+
+Each party shall protect the other's Confidential Information using the same degree of care it uses for its own confidential information, and in no case less than reasonable care. Confidentiality obligations survive for five (5) years following termination of this Agreement, except that trade secrets remain protected for as long as they qualify as trade secrets under applicable law.
+
+7. INTELLECTUAL PROPERTY
+
+Each party retains all right, title, and interest in its pre-existing intellectual property. Work product created specifically for Counterparty under a Statement of Work, and paid for in full, shall be owned by Counterparty upon final payment, subject to Company's retained license to reuse general methodologies, tools, and know-how developed during performance.
+
+8. SERVICE LEVEL COMMITMENTS
+
+Company shall use commercially reasonable efforts to achieve 99.5% platform uptime, measured monthly, excluding scheduled maintenance windows communicated at least 48 hours in advance. Support tickets classified as Severity 1 shall receive an initial response within four (4) business hours.
+
+9. RENEWAL
+
+This Agreement shall automatically renew for successive one (1) year terms unless either party provides written notice of non-renewal at least ninety (90) days prior to the end of the then-current term.
+
+10. GOVERNING LAW
+
+This Agreement is governed by the laws of the State of Massachusetts, without regard to its conflict of laws principles.
+
+11. ASSIGNMENT
+
+Neither party may assign this Agreement without the prior written consent of the other party, not to be unreasonably withheld, except that either party may assign this Agreement in connection with a merger, acquisition, or sale of substantially all of its assets upon written notice.
+
+12. FORCE MAJEURE
+
+Neither party shall be liable for delay or failure to perform resulting from causes beyond its reasonable control, including natural disasters, labor disputes, or governmental action, provided the affected party gives prompt notice and uses reasonable efforts to mitigate.

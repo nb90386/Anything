@@ -157,6 +157,8 @@ export interface ContractWithDetails extends Contract {
   approvals: ApprovalStep[];
   activity: ActivityEntry[];
   summary: ContractSummary;
+  leakage: LeakageOpportunity[];
+  drift: ClauseDriftFinding[];
 }
 
 export interface PortfolioInsights {
@@ -185,4 +187,81 @@ export interface SearchResult {
   score: number;
   snippet: string;
   matchedClauseIds: string[];
+}
+
+// ── Revenue Intelligence and Contract Risk Command Center ──────────────────
+// Types added for the v2 upgrade: revenue leakage detection, clause drift
+// analysis against a playbook, and negotiation intelligence.
+
+export type LeakageCategory =
+  | "missed_escalator"
+  | "discount_creep"
+  | "payment_term_mismatch"
+  | "sla_penalty_recoverable"
+  | "unclaimed_credit"
+  | "renewal_uplift_risk"
+  | "auto_renewal_exposure";
+
+export type LeakageConfidence = "low" | "medium" | "high";
+export type LeakageStatus = "open" | "recovered" | "dismissed";
+
+export interface LeakageOpportunity {
+  id: string;
+  contractId: string;
+  category: LeakageCategory;
+  title: string;
+  description: string;
+  estimatedValue: number;
+  currency: string;
+  confidence: LeakageConfidence;
+  recommendedAction: string;
+  status: LeakageStatus;
+}
+
+export type DriftType = "less_favorable" | "more_favorable" | "non_standard_structure" | "at_standard";
+
+export interface StandardClause {
+  id: string;
+  category: ClauseCategory;
+  title: string;
+  standardText: string;
+  playbookPosition: string;
+}
+
+export interface ClauseDriftFinding {
+  id: string;
+  contractId: string;
+  clauseId: string;
+  category: ClauseCategory;
+  driftScore: number; // 0-100, 0 = matches playbook exactly, 100 = maximally divergent
+  driftType: DriftType;
+  summary: string;
+  standardClauseId: string | null;
+  standardClauseTitle: string | null;
+}
+
+export interface NegotiationBrief {
+  contractId: string;
+  category: ClauseCategory;
+  issueSummary: string;
+  currentPosition: string;
+  recommendedPosition: string;
+  fallbackPosition: string;
+  walkAwayPosition: string;
+  talkingPoints: string[];
+}
+
+export interface RevenueIntelligenceSummary {
+  totalOpenLeakage: number;
+  currency: string;
+  openOpportunityCount: number;
+  byCategory: { category: LeakageCategory; value: number; count: number }[];
+  topOpportunities: { contractId: string; contractTitle: string; opportunity: LeakageOpportunity }[];
+}
+
+export interface RiskRadarSummary {
+  avgDriftScore: number;
+  contractsAboveThreshold: number;
+  byCategory: { category: ClauseCategory; avgDrift: number; count: number }[];
+  worstContracts: { contractId: string; title: string; avgDrift: number; findingCount: number }[];
 }

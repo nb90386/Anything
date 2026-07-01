@@ -1,12 +1,41 @@
-import { AlertTriangle, ArrowUpRight, FileText, TrendingUp } from "lucide-react";
+import { ArrowUpRight, ShieldAlert, TrendingDown, Wallet } from "lucide-react";
+import { computeInsights } from "@/lib/insights";
+import { computeRevenueIntelligence } from "@/lib/revenue/summary";
+import { computeRiskRadar } from "@/lib/risk/radar-summary";
+import { formatCompactMoney } from "@/lib/utils";
 
-const STATS = [
-  { label: "Contracts under management", value: "10", icon: FileText, tone: "text-brand-600 dark:text-brand-300" },
-  { label: "Portfolio value tracked", value: "$3.7M", icon: TrendingUp, tone: "text-emerald-600 dark:text-emerald-400" },
-  { label: "High-risk findings flagged", value: "5", icon: AlertTriangle, tone: "text-amber-600 dark:text-amber-400" },
-];
-
+/**
+ * Server-rendered snapshot of live portfolio numbers, used as the landing
+ * page's proof point. Every figure here comes from the same computeInsights /
+ * computeRevenueIntelligence / computeRiskRadar functions the dashboard uses,
+ * nothing is hardcoded.
+ */
 export function HeroPreviewCard() {
+  const insights = computeInsights();
+  const revenue = computeRevenueIntelligence();
+  const radar = computeRiskRadar();
+
+  const stats = [
+    {
+      label: "Revenue at risk this quarter",
+      value: formatCompactMoney(revenue.totalOpenLeakage, revenue.currency),
+      icon: TrendingDown,
+      tone: "text-red-600 dark:text-red-400",
+    },
+    {
+      label: "Portfolio value tracked",
+      value: formatCompactMoney(insights.totalValue, insights.currency),
+      icon: Wallet,
+      tone: "text-brand-600 dark:text-brand-300",
+    },
+    {
+      label: "Avg. clause drift score",
+      value: `${radar.avgDriftScore}/100`,
+      icon: ShieldAlert,
+      tone: "text-amber-600 dark:text-amber-400",
+    },
+  ];
+
   return (
     <div className="mx-auto max-w-4xl rounded-2xl border border-ink-100 bg-white p-2 shadow-popover dark:border-ink-800 dark:bg-ink-900">
       <div className="rounded-xl border border-ink-100 bg-ink-25 p-6 dark:border-ink-800 dark:bg-ink-950/60">
@@ -17,7 +46,7 @@ export function HeroPreviewCard() {
           </span>
         </div>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-          {STATS.map((s) => (
+          {stats.map((s) => (
             <div key={s.label} className="rounded-lg border border-ink-100 bg-white p-4 dark:border-ink-800 dark:bg-ink-900">
               <s.icon className={`mb-3 h-5 w-5 ${s.tone}`} />
               <p className="text-2xl font-semibold tabular-nums text-ink-900 dark:text-white">{s.value}</p>

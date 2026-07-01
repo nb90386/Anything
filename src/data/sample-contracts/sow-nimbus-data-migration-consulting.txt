@@ -1,0 +1,39 @@
+STATEMENT OF WORK - DATA MIGRATION CONSULTING
+
+This Statement of Work is entered into by and between Northwind Analytics, Inc. ("Company") and Nimbus Data Systems ("Counterparty") as of April 1, 2026 (the "Effective Date").
+
+1. SCOPE OF WORK
+
+Counterparty shall provide consulting services to migrate Company's legacy infrastructure data into the Nimbus managed platform, including data mapping, cleansing, transformation, and validation across three (3) source systems.
+
+2. DELIVERABLES AND MILESTONES
+
+Counterparty shall deliver Milestone 1 (Data Mapping) no later than September 1, 2026. Milestone 2 (Migration and Validation) shall be delivered within sixty (60) days of Milestone 1 acceptance.
+
+3. FEES
+
+The total fixed fee for this Statement of Work is $210,000. The mobilization fee is non-refundable prior to completion of Milestone 1 and is due no later than April 20, 2026. The remaining balance is due upon final acceptance.
+
+4. ACCEPTANCE
+
+Company shall have ten (10) business days to review each deliverable and either accept it or provide written feedback describing any deficiencies, which Counterparty shall remedy before resubmission.
+
+5. CHANGE MANAGEMENT
+
+Any changes to scope, timeline, or fees must be documented in a written change order signed by both parties before Counterparty is obligated to perform the additional work.
+
+6. TERM
+
+This Statement of Work commences on the Effective Date and continues until all deliverables are accepted, currently estimated to conclude by December 1, 2026.
+
+7. LIMITATION OF LIABILITY
+
+Each party's aggregate liability shall not exceed the total fees paid under this Statement of Work, except for confidentiality breaches or willful misconduct.
+
+8. CONFIDENTIALITY
+
+Each party shall protect the other's confidential technical information using reasonable care and shall not disclose it without written consent.
+
+9. GOVERNING LAW
+
+This Statement of Work is governed by the laws of the State of Washington.

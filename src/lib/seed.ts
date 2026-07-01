@@ -2,12 +2,19 @@ import fs from "node:fs";
 import path from "node:path";
 import { SEED_CONTRACTS } from "@/data/manifest";
 import { addAmendmentVersion, ingestContract } from "./ingest";
-import { insertApproval, wipeAllData } from "./db/repo";
+import { insertApproval, insertLeakageOpportunity, insertStandardClause, listContracts, wipeAllData, wipeStandardClauses } from "./db/repo";
+import { STANDARD_CLAUSE_LIBRARY } from "./risk/standard-clauses-data";
+import { detectCrossContractLeakage } from "./revenue/leakage";
 
 const SAMPLE_DIR = path.join(process.cwd(), "src", "data", "sample-contracts");
 
 export async function seedDatabase(): Promise<{ count: number }> {
   wipeAllData();
+  wipeStandardClauses();
+
+  for (const clause of STANDARD_CLAUSE_LIBRARY) {
+    insertStandardClause(clause);
+  }
 
   for (const def of SEED_CONTRACTS) {
     const rawText = fs.readFileSync(path.join(SAMPLE_DIR, def.fileName), "utf-8");
@@ -56,6 +63,24 @@ export async function seedDatabase(): Promise<{ count: number }> {
         });
       });
     }
+  }
+
+  // Cross-contract leakage patterns (e.g. a renewal that did not grow in value
+  // versus the prior agreement with the same counterparty) can only be detected
+  // once every contract in the portfolio is on file.
+  const crossContractFindings = detectCrossContractLeakage(listContracts());
+  for (const { contractId, draft } of crossContractFindings) {
+    insertLeakageOpportunity({
+      contractId,
+      category: draft.category,
+      title: draft.title,
+      description: draft.description,
+      estimatedValue: draft.estimatedValue,
+      currency: "USD",
+      confidence: draft.confidence,
+      recommendedAction: draft.recommendedAction,
+      status: "open",
+    });
   }
 
   return { count: SEED_CONTRACTS.length };

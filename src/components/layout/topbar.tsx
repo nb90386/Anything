@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { Moon, RefreshCcw, Sun } from "lucide-react";
 import { ROLE_LABELS, useRole, useTheme } from "@/components/providers";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Avatar } from "@/components/ui/avatar";
 import type { Role } from "@/lib/types";
 import { MobileNav } from "./mobile-nav";
@@ -17,10 +18,32 @@ const ROLE_OWNER: Record<Role, string> = {
   executive: "Dana Reyes",
 };
 
+const PAGE_TITLES: Record<string, string> = {
+  "/dashboard": "Dashboard",
+  "/copilot": "AI Copilot",
+  "/risk-radar": "Risk Radar",
+  "/revenue-leakage": "Revenue Leakage",
+  "/clause-drift": "Clause Drift",
+  "/contracts": "Contracts",
+  "/search": "Search",
+  "/upload": "Upload",
+  "/approvals": "Approvals",
+  "/demo": "Guided Demo",
+  "/report": "Executive Report",
+  "/settings": "Settings",
+};
+
+function currentPageTitle(pathname: string): string | null {
+  if (PAGE_TITLES[pathname]) return PAGE_TITLES[pathname];
+  const base = "/" + pathname.split("/").filter(Boolean)[0];
+  return PAGE_TITLES[base] ?? null;
+}
+
 export function Topbar() {
   const { theme, toggle } = useTheme();
   const { role, setRole } = useRole();
   const router = useRouter();
+  const pathname = usePathname();
   const [resetting, setResetting] = useState(false);
 
   const resetDemo = async () => {
@@ -33,11 +56,18 @@ export function Topbar() {
     }
   };
 
+  const title = currentPageTitle(pathname);
+
   return (
     <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-ink-100 bg-white/80 px-4 py-3 backdrop-blur-xl dark:border-ink-800 dark:bg-ink-950/70 sm:px-6">
       <MobileNav />
 
-      <div className="flex-1" />
+      <div className="flex flex-1 items-center gap-3 min-w-0">
+        {title ? <h1 className="truncate text-sm font-semibold text-ink-800 dark:text-ink-100">{title}</h1> : null}
+        <Badge tone="brand" className="hidden shrink-0 sm:inline-flex">
+          Private demo
+        </Badge>
+      </div>
 
       <label className="hidden items-center gap-2 sm:flex">
         <span className="text-xs font-medium text-ink-400">Viewing as</span>

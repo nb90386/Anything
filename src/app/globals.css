@@ -12,7 +12,7 @@
   --border-subtle: 223 228 236;
   --text-primary: 11 14 23;
   --text-secondary: 82 95 119;
-  --ring: 58 99 240;
+  --ring: 124 58 237;
 }
 
 .dark {
@@ -22,7 +22,7 @@
   --border-subtle: 38 46 66;
   --text-primary: 246 248 251;
   --text-secondary: 154 164 184;
-  --ring: 94 137 247;
+  --ring: 167 139 250;
 }
 
 * {

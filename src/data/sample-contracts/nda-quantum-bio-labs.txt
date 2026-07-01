@@ -1,0 +1,35 @@
+MUTUAL NON-DISCLOSURE AGREEMENT
+
+This Agreement is entered into by and between Northwind Analytics, Inc. ("Company") and Quantum Bio Labs ("Counterparty") as of January 15, 2026 (the "Effective Date").
+
+1. PURPOSE
+
+The parties wish to explore a potential business relationship involving joint evaluation of laboratory analytics and research data platforms (the "Purpose") and in connection therewith may disclose certain confidential and proprietary information to one another.
+
+2. DEFINITION OF CONFIDENTIAL INFORMATION
+
+"Confidential Information" means any non-public technical, business, or financial information disclosed by one party to the other, whether orally, in writing, or by inspection, that is designated as confidential or that a reasonable person would understand to be confidential given the nature of the information and circumstances of disclosure.
+
+3. CONFIDENTIALITY OBLIGATIONS
+
+Each receiving party shall use the disclosing party's Confidential Information solely for the Purpose, shall not disclose it to any third party without prior written consent, and shall protect it using at least the same degree of care it uses to protect its own confidential information of similar importance, and in no event less than reasonable care. Confidentiality obligations survive for five (5) years following disclosure, except that trade secrets remain protected for as long as they qualify as trade secrets under applicable law.
+
+4. EXCLUSIONS
+
+Confidential Information does not include information that is or becomes publicly available through no fault of the receiving party, was already known to the receiving party without an obligation of confidentiality, is independently developed without use of the disclosing party's Confidential Information, or is rightfully received from a third party without restriction.
+
+5. NO LICENSE OR OBLIGATION
+
+Nothing in this Agreement grants either party any license or ownership interest in the other party's Confidential Information, and neither party is obligated to proceed with any transaction, disclose any particular information, or purchase any product or service.
+
+6. TERM
+
+This Agreement remains in effect for two (2) years from the Effective Date, unless earlier terminated by either party upon thirty (30) days' written notice, provided that confidentiality obligations under Section 3 survive termination as set forth therein.
+
+7. GOVERNING LAW
+
+This Agreement is governed by the laws of the State of Massachusetts, without regard to its conflict of laws principles.
+
+8. REMEDIES
+
+The parties acknowledge that unauthorized disclosure of Confidential Information may cause irreparable harm for which monetary damages would be an inadequate remedy, and the disclosing party shall be entitled to seek injunctive relief in addition to any other available remedies.
