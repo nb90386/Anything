@@ -223,8 +223,12 @@ export function allApprovalsWithContract(): { contract: Contract; approval: Appr
 
 // ── writes ───────────────────────────────────────────────────────────────
 
-export function insertContract(input: Omit<Contract, "id" | "createdAt" | "updatedAt">): Contract {
+export function insertContract(
+  input: Omit<Contract, "id" | "createdAt" | "updatedAt">,
+  createdAt?: string
+): Contract {
   const id = randomUUID();
+  const created = createdAt ?? new Date().toISOString();
   const now = new Date().toISOString();
   db.prepare(
     `INSERT INTO contracts
@@ -238,20 +242,23 @@ export function insertContract(input: Omit<Contract, "id" | "createdAt" | "updat
     id,
     ...input,
     autoRenew: input.autoRenew ? 1 : 0,
-    createdAt: now,
+    createdAt: created,
     updatedAt: now,
   });
-  return { ...input, id, createdAt: now, updatedAt: now };
+  return { ...input, id, createdAt: created, updatedAt: now };
 }
 
-export function insertVersion(input: Omit<ContractVersion, "id" | "createdAt">): ContractVersion {
+export function insertVersion(
+  input: Omit<ContractVersion, "id" | "createdAt">,
+  createdAt?: string
+): ContractVersion {
   const id = randomUUID();
-  const now = new Date().toISOString();
+  const timestamp = createdAt ?? new Date().toISOString();
   db.prepare(
     `INSERT INTO contract_versions (id, contract_id, version_number, label, content, change_summary, created_at, created_by)
      VALUES (@id, @contractId, @versionNumber, @label, @content, @changeSummary, @createdAt, @createdBy)`
-  ).run({ id, ...input, createdAt: now });
-  return { ...input, id, createdAt: now };
+  ).run({ id, ...input, createdAt: timestamp });
+  return { ...input, id, createdAt: timestamp };
 }
 
 export function insertClause(input: Omit<Clause, "id">): Clause {

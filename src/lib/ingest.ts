@@ -33,36 +33,64 @@ export interface NewContractInput {
   actor?: string;
 }
 
+// Approximate negotiation-cycle length by contract type, used only to backdate
+// seeded sample-contract `createdAt` so portfolio-wide cycle-time analytics
+// (BusinessIQ) have realistic, non-zero values. Real uploads use "now".
+const TYPICAL_CYCLE_DAYS: Record<ContractType, number> = {
+  NDA: 6,
+  "SaaS Subscription": 18,
+  "Statement of Work": 14,
+  Procurement: 22,
+  "Data Processing Agreement": 12,
+  "Reseller Agreement": 26,
+  MSA: 34,
+  Employment: 10,
+  Amendment: 9,
+};
+
+function backdatedCreatedAt(effectiveDate: string, type: ContractType): string {
+  const cycleDays = TYPICAL_CYCLE_DAYS[type] ?? 14;
+  const d = new Date(`${effectiveDate}T00:00:00.000Z`);
+  d.setUTCDate(d.getUTCDate() - cycleDays);
+  return d.toISOString();
+}
+
 export async function ingestContract(input: NewContractInput): Promise<Contract> {
   const engine = getAnalysisEngine();
   const result = await engine.ingest(input.rawText, input.effectiveDate);
 
-  const contract = insertContract({
-    title: input.title,
-    counterparty: input.counterparty,
-    type: input.type,
-    status: input.status ?? "in_review",
-    department: input.department,
-    ownerName: input.ownerName,
-    value: input.value,
-    currency: input.currency,
-    effectiveDate: input.effectiveDate,
-    expirationDate: input.expirationDate,
-    autoRenew: input.autoRenew,
-    renewalNoticeDays: input.renewalNoticeDays,
-    riskScore: result.riskScore,
-    fileName: input.fileName,
-    source: input.source,
-  });
+  const contract = insertContract(
+    {
+      title: input.title,
+      counterparty: input.counterparty,
+      type: input.type,
+      status: input.status ?? "in_review",
+      department: input.department,
+      ownerName: input.ownerName,
+      value: input.value,
+      currency: input.currency,
+      effectiveDate: input.effectiveDate,
+      expirationDate: input.expirationDate,
+      autoRenew: input.autoRenew,
+      renewalNoticeDays: input.renewalNoticeDays,
+      riskScore: result.riskScore,
+      fileName: input.fileName,
+      source: input.source,
+    },
+    input.source === "sample" ? backdatedCreatedAt(input.effectiveDate, input.type) : undefined
+  );
 
-  const version = insertVersion({
-    contractId: contract.id,
-    versionNumber: 1,
-    label: "Original",
-    content: input.rawText,
-    changeSummary: null,
-    createdBy: input.actor ?? input.ownerName,
-  });
+  const version = insertVersion(
+    {
+      contractId: contract.id,
+      versionNumber: 1,
+      label: "Original",
+      content: input.rawText,
+      changeSummary: null,
+      createdBy: input.actor ?? input.ownerName,
+    },
+    input.source === "sample" ? new Date(`${input.effectiveDate}T00:00:00.000Z`).toISOString() : undefined
+  );
 
   const clauses: Clause[] = result.clauses.map((c) =>
     insertClause({
@@ -117,7 +145,8 @@ export function addAmendmentVersion(
   rawText: string,
   label: string,
   changeSummary: string,
-  createdBy: string
+  createdBy: string,
+  createdAt?: string
 ): void {
   const segments = segmentContract(rawText);
   const clauseDrafts = segments.map((seg) => {
@@ -128,14 +157,17 @@ export function addAmendmentVersion(
 
   const nextVersionNumber = getVersions(contractId).length + 1;
 
-  const version = insertVersion({
-    contractId,
-    versionNumber: nextVersionNumber,
-    label,
-    content: rawText,
-    changeSummary,
-    createdBy,
-  });
+  const version = insertVersion(
+    {
+      contractId,
+      versionNumber: nextVersionNumber,
+      label,
+      content: rawText,
+      changeSummary,
+      createdBy,
+    },
+    createdAt
+  );
 
   const clauses: Clause[] = clauseDrafts.map((c) =>
     insertClause({

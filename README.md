@@ -52,6 +52,19 @@ No `.env` file is required to run the demo. See [`.env.example`](.env.example) f
 
 ---
 
+## Screenshots
+
+| | |
+|---|---|
+| ![Landing page](public/screenshots/01-landing.png) | ![Dashboard](public/screenshots/02-dashboard.png) |
+| ![Contract detail](public/screenshots/04-contract-detail.png) | ![Risk findings](public/screenshots/05-risk-findings.png) |
+| ![BusinessIQ](public/screenshots/06-businessiq.png) | ![Approvals](public/screenshots/07-approvals.png) |
+
+More in [`public/screenshots/`](public/screenshots/). Regenerate anytime with `node scripts/capture-screenshots.mjs`
+while the app is running (uses Playwright).
+
+---
+
 ## Tech stack
 
 | Layer | Choice | Why |
@@ -109,6 +122,8 @@ docs/
   research/                     Malbek + CLM market research report
   product/                      vision, PRD, personas, journeys, roadmap, demo script
   architecture/                 system design, security model, data model, API spec
+  testing/                      test summary / quality-gate report
+  pitch/                        CEO pitch message template
 ```
 
 ---

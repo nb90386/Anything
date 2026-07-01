@@ -15,22 +15,30 @@ const QUICK_PROMPTS = [
 ];
 
 function renderContent(content: string) {
-  // Very lightweight markdown-ish rendering: **bold** and bullet lines starting with "- " or "* ".
+  // Very lightweight markdown-ish rendering: **bold**, _italic_, and bullet lines starting with "- " or "* ".
   const lines = content.split("\n");
   return lines.map((line, i) => {
     const trimmed = line.trim();
     const isBullet = /^[-*]\s+/.test(trimmed);
     const text = isBullet ? trimmed.replace(/^[-*]\s+/, "") : line;
-    const parts = text.split(/(\*\*[^*]+\*\*)/g).filter(Boolean);
-    const rendered = parts.map((part, j) =>
-      part.startsWith("**") && part.endsWith("**") ? (
-        <strong key={j} className="font-semibold">
-          {part.slice(2, -2)}
-        </strong>
-      ) : (
-        <span key={j}>{part}</span>
-      )
-    );
+    const parts = text.split(/(\*\*[^*]+\*\*|_[^_]+_)/g).filter(Boolean);
+    const rendered = parts.map((part, j) => {
+      if (part.startsWith("**") && part.endsWith("**")) {
+        return (
+          <strong key={j} className="font-semibold">
+            {part.slice(2, -2)}
+          </strong>
+        );
+      }
+      if (part.startsWith("_") && part.endsWith("_") && part.length > 2) {
+        return (
+          <em key={j} className="text-ink-500 dark:text-ink-400">
+            {part.slice(1, -1)}
+          </em>
+        );
+      }
+      return <span key={j}>{part}</span>;
+    });
     if (isBullet) {
       return (
         <li key={i} className="ml-4 list-disc">

@@ -38,7 +38,8 @@ export async function seedDatabase(): Promise<{ count: number }> {
         amendmentText,
         def.amendmentLabel ?? "Amendment",
         def.amendmentSummary ?? "Contract amended.",
-        def.ownerName
+        def.ownerName,
+        def.amendmentDate ? new Date(`${def.amendmentDate}T00:00:00.000Z`).toISOString() : undefined
       );
     }
 

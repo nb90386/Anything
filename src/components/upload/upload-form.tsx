@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { cloneElement, useId, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   AlertTriangle,
@@ -440,14 +440,18 @@ export function UploadForm() {
   );
 }
 
-function Field({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
+function Field({ label, required, children }: { label: string; required?: boolean; children: React.ReactElement }) {
+  const fieldId = useId();
   return (
     <div>
-      <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-ink-400 dark:text-ink-500">
+      <label
+        htmlFor={fieldId}
+        className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-ink-400 dark:text-ink-500"
+      >
         {label}
         {required ? <span className="text-red-500"> *</span> : null}
       </label>
-      {children}
+      {cloneElement(children, { id: fieldId })}
     </div>
   );
 }
