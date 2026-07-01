@@ -66,7 +66,7 @@ const RISK_RULES: RiskRule[] = [
     pattern: /shall not exceed.{0,40}(fees|amounts) paid.{0,40}(twelve|12).{0,10}month/i,
     severity: "low",
     title: "Standard liability cap in place",
-    describe: () => "Liability is capped at fees paid in the trailing 12 months — a market-standard, favorable position.",
+    describe: () => "Liability is capped at fees paid in the trailing 12 months, a market-standard, favorable position.",
     recommendation: "No action needed; monitor for carve-outs that could erode the cap.",
   },
   {

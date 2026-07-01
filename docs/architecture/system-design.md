@@ -1,4 +1,4 @@
-# System Design — Malbek Contract Intelligence Copilot
+# System Design - Malbek Contract Intelligence Copilot
 
 > Independent portfolio demo, not affiliated with Malbek Inc. This document describes the actual architecture of the v1 build: a Next.js 14 App Router application with a local SQLite data layer and a pluggable AI provider abstraction.
 
@@ -86,7 +86,7 @@ src/
 
 ## 4. AI Provider Abstraction
 
-All AI-driven features (summary, clause classification, risk extraction, obligation extraction, chat, and — conceptually — future drafting features) go through one interface:
+All AI-driven features (summary, clause classification, risk extraction, obligation extraction, chat, and - conceptually - future drafting features) go through one interface:
 
 ```ts
 interface AIProvider {
@@ -98,15 +98,15 @@ interface AIProvider {
 }
 ```
 
-- **`mockProvider`** (default, `AI_PROVIDER=mock`): a deterministic engine — regex/keyword clause segmentation, a rules table mapping clause patterns to risk severity/recommendation, date/party pattern extraction for obligations, and TF-IDF retrieval feeding a templated answer synthesizer for chat. It is genuinely functional (structured, source-cited output), not a canned demo response — the same contract always produces the same analysis, which also makes it deterministic for tests.
-- **`anthropicProvider`** / **`openaiProvider`**: documented, code-complete hooks that call the respective chat completion APIs with a prompt that requests the same structured JSON shape the mock provider returns (so downstream code — UI, DB writes — is provider-agnostic). Activated only when `AI_PROVIDER=anthropic|openai` **and** the corresponding API key env var is present; the app fails closed to the mock provider with a console warning if the key is missing, rather than crashing.
+- **`mockProvider`** (default, `AI_PROVIDER=mock`): a deterministic engine - regex/keyword clause segmentation, a rules table mapping clause patterns to risk severity/recommendation, date/party pattern extraction for obligations, and TF-IDF retrieval feeding a templated answer synthesizer for chat. It is genuinely functional (structured, source-cited output), not a canned demo response - the same contract always produces the same analysis, which also makes it deterministic for tests.
+- **`anthropicProvider`** / **`openaiProvider`**: documented, code-complete hooks that call the respective chat completion APIs with a prompt that requests the same structured JSON shape the mock provider returns (so downstream code - UI, DB writes - is provider-agnostic). Activated only when `AI_PROVIDER=anthropic|openai` **and** the corresponding API key env var is present; the app fails closed to the mock provider with a console warning if the key is missing, rather than crashing.
 - A single factory function (`getAIProvider()`) reads `process.env.AI_PROVIDER` once per server process and returns the appropriate implementation; feature code never imports a concrete provider directly.
 
 ## 5. Data Layer
 
 - `better-sqlite3` opens `data/app.db` as a singleton on first import, synchronously, which fits Next.js API route handlers well (no connection pooling complexity).
-- A lightweight migration runner applies `schema.sql` (idempotent `CREATE TABLE IF NOT EXISTS`) on startup — see `docs/architecture/data-model.md` for the full table list.
-- All queries go through per-entity repository modules using **parameterized queries only** (`db.prepare(...).run(params)`), never string-concatenated SQL — see `docs/architecture/security-model.md`.
+- A lightweight migration runner applies `schema.sql` (idempotent `CREATE TABLE IF NOT EXISTS`) on startup - see `docs/architecture/data-model.md` for the full table list.
+- All queries go through per-entity repository modules using **parameterized queries only** (`db.prepare(...).run(params)`), never string-concatenated SQL - see `docs/architecture/security-model.md`.
 - Demo seed data (`lib/demo/seedData.ts`) is inserted via the same repository layer used by real ingestion, so seeded contracts exercise the identical code path as an uploaded contract.
 
 ## 6. Request Flow (Text Diagrams)
@@ -181,7 +181,7 @@ Response: { spend, riskDistribution, renewalPipeline, cycleTime }
 
 ## 7. Deployment Notes
 
-- **Vercel-compatible for the Next.js app itself** — the frontend/API routes deploy cleanly to Vercel's serverless/edge runtime.
+- **Vercel-compatible for the Next.js app itself** - the frontend/API routes deploy cleanly to Vercel's serverless/edge runtime.
 - **Constraint: `better-sqlite3` requires a persistent, writable local filesystem.** Vercel's serverless functions are ephemeral and read-only outside `/tmp`, so a SQLite file written during one invocation is not guaranteed to persist or be visible to the next. This makes the current data layer **suitable for local demo/dev and for single-process deployments (e.g., a small VM, Docker container, Railway/Fly.io/Render instance with a persistent volume) but not for Vercel's default serverless deployment model.**
-- **Upgrade path:** because all persistence goes through the repository layer (`lib/db/repositories/*`), swapping `better-sqlite3` for a Postgres client (e.g., `postgres.js` or Prisma against Supabase/Neon/RDS) means rewriting the repository implementations only — API routes, extraction logic, and UI are unaffected. This is the recommended next step before any real hosted deployment, and is called out explicitly in `docs/product/feature-roadmap.md` under "Next."
-- For a pure demo/portfolio walkthrough (the actual current use case), running locally (`npm run dev`) or in a single persistent container is the intended deployment target — not production Vercel hosting.
+- **Upgrade path:** because all persistence goes through the repository layer (`lib/db/repositories/*`), swapping `better-sqlite3` for a Postgres client (e.g., `postgres.js` or Prisma against Supabase/Neon/RDS) means rewriting the repository implementations only - API routes, extraction logic, and UI are unaffected. This is the recommended next step before any real hosted deployment, and is called out explicitly in `docs/product/feature-roadmap.md` under "Next."
+- For a pure demo/portfolio walkthrough (the actual current use case), running locally (`npm run dev`) or in a single persistent container is the intended deployment target - not production Vercel hosting.

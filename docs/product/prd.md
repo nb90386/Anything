@@ -1,4 +1,4 @@
-# PRD — Malbek Contract Intelligence Copilot
+# PRD - Malbek Contract Intelligence Copilot
 
 > Independent portfolio demo, not affiliated with Malbek Inc. This PRD documents the v1 scope as actually built: a local-first, offline-capable Next.js application with a deterministic AI layer and an optional real-LLM upgrade path.
 
@@ -8,18 +8,18 @@ Malbek Contract Intelligence Copilot is a single-tenant, local-first web app tha
 
 ## 2. Goals
 
-- **G1 — Prove domain modeling depth.** Represent contracts, versions, clauses, risks, obligations, approvals, and activity as normalized, related entities that other features query, not a single blob of AI text.
-- **G2 — Make every AI output explainable.** Every risk, clause classification, and chat answer must cite the clause(s) or source text it was derived from.
-- **G3 — Demonstrate portfolio-level synthesis.** At least two features (BusinessIQ-style dashboard, cross-repository search) must reason across the whole contract set, not one document at a time.
-- **G4 — Zero-friction demo.** The app must run locally with no external services, API keys, or network calls required (`AI_PROVIDER=mock` by default), and seed itself with realistic sample contracts on first run.
-- **G5 — Show a credible upgrade path.** The AI provider and the SQLite data layer must be abstracted cleanly enough that swapping in a real LLM (Anthropic/OpenAI) or a hosted Postgres database is a configuration change, not a rewrite.
+- **G1 - Prove domain modeling depth.** Represent contracts, versions, clauses, risks, obligations, approvals, and activity as normalized, related entities that other features query, not a single blob of AI text.
+- **G2 - Make every AI output explainable.** Every risk, clause classification, and chat answer must cite the clause(s) or source text it was derived from.
+- **G3 - Demonstrate portfolio-level synthesis.** At least two features (BusinessIQ-style dashboard, cross-repository search) must reason across the whole contract set, not one document at a time.
+- **G4 - Zero-friction demo.** The app must run locally with no external services, API keys, or network calls required (`AI_PROVIDER=mock` by default), and seed itself with realistic sample contracts on first run.
+- **G5 - Show a credible upgrade path.** The AI provider and the SQLite data layer must be abstracted cleanly enough that swapping in a real LLM (Anthropic/OpenAI) or a hosted Postgres database is a configuration change, not a rewrite.
 
 ## 3. Non-Goals
 
 - Real user authentication, multi-tenancy, or account management.
 - Real e-signature integration (DocuSign/Adobe Sign).
-- Real third-party integrations (Salesforce, SAP, Slack) — these are referenced only in roadmap/architecture docs as future direction.
-- Production-grade legal accuracy of AI-generated risk assessments — outputs are illustrative, not legal advice, and the app should say so.
+- Real third-party integrations (Salesforce, SAP, Slack) - these are referenced only in roadmap/architecture docs as future direction.
+- Production-grade legal accuracy of AI-generated risk assessments - outputs are illustrative, not legal advice, and the app should say so.
 - Concurrent multi-user editing or real-time collaboration.
 - Mobile-native app (responsive web only).
 
@@ -60,12 +60,12 @@ Malbek Contract Intelligence Copilot is a single-tenant, local-first web app tha
 
 ### 4.7 Cross-Repository Search
 - FR-22: A global search lets users query across all ingested contracts using natural language or keywords.
-- FR-23: Relevance ranking uses local TF-IDF/cosine-similarity scoring computed at query time — no external vector database or network call.
+- FR-23: Relevance ranking uses local TF-IDF/cosine-similarity scoring computed at query time - no external vector database or network call.
 - FR-24: Results show the matching contract, the matching clause/snippet, and a relevance indicator.
 
 ### 4.8 Role-Based Views
 - FR-25: A lightweight, client-side role switcher (Legal / Sales / Finance / Procurement) changes which dashboard widgets and default views are emphasized, without requiring login.
-- FR-26: Role switching is instant and does not gate access to any data (this is a UX lens, not an authorization boundary — documented explicitly in the security model).
+- FR-26: Role switching is instant and does not gate access to any data (this is a UX lens, not an authorization boundary - documented explicitly in the security model).
 
 ### 4.9 Executive Report Export
 - FR-27: Users can export a board-ready summary report (portfolio risk, renewal exposure, cycle time, key flags) as a downloadable document from the insights view.
@@ -77,7 +77,7 @@ Malbek Contract Intelligence Copilot is a single-tenant, local-first web app tha
 
 ## 5. Success Metrics (Demo/Portfolio Context)
 
-This is a portfolio artifact, not a SaaS product — metrics are about demo quality and credibility, not usage/revenue:
+This is a portfolio artifact, not a SaaS product - metrics are about demo quality and credibility, not usage/revenue:
 
 | Metric | Target |
 |---|---|
@@ -99,4 +99,4 @@ This is a portfolio artifact, not a SaaS product — metrics are about demo qual
 - Contract drafting from templates or deal parameters
 - Mobile-native apps
 - Multi-language contract support
-- Audit-grade compliance logging (SOC 2, encryption at rest) — see `docs/architecture/security-model.md` for the honest gap analysis
+- Audit-grade compliance logging (SOC 2, encryption at rest) - see `docs/architecture/security-model.md` for the honest gap analysis

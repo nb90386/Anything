@@ -1,18 +1,18 @@
 import { expect, test } from "@playwright/test";
 
-test.describe("Contract Intelligence Copilot — golden demo path", () => {
+test.describe("Contract Intelligence Copilot: golden demo path", () => {
   test("landing page renders and links into the app", async ({ page }) => {
     await page.goto("/");
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("commercial intelligence");
-    await expect(page.getByText("Independent portfolio demo")).toBeVisible();
-    await page.getByRole("link", { name: /Enter the demo/i }).click();
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("board decision");
+    await expect(page.getByText("Private demo, independent portfolio project")).toBeVisible();
+    await page.getByRole("link", { name: /Open the dashboard/i }).first().click();
     await expect(page).toHaveURL(/\/dashboard$/);
   });
 
   test("dashboard shows real portfolio KPIs", async ({ page }) => {
     await page.goto("/dashboard");
-    await expect(page.getByRole("heading", { name: "Dashboard" })).toBeVisible();
-    await expect(page.getByText("Total Contracts", { exact: false })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Executive Command Center" })).toBeVisible();
+    await expect(page.getByText("Portfolio Value", { exact: false })).toBeVisible();
     await expect(page.getByText("Risk Distribution")).toBeVisible();
   });
 
@@ -45,10 +45,10 @@ test.describe("Contract Intelligence Copilot — golden demo path", () => {
     await expect(page.getByText(/risk/i).last()).toBeVisible({ timeout: 15000 });
   });
 
-  test("insights (BusinessIQ) page renders real charts", async ({ page }) => {
+  test("insights route redirects to the dashboard", async ({ page }) => {
     await page.goto("/insights");
-    await expect(page.getByRole("heading", { name: "BusinessIQ" })).toBeVisible();
-    await expect(page.getByText("Value by Department")).toBeVisible();
+    await expect(page).toHaveURL(/\/dashboard$/);
+    await expect(page.getByRole("heading", { name: "Executive Command Center" })).toBeVisible();
   });
 
   test("search finds contracts by clause content", async ({ page }) => {

@@ -53,7 +53,7 @@ export class MockAnalysisEngine implements AnalysisEngine {
       }
       const top = [...risks].sort((a, b) => sevRank(b.severity) - sevRank(a.severity)).slice(0, 3);
       const lines = top.map(
-        (r) => `- **${r.title}** (${r.severity.toUpperCase()}) — ${r.description} _Recommendation: ${r.recommendation}_`
+        (r) => `- **${r.title}** (${r.severity.toUpperCase()}): ${r.description} _Recommendation: ${r.recommendation}_`
       );
       const citedClauseIds = top.map((r) => r.clauseId).filter((id): id is string => !!id);
       return {

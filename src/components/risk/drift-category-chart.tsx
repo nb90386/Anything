@@ -22,7 +22,7 @@ export function DriftCategoryChart({
       categories={["Average drift score"]}
       colors={["violet"]}
       valueFormatter={(v: number) => `${v}`}
-      yAxisWidth={40}
+      yAxisWidth={140}
       layout="vertical"
       showLegend={false}
       className="h-80"

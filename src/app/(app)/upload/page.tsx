@@ -13,7 +13,7 @@ export default function UploadPage() {
           Ingest a contract
         </h1>
         <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-ink-500 dark:text-ink-400">
-          Upload a PDF, DOCX, or TXT file — or paste raw contract text — and the analysis engine will segment
+          Upload a PDF, DOCX, or TXT file, or paste raw contract text, and the analysis engine will segment
           clauses, classify categories, extract risks, and build a briefing in seconds.
         </p>
       </div>

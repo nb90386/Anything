@@ -86,7 +86,7 @@ export function ClauseDriftExplorer({ rows, categories }: { rows: DriftExplorerR
             {filtered.map((row) => (
               <AccordionItem key={row.id} value={row.id} className="border-b border-ink-100 px-5 last:border-b-0 dark:border-ink-800">
                 <AccordionTrigger className="py-4 hover:no-underline">
-                  <div className="flex w-full flex-wrap items-center gap-4 text-left">
+                  <div className="flex w-full min-w-0 flex-wrap items-center gap-4 text-left">
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
                         <Link
@@ -103,12 +103,12 @@ export function ClauseDriftExplorer({ rows, categories }: { rows: DriftExplorerR
                       </div>
                       <p className="mt-1 truncate text-xs text-ink-500 dark:text-ink-400">{row.summary}</p>
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex shrink-0 items-center gap-3">
                       <DriftTypeBadge type={row.driftType} />
                       <DriftSeverityBadge score={row.driftScore} />
-                      <div className="hidden items-center gap-2 sm:flex">
-                        <Progress value={row.driftScore} className="w-24" barClassName={driftSeverityColorClass(row.driftScore)} />
-                        <span className="w-9 text-right text-xs font-semibold tabular-nums text-ink-600 dark:text-ink-300">
+                      <div className="hidden shrink-0 items-center gap-2 sm:flex">
+                        <Progress value={row.driftScore} className="w-24 shrink-0" barClassName={driftSeverityColorClass(row.driftScore)} />
+                        <span className="w-10 shrink-0 text-right text-xs font-semibold tabular-nums text-ink-600 dark:text-ink-300">
                           {row.driftScore}/100
                         </span>
                       </div>

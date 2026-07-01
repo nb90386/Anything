@@ -41,7 +41,7 @@ export default function SearchPage({
         <EmptyState
           icon={<FileSearch className="h-6 w-6" />}
           title="Search across your contract portfolio"
-          description={`Search by keyword — try "liability", "auto-renew", or a counterparty name.`}
+          description={`Search by keyword: try "liability", "auto-renew", or a counterparty name.`}
         />
       ) : results.length === 0 ? (
         <EmptyState

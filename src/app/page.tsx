@@ -155,8 +155,8 @@ export default function LandingPage() {
             See the whole portfolio in one screen
           </h2>
           <p className="mt-3 text-ink-500 dark:text-ink-400">
-            Ten seeded contracts, live leakage and drift findings, and a dashboard already populated. No setup, no
-            external accounts.
+            Twenty-five seeded contracts, live leakage and drift findings, and a dashboard already populated. No
+            setup, no external accounts.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button asChild size="lg">

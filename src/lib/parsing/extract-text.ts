@@ -16,7 +16,7 @@ export async function extractTextFromFile(buffer: Buffer, fileName: string): Pro
     const pdfParse = (await import("pdf-parse")).default;
     const result = await pdfParse(buffer);
     if (!result.text.trim()) {
-      return { text: "", warning: "This PDF appears to be scanned/image-based — no extractable text was found. Try a text-based PDF or paste the contract text directly." };
+      return { text: "", warning: "This PDF appears to be scanned/image-based; no extractable text was found. Try a text-based PDF or paste the contract text directly." };
     }
     return { text: normalize(result.text), warning: null };
   }

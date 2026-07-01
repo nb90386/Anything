@@ -2,7 +2,7 @@
   "name": "malbek-clm-copilot",
   "version": "0.1.0",
   "private": true,
-  "description": "Contract Intelligence Copilot — an independent AI-powered CLM portfolio demo inspired by the Malbek product space. Not affiliated with Malbek.",
+  "description": "Contract Intelligence Copilot: an independent AI-powered CLM portfolio demo inspired by the Malbek product space. Not affiliated with Malbek.",
   "scripts": {
     "dev": "next dev -p 3000",
     "build": "next build",

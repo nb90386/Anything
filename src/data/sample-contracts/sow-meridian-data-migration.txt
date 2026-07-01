@@ -1,4 +1,4 @@
-STATEMENT OF WORK NO. 1 — DATA MIGRATION
+STATEMENT OF WORK NO. 1: DATA MIGRATION
 
 This Statement of Work is entered into by and between Northwind Analytics, Inc. ("Company") and Meridian Logistics Corp. ("Counterparty") as of January 10, 2026 (the "Effective Date"), issued under the Master Services Agreement dated January 15, 2025.
 

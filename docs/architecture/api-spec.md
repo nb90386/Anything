@@ -1,6 +1,6 @@
-# API Specification — Malbek Contract Intelligence Copilot
+# API Specification - Malbek Contract Intelligence Copilot
 
-> Independent portfolio demo, not affiliated with Malbek Inc. All routes are Next.js 14 App Router API routes under `src/app/api/`. Request bodies are validated with zod before any processing; invalid input returns `400` with a structured error body: `{ error: string, issues?: ZodIssue[] }`. There is no authentication layer in this demo (see `docs/architecture/security-model.md`) — every route is unauthenticated and unscoped to a tenant.
+> Independent portfolio demo, not affiliated with Malbek Inc. All routes are Next.js 14 App Router API routes under `src/app/api/`. Request bodies are validated with zod before any processing; invalid input returns `400` with a structured error body: `{ error: string, issues?: ZodIssue[] }`. There is no authentication layer in this demo (see `docs/architecture/security-model.md`) - every route is unauthenticated and unscoped to a tenant.
 
 ## Conventions
 
@@ -46,14 +46,14 @@ List all contracts, optionally filtered.
 
 ## `POST /api/contracts`
 
-Ingest a new contract — either a file upload or a seeded demo contract reference — and run the full extraction pipeline synchronously.
+Ingest a new contract - either a file upload or a seeded demo contract reference - and run the full extraction pipeline synchronously.
 
-**Request** — `multipart/form-data`
+**Request** - `multipart/form-data`
 
 | Field | Type | Notes |
 |---|---|---|
 | `file` | File, required unless `demoContractKey` set | PDF, DOCX, or plain text; max 10 MB |
-| `demoContractKey` | string, optional | e.g., `"msa-acme"` — loads a seeded fixture instead of parsing a file |
+| `demoContractKey` | string, optional | e.g., `"msa-acme"` - loads a seeded fixture instead of parsing a file |
 | `title` | string, required | |
 | `counterparty` | string, required | |
 | `type` | string, required | One of the contract type enum values |
@@ -74,9 +74,9 @@ Ingest a new contract — either a file upload or a seeded demo contract referen
 ```
 
 **Errors**
-- `400` — validation failure, unsupported file type, or file exceeds size limit
-- `422` — file parsed but no extractable text found (e.g., scanned image PDF with no text layer)
-- `500` — unexpected parsing/extraction failure
+- `400` - validation failure, unsupported file type, or file exceeds size limit
+- `422` - file parsed but no extractable text found (e.g., scanned image PDF with no text layer)
+- `500` - unexpected parsing/extraction failure
 
 ---
 
@@ -139,7 +139,7 @@ Full detail for one contract, including all derived data.
 ```
 
 **Errors**
-- `404` — no contract with that `id`
+- `404` - no contract with that `id`
 
 ---
 
@@ -164,8 +164,8 @@ Ask a retrieval-based question scoped to this contract only.
 Side effect: persists two `chat_messages` rows (`role: 'user'` then `role: 'assistant'`).
 
 **Errors**
-- `400` — empty/oversized question
-- `404` — contract not found
+- `400` - empty/oversized question
+- `404` - contract not found
 
 ---
 
@@ -191,12 +191,12 @@ List all versions of a contract.
 
 Add a new version (amendment) to an existing contract, and compute a clause-level diff against the immediately prior version.
 
-**Request** — `multipart/form-data`
+**Request** - `multipart/form-data`
 
 | Field | Type | Notes |
 |---|---|---|
 | `file` | File, required | New version's document |
-| `label` | string, optional | e.g., "Amendment 1 — Payment Terms Update" |
+| `label` | string, optional | e.g., "Amendment 1 - Payment Terms Update" |
 | `createdBy` | string, optional | |
 
 **Response `201`**
@@ -217,8 +217,8 @@ Add a new version (amendment) to an existing contract, and compute a clause-leve
 ```
 
 **Errors**
-- `400` — validation/parsing failure
-- `404` — contract not found
+- `400` - validation/parsing failure
+- `404` - contract not found
 
 ---
 
@@ -252,8 +252,8 @@ Advance the approval workflow by deciding the currently active step.
 ```
 
 **Errors**
-- `400` — no active step to decide (workflow already complete, or contract has no approval chain)
-- `404` — contract not found
+- `400` - no active step to decide (workflow already complete, or contract has no approval chain)
+- `404` - contract not found
 
 ---
 
@@ -284,7 +284,7 @@ Cross-repository search using local TF-IDF/cosine-similarity ranking.
 ```
 
 **Errors**
-- `400` — missing/empty query
+- `400` - missing/empty query
 
 ---
 
@@ -337,7 +337,7 @@ Generate an exportable report. Use `id = "portfolio"` for the portfolio-wide exe
 ```
 
 **Errors**
-- `404` — contract id not found (when not `"portfolio"`)
+- `404` - contract id not found (when not `"portfolio"`)
 
 ---
 
@@ -345,7 +345,7 @@ Generate an exportable report. Use `id = "portfolio"` for the portfolio-wide exe
 
 Wipe all current data and reseed the standard demo contract set (MSA, NDA, SaaS Subscription, Procurement, DPA, Reseller, SOW, Employment, plus the Amendment pair).
 
-**Request** — no body required.
+**Request** - no body required.
 
 **Response `200`**
 ```ts
@@ -357,4 +357,4 @@ Wipe all current data and reseed the standard demo contract set (MSA, NDA, SaaS 
 ```
 
 **Errors**
-- `500` — reseed failure (e.g., migration mismatch); response includes `{ error: string }` and prior data is left untouched (operation is transactional).
+- `500` - reseed failure (e.g., migration mismatch); response includes `{ error: string }` and prior data is left untouched (operation is transactional).

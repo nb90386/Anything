@@ -15,7 +15,7 @@ Respond with ONLY the JSON object.`;
 /**
  * Real OpenAI-backed analysis engine (also works with any OpenAI-compatible
  * gateway, e.g. OpenRouter, via OPENAI_BASE_URL). Activated when
- * AI_PROVIDER=openai and OPENAI_API_KEY is set — see .env.example.
+ * AI_PROVIDER=openai and OPENAI_API_KEY is set. See .env.example.
  */
 export class OpenAIAnalysisEngine implements AnalysisEngine {
   readonly id = "openai" as const;

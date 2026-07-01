@@ -63,7 +63,7 @@ export function Topbar() {
       <MobileNav />
 
       <div className="flex flex-1 items-center gap-3 min-w-0">
-        {title ? <h1 className="truncate text-sm font-semibold text-ink-800 dark:text-ink-100">{title}</h1> : null}
+        {title ? <p className="truncate text-sm font-semibold text-ink-800 dark:text-ink-100">{title}</p> : null}
         <Badge tone="brand" className="hidden shrink-0 sm:inline-flex">
           Private demo
         </Badge>

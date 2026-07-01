@@ -1,5 +1,27 @@
 import type { Config } from "tailwindcss";
 
+// Tremor's chart components (DonutChart, BarChart, AreaChart, BadgeDelta, ...)
+// build Tailwind class names like `fill-violet-500` at runtime from a `colors`
+// prop, as a template string. Tailwind's JIT compiler only generates CSS for
+// class names it can find as complete literal strings somewhere it scans, and
+// Tremor's own source never spells the full name out literally, so no
+// content-glob scan of node_modules/@tremor ever picks these up. Without an
+// explicit safelist every Tremor chart silently renders as solid black.
+// Generated as literal strings (not a regex safelist entry) since a regex
+// pattern here was observed to be inconsistently honored by Next.js's
+// PostCSS/webpack pipeline in this project, even though it worked when
+// running the Tailwind CLI standalone; explicit strings are unambiguous.
+const TREMOR_COLORS = [
+  "slate", "gray", "zinc", "neutral", "stone", "red", "orange", "amber", "yellow",
+  "lime", "green", "emerald", "teal", "cyan", "sky", "blue", "indigo", "violet",
+  "purple", "fuchsia", "pink", "rose",
+];
+const TREMOR_SHADES = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
+const TREMOR_PREFIXES = ["bg", "text", "border", "ring", "fill", "stroke"];
+const tremorSafelist = TREMOR_PREFIXES.flatMap((prefix) =>
+  TREMOR_COLORS.flatMap((color) => TREMOR_SHADES.map((shade) => `${prefix}-${color}-${shade}`))
+);
+
 const config: Config = {
   darkMode: "class",
   content: [
@@ -10,6 +32,7 @@ const config: Config = {
     {
       pattern: /^(bg|text|border|ring)-(tremor|risk)-.*/,
     },
+    ...tremorSafelist,
   ],
   theme: {
     extend: {

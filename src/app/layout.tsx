@@ -7,9 +7,9 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swa
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Contract Intelligence Copilot — Independent CLM Portfolio Demo",
+  title: "Contract Intelligence Copilot: Independent CLM Portfolio Demo",
   description:
-    "An AI-powered contract lifecycle management demo — upload contracts, extract risk, track obligations, compare amendments, and turn a portfolio into commercial insight. An independent portfolio project inspired by the CLM product space; not affiliated with Malbek Inc.",
+    "An AI-powered contract lifecycle management demo: upload contracts, extract risk, track obligations, compare amendments, and turn a portfolio into commercial insight. An independent portfolio project inspired by the CLM product space; not affiliated with Malbek Inc.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

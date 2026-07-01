@@ -14,7 +14,7 @@ export function RoleGreeting() {
   const { role } = useRole();
   return (
     <p className="text-sm text-ink-500 dark:text-ink-400">
-      Welcome back — here&apos;s what&apos;s relevant to{" "}
+      Welcome back, here&apos;s what&apos;s relevant to{" "}
       <span className="font-medium text-ink-700 dark:text-ink-200">{ROLE_LABELS[role]}</span> today:{" "}
       {ROLE_FOCUS[role]}.
     </p>

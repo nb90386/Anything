@@ -145,7 +145,7 @@ export function ChatPanel({ contractId, contractTitle }: { contractId: string; c
             </div>
             <p className="text-sm font-medium text-ink-700 dark:text-ink-200">Ask anything about this contract</p>
             <p className="text-xs text-ink-500 dark:text-ink-400">
-              Grounded in the actual clauses — try a quick prompt below.
+              Grounded in the actual clauses. Try a quick prompt below.
             </p>
           </div>
         ) : (

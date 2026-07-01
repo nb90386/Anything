@@ -12,7 +12,7 @@ let cached: AnalysisEngine | null = null;
  * Returns the configured analysis engine. Defaults to the deterministic
  * mock engine (no API key, works fully offline). Set AI_PROVIDER=anthropic
  * or AI_PROVIDER=openai (+ the matching API key) in .env.local to switch to
- * a real LLM-backed engine — see .env.example for details.
+ * a real LLM-backed engine. See .env.example for details.
  */
 export function getAnalysisEngine(): AnalysisEngine {
   if (cached) return cached;

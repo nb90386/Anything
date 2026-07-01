@@ -41,7 +41,7 @@ export interface ChatAnswer {
 /**
  * A CLM analysis engine turns raw contract text into structured clauses,
  * risks, and obligations, and can answer natural-language questions about
- * a specific contract. Swap AI_PROVIDER in .env.local to change engines —
+ * a specific contract. Swap AI_PROVIDER in .env.local to change engines:
  * see src/lib/ai/index.ts for the factory.
  */
 export interface AnalysisEngine {

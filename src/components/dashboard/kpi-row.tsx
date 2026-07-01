@@ -47,11 +47,11 @@ export function KpiRow({ items }: { items: KpiItem[] }) {
           >
             <Flex alignItems="start" justifyContent="between">
               <div className="min-w-0">
-                <Text className="truncate text-xs font-medium uppercase tracking-wide text-ink-400 dark:text-ink-500">
+                <Text className="text-xs font-medium uppercase leading-snug tracking-wide text-ink-400 dark:text-ink-500">
                   {item.label}
                 </Text>
                 <Metric className="mt-2 tabular-nums text-ink-950 dark:text-white">{item.value}</Metric>
-                <Text className="mt-1 truncate text-xs text-ink-400 dark:text-ink-500">{item.sub}</Text>
+                <Text className="mt-1 leading-snug text-xs text-ink-400 dark:text-ink-500">{item.sub}</Text>
               </div>
               <div className={cn("flex h-10 w-10 shrink-0 items-center justify-center rounded-lg", TONE_CLASSES[item.tone])}>
                 <Icon className="h-5 w-5" />

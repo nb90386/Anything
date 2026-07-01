@@ -16,7 +16,7 @@ Respond with ONLY the JSON object, no prose, no markdown fences.`;
 /**
  * Real Claude-backed analysis engine. Activated when AI_PROVIDER=anthropic
  * and ANTHROPIC_API_KEY is set (see .env.example). Falls back to the mock
- * engine's chat/ingest behavior is NOT automatic — if the API call fails,
+ * engine's chat/ingest behavior is NOT automatic: if the API call fails,
  * callers should catch and surface the error; the mock engine is only used
  * automatically as the default provider (see ../index.ts).
  */

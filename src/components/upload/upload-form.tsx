@@ -23,7 +23,7 @@ import type { Contract } from "@/lib/types";
 const SAMPLES: { name: string; title: string; counterparty: string; type: (typeof CONTRACT_TYPES)[number]; text: string }[] = [
   {
     name: "Vendor MSA (risky liability)",
-    title: "Master Services Agreement — Northwind Logistics",
+    title: "Master Services Agreement: Northwind Logistics",
     counterparty: "Northwind Logistics Inc.",
     type: "MSA",
     text: `MASTER SERVICES AGREEMENT
@@ -40,7 +40,7 @@ This Master Services Agreement ("Agreement") is entered into between Acme Corp (
   },
   {
     name: "Mutual NDA (standard)",
-    title: "Mutual Non-Disclosure Agreement — Bright Path Studios",
+    title: "Mutual Non-Disclosure Agreement: Bright Path Studios",
     counterparty: "Bright Path Studios LLC",
     type: "NDA",
     text: `MUTUAL NON-DISCLOSURE AGREEMENT
@@ -55,7 +55,7 @@ This Mutual Non-Disclosure Agreement is made between Acme Corp and Bright Path S
   },
   {
     name: "SaaS Subscription (data privacy)",
-    title: "SaaS Subscription Agreement — Cirrus Analytics",
+    title: "SaaS Subscription Agreement: Cirrus Analytics",
     counterparty: "Cirrus Analytics Inc.",
     type: "SaaS Subscription",
     text: `SAAS SUBSCRIPTION AGREEMENT
@@ -338,7 +338,7 @@ export function UploadForm() {
           </CardHeader>
           <CardContent className="space-y-4 pt-4">
             <Field label="Title" required>
-              <Input value={form.title} onChange={(e) => update("title", e.target.value)} placeholder="e.g. MSA — Acme Vendor" />
+              <Input value={form.title} onChange={(e) => update("title", e.target.value)} placeholder="e.g. MSA - Acme Vendor" />
             </Field>
             <Field label="Counterparty" required>
               <Input value={form.counterparty} onChange={(e) => update("counterparty", e.target.value)} placeholder="e.g. Northwind Logistics Inc." />
@@ -433,7 +433,7 @@ export function UploadForm() {
         </Button>
         <p className="text-center text-xs text-ink-400">
           <FileText className="mr-1 inline h-3 w-3" />
-          Text is parsed, segmented into clauses, and risk-scored by the offline analysis engine — no data leaves this demo.
+          Text is parsed, segmented into clauses, and risk-scored by the offline analysis engine. No data leaves this demo.
         </p>
       </div>
     </form>

@@ -21,7 +21,7 @@ export async function GET(_req: NextRequest, { params }: { params: { id: string 
 
 function renderReport(c: NonNullable<ReturnType<typeof getContractWithDetails>>): string {
   const lines: string[] = [];
-  lines.push(`# Executive Report — ${c.title}`);
+  lines.push(`# Executive Report: ${c.title}`);
   lines.push("");
   lines.push(`_Generated ${formatDate(new Date().toISOString())} by Contract Intelligence Copilot (independent portfolio demo)._`);
   lines.push("");
@@ -45,7 +45,7 @@ function renderReport(c: NonNullable<ReturnType<typeof getContractWithDetails>>)
     lines.push("_No material risks were identified._");
   } else {
     for (const r of c.risks) {
-      lines.push(`### ${r.title} — ${titleCase(r.severity)}`);
+      lines.push(`### ${r.title}: ${titleCase(r.severity)}`);
       lines.push("");
       lines.push(r.description);
       lines.push("");

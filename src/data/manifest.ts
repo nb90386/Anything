@@ -141,7 +141,7 @@ export const SEED_CONTRACTS: SeedContractDef[] = [
   },
   {
     fileName: "sow-meridian-data-migration.txt",
-    title: "Statement of Work — Data Migration",
+    title: "Statement of Work: Data Migration",
     counterparty: "Meridian Logistics Corp.",
     type: "Statement of Work",
     status: "pending_approval",
@@ -193,7 +193,7 @@ export const SEED_CONTRACTS: SeedContractDef[] = [
   },
   {
     fileName: "sow-redwood-systems.txt",
-    title: "Statement of Work — Systems Integration",
+    title: "Statement of Work: Systems Integration",
     counterparty: "Redwood Systems Integrators",
     type: "Statement of Work",
     status: "negotiation",

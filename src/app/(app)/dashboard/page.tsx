@@ -170,7 +170,7 @@ export default function DashboardPage() {
                           </div>
                           <div className="flex shrink-0 items-center gap-4">
                             <span className={cn("text-xs font-semibold tabular-nums", urgency)}>
-                              {days !== null ? `${days}d` : "—"}
+                              {days !== null ? `${days}d` : "-"}
                             </span>
                             <span className="hidden text-sm font-medium tabular-nums text-ink-700 dark:text-ink-200 sm:inline">
                               {formatCompactMoney(r.value)}
