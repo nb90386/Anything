@@ -87,12 +87,26 @@ export async function seedDatabase(): Promise<{ count: number }> {
   return { count: SEED_CONTRACTS.length };
 }
 
+declare global {
+  // eslint-disable-next-line no-var
+  var __clmSeeding: Promise<void> | undefined;
+}
+
 // On serverless platforms /tmp starts empty on every cold start, so the demo
 // data has to be seeded on first request in that instance's lifetime rather
 // than once via a CLI script. isSeeded() is a cheap COUNT query, so this is a
-// no-op on every request after the first within a warm instance.
+// no-op on every request after the first within a warm instance. Concurrent
+// requests hitting the same freshly-cold instance share one in-flight seed
+// promise instead of racing each other into duplicate inserts.
 export async function ensureSeeded(): Promise<void> {
-  if (!isSeeded()) {
-    await seedDatabase();
+  if (isSeeded()) return;
+  if (!globalThis.__clmSeeding) {
+    globalThis.__clmSeeding = seedDatabase()
+      .then(() => undefined)
+      .catch((err) => {
+        globalThis.__clmSeeding = undefined;
+        throw err;
+      });
   }
+  await globalThis.__clmSeeding;
 }
