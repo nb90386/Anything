@@ -23,3 +23,8 @@ Date: 2026-11-02. Founder brief: Operation Zero. Output folder: startup-research
 
 ## Constraint discovered 2026-11-02
 - WebSearch budget: 200 calls per turn, shared by all agents. The 14 discovery agents exhausted it within the first fan-out. Agents must finish with what they gathered; later phases must be budgeted (~200 searches per user turn). Mitigation: fewer, better-briefed agents per phase; prioritize kill-evidence and competitor checks over breadth.
+
+## 2026-11-02 — Candidates and scoring
+- 24 candidates written (04-opportunity-longlist.md), scored (07-scoring-model.csv, tools/score.py). Base ranking: C01 73.5, C02 68.5, C07 65.5, C06 64.5, C03 63.5, C04 61.5, C05 60.0, C11 58.5. Hard rejects: C16 (CROA), C19, C20, C22, C23, C24.
+- CAUTION: C01 wins 100% of 222 weight perturbations. That is a sign the scorer (me) may be anchored; competitive analysis and red team must try to kill C01 specifically. Scores are subjective judgments; all justifications are in the CSV.
+- Top 8 for competitive analysis: C01, C02, C07, C06, C03, C04, C05, C11.
