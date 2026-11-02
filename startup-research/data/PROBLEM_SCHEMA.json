@@ -1,0 +1,24 @@
+{
+  "description": "One record per distinct, evidence-backed problem. Write an array of these.",
+  "fields": {
+    "id": "string, e.g. FIN-01 (domain prefix + number)",
+    "domain": "string, one of the 12 research domains or 'wildcard'",
+    "title": "short problem title (not a product name)",
+    "affected_user": "exact person/role/institution affected",
+    "job_to_be_done": "the specific task they need to accomplish",
+    "current_process": "how it is done today",
+    "what_fails": "what breaks, concretely",
+    "failure_frequency": "how often (per user, per year, etc.) with source if available; else 'unknown'",
+    "cost_of_failure": "time or money lost, with source if supportable; else 'unknown'",
+    "existing_workaround": "what people do today to cope",
+    "who_pays_today": "who currently spends money on this (vendors, consultants, staff time, etc.)",
+    "sources": [{"url": "exact URL from search results", "date": "YYYY-MM-DD or YYYY-MM or 'unknown'", "type": "firsthand_complaint | primary_statistic | published_study | industry_commentary | speculation", "note": "what this source shows, 1 sentence"}],
+    "firsthand_evidence": "a brief paraphrase of a real firsthand complaint if found (NO fabricated quotes; paraphrase only unless the exact short phrase came from a search result)",
+    "evidence_strength": "strong | medium | weak",
+    "key_unknowns": "what we do not know that matters",
+    "technical_unlock": "what capability (new or existing) could make this solvable now; be specific; 'none obvious' is acceptable",
+    "why_now": "what changed in the last 12-24 months that matters, if anything",
+    "existing_solutions": "known vendors/products/open-source attempting it, if any",
+    "verification_status": "VERIFIED | INFERRED | ASSUMED (apply to the core claim that the problem exists at scale)"
+  }
+}
