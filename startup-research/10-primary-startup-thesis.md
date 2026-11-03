@@ -40,12 +40,12 @@ None exists today. If an incumbent with distribution (Siteimprove, Adobe, PAC) s
 
 ## The expansion
 1. Verification API for vendors → monitoring for public entities → remediation with measured quality, priced below service bureaus, once real flag rates are known.
-2. Adjacent mandates: HHS Section 504 recipients (deadline not extended), EU Accessibility Act private-sector documents, ADA Title III exposure (banks, insurers, utilities publishing statements and forms at very high volume).
+2. Adjacent mandates: HHS Section 504 recipients (deadline reportedly extended to May 2027 and 2028), EU Accessibility Act private-sector documents, ADA Title III exposure (banks, insurers, utilities publishing statements and forms at very high volume).
 3. Web pages and apps: semantic QA of real screen-reader behavior, building on the same corpus.
 4. Long term, possibly: the verification layer for machine-made content that must work for people who cannot see it, used by vendors, buyers and regulators.
 
 ## The timing
-- Mandate: Title II dates fixed at 2027/2028 (extended once, not removed); HHS 504 not extended; EAA in force since June 2025.
+- Mandate: Title II dates fixed at 2027/2028 (extended once, not removed); HHS 504 reportedly extended to May 2027 and 2028; EAA in force since June 2025.
 - Supply shock: in 2025–2026 auto-tagging became free and ubiquitous, so the volume of unverified accessibility output is exploding.
 - Capability: vision-language models can now judge page semantics cheaply. Measured cost was $0.004–$0.06 per page in this session.
 - Public signal: the PDF Association published in August 2026 that language models can judge reading order, so the standards community now accepts the method. That is also a warning that others will build it.

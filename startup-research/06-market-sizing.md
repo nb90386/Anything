@@ -59,7 +59,7 @@ Measured flag rate after the automated loop on 31 real single-page documents: 13
 ### What a billion-dollar outcome would require
 
 $1B at ~10x ARR means ~$100M ARR. The US public-sector wedge base TAM ($193M) cannot support that without implausible share. It requires, in order of plausibility:
-1. HHS Section 504 recipients (hospitals, clinics) whose web/document deadline was not extended (V: competition-C01).
+1. HHS Section 504 recipients (hospitals, clinics). Correction: an interim final rule dated May 7, 2026 reportedly extended their dates to May 11, 2027 and May 10, 2028 (round2/scan-accessibility-money.md; Federal Register text not read).
 2. Private-sector documents under the EU Accessibility Act (in force June 28, 2025) and ADA Title III litigation exposure: banks, insurers and utilities publish statements, notices and forms at very high volume (I).
 3. Semantic verification of web pages and apps, where 95.9% of home pages fail automated checks (V: WebAIM Million 2026, problem HCI-02).
 4. Becoming the reference verifier that vendors, buyers and regulators use, which requires the blind-user-labeled corpus and a public benchmark.

@@ -1,5 +1,7 @@
 # 00 — Executive Decision
 
+> **Update, November 3, 2026 (round 2):** at the founder's request the search was re-run with new priorities: faster money, proven spending, bigger market, impact. The round-2 winner is a done-for-you accessibility remediation service that uses this verifier as its quality engine. See `round2/00-ROUND2-DECISION.md`. Round 1 below is kept as the research record.
+
 Research period: November 2–3, 2026. Evidence base: 102 problems from 13 domain investigations, 24 candidates, 8 competitive analyses, an independent red team, and four technical experiments on real documents. No customer, user or buyer has been contacted. Every commercial claim below is **UNVALIDATED** until the tests in `12-customer-validation-plan.md` are run with real people.
 
 ---
@@ -20,7 +22,7 @@ Research period: November 2–3, 2026. Evidence base: 102 problems from 13 domai
 
 **Why it can start with one founder:** It is pure software on the founder's existing stack. The prototype was built and tested on real documents in one day for about $10 of model usage (241 calls). The target documents are public, so the founder can show value on a buyer's own documents without asking permission. The founder's college is itself a Title II entity, and Bay Area blind-user organizations are reachable for paid testing.
 
-**Why now:** Title II dates are fixed for 2027/2028, extended once but not removed. HHS Section 504 was not extended, and the EU Accessibility Act has applied since June 2025. Free auto-tagging floods the market with unverified output. Model judging now costs $0.004–$0.06 per page (measured).
+**Why now:** Title II dates are fixed for 2027/2028, extended once but not removed. HHS Section 504 for health providers was also extended, reportedly to May 2027 and May 2028 (correction found in round 2), and the EU Accessibility Act has applied since June 2025. Free auto-tagging floods the market with unverified output. Model judging now costs $0.004–$0.06 per page (measured).
 
 **What makes it difficult to copy:** Today, nothing. The prompt and code can be copied in a weekend. Defensibility has to be earned through three things:
 - A blind-user-labeled failure corpus.

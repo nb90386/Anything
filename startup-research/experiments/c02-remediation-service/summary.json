@@ -1,0 +1,40 @@
+{
+ "n": 32,
+ "passed_as_autotagged": 9,
+ "fixed_automatically": 6,
+ "flagged_initially": 23,
+ "still_need_human": 17,
+ "auto_pass_rate": 0.469,
+ "ci95": [
+  0.291,
+  0.653
+ ],
+ "remaining_categories": [
+  [
+   "table_headers",
+   8
+  ],
+  [
+   "reading_order",
+   6
+  ],
+  [
+   "missing_content",
+   6
+  ],
+  [
+   "list_structure",
+   5
+  ],
+  [
+   "alt_text",
+   4
+  ],
+  [
+   "heading_missing",
+   2
+  ]
+ ],
+ "mean_cost_usd": 0.148,
+ "mean_secs": 25.6
+}

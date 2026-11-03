@@ -1,0 +1,527 @@
+{
+ "01030000000001": {
+  "before": [],
+  "edits": 0,
+  "unfixable": [],
+  "after": [],
+  "rule_after": [],
+  "cost_usd": 0.0629,
+  "secs": 10.0
+ },
+ "01030000000004": {
+  "before": [],
+  "edits": 0,
+  "unfixable": [],
+  "after": [],
+  "rule_after": [],
+  "cost_usd": 0.059,
+  "secs": 9.0
+ },
+ "01030000000041": {
+  "before": [
+   "alt_text",
+   "missing_content",
+   "reading_order"
+  ],
+  "edits": 16,
+  "unfixable": [
+   "Element 1 merges body text (first paragraph of left column) with the running footer text and chart values; it cannot be split, so the footer text can't be artifacted without hiding the paragraph.",
+   "The page-number '29' and the footer text are not separate elements, so they can't be marked as artifacts.",
+   "Element 6 is a pull quote with no matching role; it is left as P.",
+   "Elements 2-5 split paragraphs across columns, and element 4 starts mid-sentence. Paragraph merging can't be done with the allowed edits.",
+   "Elements 8-21 have repeated, garbled text. The chart's real content can't be recovered from the tags, so alt text is taken from the visible image."
+  ],
+  "after": [
+   "reading_order"
+  ],
+  "rule_after": [],
+  "cost_usd": 0.2101,
+  "secs": 36.6
+ },
+ "01030000000045": {
+  "before": [
+   "list_structure",
+   "missing_content",
+   "reading_order"
+  ],
+  "edits": 2,
+  "unfixable": [
+   "Elements 1 and 2 look like duplicated body text, with 1 a truncated copy of 2. Removing one needs a content change, not a role edit.",
+   "The table body is one TR with three TDs. Each TD holds several rows (a list of numbers, then stacked names and counts). It needs splitting into one row per organization.",
+   "Several organization names are merged into one paragraph (element 34), and so are some counts (element 40). They need splitting into separate cells.",
+   "The row numbers 1-7 are tagged as a list inside a table cell. That needs restructuring, not a role change.",
+   "Element 47 mixes the footnote number with the URL text. It can't be separated with the allowed edits."
+  ],
+  "after": [
+   "reading_order",
+   "table_headers"
+  ],
+  "rule_after": [],
+  "cost_usd": 0.1656,
+  "secs": 33.8
+ },
+ "01030000000046": {
+  "before": [
+   "list_structure",
+   "table_headers"
+  ],
+  "edits": 6,
+  "unfixable": [
+   "Table body is not split into rows and cells: each column's values are merged into one TD (party names, counts and differences run together), so the row structure has to be rebuilt.",
+   "Header cells are not aligned with the columns: the 'Number of commune/sangkat' and 'Number of candidates' subheaders need column spans under the provisional and official result headers.",
+   "The No. column is tagged as a list inside one cell, with stray list items 58 and 59 in the fourth data cell. These need regrouping into table rows.",
+   "H1 text is garbled, with the title merged with the table caption and a stray '21 and Official Results'. The text would need to be split into a heading and a Caption.",
+   "Header cell text has missing spaces ('Officialregistrationresulton29 April') and cannot be fixed with these edits.",
+   "The footnote list items (21, 22) are separated from their reference markers."
+  ],
+  "after": [
+   "list_structure",
+   "missing_content",
+   "reading_order",
+   "table_headers"
+  ],
+  "rule_after": [],
+  "cost_usd": 0.176,
+  "secs": 36.8
+ },
+ "01030000000047": {
+  "before": [
+   "reading_order",
+   "table_headers",
+   "table_structure"
+  ],
+  "edits": 7,
+  "unfixable": [
+   "First header cell (5) holds running-header text merged with 'No.'; its text can't be edited",
+   "Table columns are merged and unaligned: party names, numbers and differences are lumped into single cells or mis-grouped, so the table needs re-detection",
+   "Row numbers 11-17 and the difference values are wrongly tagged as lists (L/LI/Lbl/LBody); they can't be regrouped into table cells with these edits",
+   "Header cells need spans (colspan/rowspan) for the two-level header, which the allowed edits can't set"
+  ],
+  "after": [
+   "list_structure",
+   "reading_order",
+   "table_headers"
+  ],
+  "rule_after": [],
+  "cost_usd": 0.172,
+  "secs": 34.9
+ },
+ "01030000000053": {
+  "before": [],
+  "edits": 0,
+  "unfixable": [],
+  "after": [],
+  "rule_after": [],
+  "cost_usd": 0.0591,
+  "secs": 8.7
+ },
+ "01030000000064": {
+  "before": [
+   "table_headers"
+  ],
+  "edits": 3,
+  "unfixable": [
+   "Table 1 was never detected as a table. Its header row (ids 2 and 3) and its data cells (id 4) are flattened into paragraphs, so no Table, TR, TH or TD structure exists to fix.",
+   "Id 2 (PORTSHIPCALLS) is a table column header wrongly tagged H1. I demoted it to P, but it needs to become a TH once the table is rebuilt.",
+   "Id 4 merges all port names and counts into a single P and needs splitting into separate cells.",
+   "Id 1 holds text that continues from the previous page, and it may need splitting from the following content."
+  ],
+  "after": [
+   "table_headers"
+  ],
+  "rule_after": [],
+  "cost_usd": 0.17,
+  "secs": 32.2
+ },
+ "01030000000065": {
+  "before": [
+   "alt_text"
+  ],
+  "edits": 3,
+  "unfixable": [],
+  "after": [],
+  "rule_after": [],
+  "cost_usd": 0.164,
+  "secs": 23.4
+ },
+ "01030000000071": {
+  "before": [
+   "alt_text"
+  ],
+  "edits": 3,
+  "unfixable": [
+   "The Diagram 4 bar chart (elements 6-28) was never tagged as a Figure. Its axis labels and values are loose P elements that need regrouping into one Figure with alt text. The edit set can't create a Figure or move those elements.",
+   "The page starts mid-sentence, with a paragraph continued from the previous page. Element 2 merges body text with an inline footnote marker (95). Splitting them needs text-level changes."
+  ],
+  "after": [
+   "alt_text"
+  ],
+  "rule_after": [
+   "heading_level"
+  ],
+  "cost_usd": 0.1783,
+  "secs": 30.5
+ },
+ "01030000000072": {
+  "before": [
+   "alt_text"
+  ],
+  "edits": 6,
+  "unfixable": [
+   "Elements 2-15 are the bar chart's axis values and category labels, tagged as loose paragraphs. They need to be grouped into a Figure with alt text or a data summary, which these edits can't do.",
+   "Diagram 5 (the chart) has no Figure element, so it needs a new Figure tag with alt text describing the content distribution for 2019-2020.",
+   "Element 20 is a body paragraph wrongly tagged Caption. I changed it to P, but it is nested inside a Sect with the figure, so the grouping can't be corrected."
+  ],
+  "after": [
+   "alt_text"
+  ],
+  "rule_after": [],
+  "cost_usd": 0.1736,
+  "secs": 28.0
+ },
+ "01030000000077": {
+  "before": [
+   "alt_text"
+  ],
+  "edits": 26,
+  "unfixable": [
+   "Element 1 merges the running header ('ASEAN Migration Outlook') with body text; it can't be split with the allowed edits",
+   "Chart parts (axis labels, values, legend) are separate P elements, not grouped into one Figure; I put the alt text on element 3 and marked the rest as artifacts",
+   "Chart data values are lost if marked as artifacts, and no data table exists to carry them",
+   "Element 31 also merges a running header with body text, so artifacting it hides that text"
+  ],
+  "after": [],
+  "rule_after": [
+   "heading_level"
+  ],
+  "cost_usd": 0.1679,
+  "secs": 32.2
+ },
+ "01030000000078": {
+  "before": [
+   "alt_text",
+   "table_headers"
+  ],
+  "edits": 31,
+  "unfixable": [
+   "Figure 1.10 chart has no Figure element, so alt text can't be added. The axis and data labels (2-29) are marked artifact only to remove the noise, and the chart's data is not conveyed. It needs a Figure tag with alt text describing remittance inflows for the World and ASEAN, 2014-2020.",
+   "Element 1 merges the running header 'ASEAN Migration Outlook' with the figure caption. It can't be split, so the header text can't be marked as an artifact separately.",
+   "Element 37 merges the page number '26' and the running header with the start of the 'Figure 1.10' text. It is marked artifact as a whole, which may hide a stray fragment of the caption.",
+   "Table 1.4 (elements 32-34) was never tagged as a table. It is a single P with the cells flattened into one string, so Table/TR/TH/TD structure can't be built by role edits.",
+   "Elements 32-34 should be reordered under the table caption (31) once the table is rebuilt.",
+   "Elements 36 and 37 may need splitting if the body paragraph is truncated or merged with footer text."
+  ],
+  "after": [
+   "alt_text",
+   "table_headers"
+  ],
+  "rule_after": [],
+  "cost_usd": 0.1865,
+  "secs": 35.1
+ },
+ "01030000000081": {
+  "before": [
+   "heading_level"
+  ],
+  "edits": 4,
+  "unfixable": [
+   "Element 2 merges the running header 'Jailed for Doing Business' with the Table 22 title, and the edits can't split it.",
+   "Element 1 duplicates that text, so it is marked as an artifact. The merged text in element 2 is still read aloud.",
+   "Table 22 appears to have been cut short, with only two data rows tagged. I can't verify this against the page image and can't fix it with these edits."
+  ],
+  "after": [],
+  "rule_after": [
+   "heading_level"
+  ],
+  "cost_usd": 0.1773,
+  "secs": 26.7
+ },
+ "01030000000090": {
+  "before": [],
+  "edits": 0,
+  "unfixable": [],
+  "after": [],
+  "rule_after": [],
+  "cost_usd": 0.062,
+  "secs": 8.5
+ },
+ "01030000000092": {
+  "before": [],
+  "edits": 0,
+  "unfixable": [],
+  "after": [],
+  "rule_after": [],
+  "cost_usd": 0.0636,
+  "secs": 7.9
+ },
+ "01030000000095": {
+  "before": [
+   "alt_text"
+  ],
+  "edits": 3,
+  "unfixable": [
+   "Footnote 10 (id 12) is a note and has no footnote or note role in the allowed edits. It stays a P.",
+   "The footnote marker '10' after 'others.' in id 11 is not tagged as a separate reference or link to the footnote.",
+   "Id 13 is the running footer 'BEHAVIORAL ECONOMICS PRACTICUM 111', and it also lacks word spaces in its text. Marking it as an artifact fixes the reading problem.",
+   "The Caption elements (ids 3 and 9) contain only a citation link and no descriptive caption text. Their text cannot be changed with these edits."
+  ],
+  "after": [],
+  "rule_after": [],
+  "cost_usd": 0.1881,
+  "secs": 28.0
+ },
+ "01030000000110": {
+  "before": [
+   "alt_text",
+   "missing_content"
+  ],
+  "edits": 2,
+  "unfixable": [
+   "The viscosity data is a table, but it is tagged as a Figure image, so it has no row, column or header-cell structure. Fixing it needs table tagging (TH/TD cells), which these edits cannot do.",
+   "The equation 'Re = vd/\u03bd (1)' is missing from the tag tree, and the text in [2] and [3] has garbled symbols. Fixing this needs new tags or text, which these edits cannot add."
+  ],
+  "after": [
+   "missing_content"
+  ],
+  "rule_after": [],
+  "cost_usd": 0.1871,
+  "secs": 30.5
+ },
+ "01030000000117": {
+  "before": [
+   "heading_level",
+   "table_headers"
+  ],
+  "edits": 3,
+  "unfixable": [
+   "Elements 2-12 are a data table (Saccharometer / DI Water / Glucose Solution / Yeast Suspension) that was tagged as a heading plus a list. It needs rebuilding as a Table with TR, TH and TD, which these edits can't do.",
+   "Cell text in elements 2 and 6, 9 and 12 is concatenated with no separators, so it needs re-extraction.",
+   "Elements 17, 20 and 23 each merge the step text with underscore answer lines, so the blank lines would be read aloud as underscores.",
+   "The 'Record the Question' and 'Hypothesis' words appear to run together with the following text, which suggests lost bold or space formatting."
+  ],
+  "after": [
+   "list_structure",
+   "table_headers"
+  ],
+  "rule_after": [
+   "heading_level"
+  ],
+  "cost_usd": 0.178,
+  "secs": 26.4
+ },
+ "01030000000134": {
+  "before": [
+   "alt_text",
+   "reading_order"
+  ],
+  "edits": 4,
+  "unfixable": [
+   "Element 2 holds the intro paragraph and the Figure 8.6 caption text together, and the figure caption and the figure image are not paired.",
+   "The list (L/LI) wrapping the figure captions should be Caption elements next to their Figures, which these edits cannot do.",
+   "The Figure 8.6 and 8.7 caption text is merged into one LBody, and the first Figure (3) sits in the paragraph's Sect, so the elements need splitting and regrouping.",
+   "The Long description link sits inside the caption and Figure 9 is nested in the LBody; this nesting cannot be changed with these edits."
+  ],
+  "after": [],
+  "rule_after": [],
+  "cost_usd": 0.1822,
+  "secs": 28.0
+ },
+ "01030000000141": {
+  "before": [
+   "alt_text",
+   "heading_level",
+   "heading_missing",
+   "list_structure",
+   "missing_content"
+  ],
+  "edits": 2,
+  "unfixable": [
+   "The ten numbered points and two column headings are only in the image, with no text in the tag tree. They need real H2/P/LI tags, so I put their content in the Figure alt text instead.",
+   "The text 'and.org' is a fragment of the footer logo 'CopyrightandCreativity.org'. It is not a heading, so I marked it as an artifact. The full site name is only in the Figure alt text.",
+   "The page title '10 Things You Should Know About Copyright' has no H1 tag, and I can't create one with the allowed edits.",
+   "The reading order of the two columns can't be checked or fixed because there are no text elements to reorder."
+  ],
+  "after": [
+   "heading_missing",
+   "list_structure",
+   "missing_content"
+  ],
+  "rule_after": [],
+  "cost_usd": 0.1969,
+  "secs": 62.9
+ },
+ "01030000000145": {
+  "before": [
+   "alt_text",
+   "list_structure",
+   "reading_order"
+  ],
+  "edits": 8,
+  "unfixable": [
+   "I did not open the page image, so the alt text is a guess. The figures are probably fraction bars or radical signs inside equations, so I marked them decorative with empty alt text. Check this against the image.",
+   "The equations are split across separate P and Figure elements (Re = Dv/\u03bd, the friction formula, the limit definition). They need to be merged into one Formula element with alt text, and these edits can't do that.",
+   "The L/LI/Lbl/LBody structure (elements 9-19) is not a real list. It is running paragraphs that continue across the equations, and it needs retagging as P elements with the equations pulled out.",
+   "Equation P elements are nested inside LBody (13, 14, 16), which these edits can't restructure.",
+   "Text in the tags has no spaces between words, which looks like an extraction problem in the underlying PDF text."
+  ],
+  "after": [
+   "alt_text",
+   "list_structure",
+   "reading_order"
+  ],
+  "rule_after": [
+   "missing_content"
+  ],
+  "cost_usd": 0.1897,
+  "secs": 38.6
+ },
+ "01030000000147": {
+  "before": [
+   "heading_missing"
+  ],
+  "edits": 5,
+  "unfixable": [
+   "Element 5 merges the heading '3. RECOLLECTION OF NATIONAL INITIATIVES' with the intro paragraph. It needs to be split into an H1/H2 and a P, which these edits can't do.",
+   "Each link is split into several Link fragments. They need merging into one link per URL."
+  ],
+  "after": [
+   "heading_missing"
+  ],
+  "rule_after": [],
+  "cost_usd": 0.1942,
+  "secs": 23.9
+ },
+ "01030000000157": {
+  "before": [],
+  "edits": 0,
+  "unfixable": [],
+  "after": [],
+  "rule_after": [],
+  "cost_usd": 0.0541,
+  "secs": 6.8
+ },
+ "01030000000166": {
+  "before": [
+   "missing_content",
+   "table_headers"
+  ],
+  "edits": 7,
+  "unfixable": [
+   "Table 13.4 was never detected as a table. Its header row and data are merged into paragraphs [9] and [10], so the TABLE, TR, TH and TD structure can't be rebuilt with role edits.",
+   "Link [15] and link [18] have URL strings as alt text. They are decorative shovel icons, so I marked them as artifacts. Their link tags can't be removed or rewritten with the allowed edits.",
+   "Callout [13]\u2013[16] needs regrouping. The exercise caption, icon and question should sit in one container, but the allowed edits can't do that."
+  ],
+  "after": [
+   "missing_content",
+   "table_headers"
+  ],
+  "rule_after": [],
+  "cost_usd": 0.1797,
+  "secs": 31.1
+ },
+ "01030000000168": {
+  "before": [
+   "missing_content"
+  ],
+  "edits": 11,
+  "unfixable": [
+   "Paragraph [1] ends mid-thought ('For example,') and [2] is cut off, so text appears to be split across pages. This can't be fixed with these edits.",
+   "The Sect wrappers [6] and [13] group instruction text with the icon image. Regrouping needs structural changes.",
+   "Table 14.1 is referenced but not present on this page, so there is nothing to tag.",
+   "I did not open the page image. These edits come from the tag tree alone, so the H2 level and the decorative-icon calls are unchecked against the page."
+  ],
+  "after": [
+   "missing_content"
+  ],
+  "rule_after": [
+   "heading_level"
+  ],
+  "cost_usd": 0.1823,
+  "secs": 30.8
+ },
+ "01030000000171": {
+  "before": [],
+  "edits": 0,
+  "unfixable": [],
+  "after": [],
+  "rule_after": [],
+  "cost_usd": 0.0767,
+  "secs": 11.2
+ },
+ "01030000000176": {
+  "before": [
+   "alt_text"
+  ],
+  "edits": 5,
+  "unfixable": [
+   "I did not open the page image, so these edits come from the tag tree alone. In particular, the alt text for element 6 is inferred from the caption, which is truncated.",
+   "Elements 1 and 2 have no spaces in their text (e.g. 'vaporandothergases'), so the text extraction is broken. This can't be fixed with tag edits.",
+   "Element 1 starts mid-sentence and continues from the previous page. Tags can't fix that.",
+   "Element 3 is a cross-reference link inside a paragraph, and its alt text 'Annotation' is unhelpful. I can't change link text with the allowed edits."
+  ],
+  "after": [
+   "missing_content"
+  ],
+  "rule_after": [
+   "heading_level"
+  ],
+  "cost_usd": 0.1686,
+  "secs": 30.5
+ },
+ "01030000000179": {
+  "before": [
+   "alt_text"
+  ],
+  "edits": 5,
+  "unfixable": [
+   "Link [3] inside the Figure only repeats the image URL and cannot be removed or merged with the edit set.",
+   "Link [9] sits inside paragraph [8] but is tagged after it, and its parent/nesting cannot be changed with these edits.",
+   "Heading levels are assumed to be H2 because the chapter title isn't on this page, so the level should be checked against the rest of the document."
+  ],
+  "after": [],
+  "rule_after": [
+   "heading_level"
+  ],
+  "cost_usd": 0.1703,
+  "secs": 25.1
+ },
+ "01030000000180": {
+  "before": [],
+  "edits": 0,
+  "unfixable": [],
+  "after": [],
+  "rule_after": [],
+  "cost_usd": 0.0602,
+  "secs": 7.3
+ },
+ "01030000000191": {
+  "before": [],
+  "edits": 0,
+  "unfixable": [],
+  "after": [],
+  "rule_after": [],
+  "cost_usd": 0.0681,
+  "secs": 8.4
+ },
+ "01030000000197": {
+  "before": [
+   "reading_order",
+   "table_headers"
+  ],
+  "edits": 3,
+  "unfixable": [
+   "Table 8 (Filtered Task Name) was never detected as a table. Its single header cell is tagged as a P and its rows are tagged as list items (L/LI) with Lbl/LBody.",
+   "Table 9 (ARC, HellaSwag, MMLU, TruthfulQA, Winogrande, GSM8K and their values) was never detected as a table. Its cells are merged into one P, nested under a caption LI, so there are no TH/TD cells.",
+   "The two captions are wrapped in list structure (L/LI/Lbl/LBody) that cannot be removed or regrouped with these edits.",
+   "The 'Filtered task names.' and 'Results on data contamination.' run-in bold headings are merged into body paragraphs (ids 3 and 21), so they cannot be split out as headings.",
+   "The text of every element is missing its word spaces, and the table text is run together, so it cannot be fixed with role, alt or reorder edits."
+  ],
+  "after": [
+   "reading_order",
+   "table_headers"
+  ],
+  "rule_after": [],
+  "cost_usd": 0.1973,
+  "secs": 33.8
+ }
+}
