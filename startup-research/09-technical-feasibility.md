@@ -52,7 +52,7 @@ The semantic verifier sees the rendered page image plus the tag tree serialized 
 | Test | Semantic verifier (Sonnet) | Semantic verifier (Haiku) | Rule checker |
 |---|---|---|---|
 | Blanket defects detected | 27/27 = 100% (95% CI 87–100%) | 24/27 = 89% (71–98%); the 3 misses were list defects it reported as minor | 13/27 = 48% (29–68%) |
-| Subtle defects detected | 13/15 = 87% (60–98%) | run incomplete at time of writing | 0/15 = 0% (0–22%) |
+| Subtle defects detected | 13/15 = 87% (60–98%) | 11/15 = 73% (45–92%) | 0/15 = 0% (0–22%) |
 | False flags on clean controls | 0/5 (0–52%) | 0/5 | 0/5 |
 | Cost per page | $0.059 | $0.004 | ~0 |
 

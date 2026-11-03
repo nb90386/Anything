@@ -165,5 +165,94 @@
    "secs": 9.3,
    "cost_usd": 0.00390491
   }
+ },
+ "syllabus__one_th_as_td": {
+  "doc": "syllabus",
+  "defect": "one_th_as_td",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/syllabus__one_th_as_td.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [],
+   "pass": true,
+   "secs": 9.9,
+   "cost_usd": 0.00397634
+  }
+ },
+ "syllabus__one_li_as_p": {
+  "doc": "syllabus",
+  "defect": "one_li_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/syllabus__one_li_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "list_structure",
+     "severity": "major",
+     "evidence": "Visually a three-item bulleted list (Extended time on exams, Note-taking support, Accessible course materials). The tag tree puts only the first two items in L; 'Accessible course materials' is a P outside the list, so a screen reader announces a two-item list followed by a paragraph."
+    }
+   ],
+   "pass": false,
+   "secs": 13.3,
+   "cost_usd": 0.004140830000000001
+  }
+ },
+ "two_column_report__one_heading_as_p": {
+  "doc": "two_column_report",
+  "defect": "one_heading_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/two_column_report__one_heading_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "\"Findings\" is styled identically to the H2 headings \"Summary\", \"Methods\" and \"Next steps\" in the render, but is tagged as P, so screen-reader users navigating by headings will skip that section."
+    }
+   ],
+   "pass": false,
+   "secs": 12.8,
+   "cost_usd": 0.00414231
+  }
+ },
+ "two_column_report__one_swap": {
+  "doc": "two_column_report",
+  "defect": "one_swap",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/two_column_report__one_swap.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "Tag tree reads H2 'Summary', then H2 'Methods', and only then the two body paragraphs. Visually, 'Summary' is followed by its paragraph and 'Methods' starts the next block, so screen-reader users hear each heading separated from its text."
+    }
+   ],
+   "pass": false,
+   "secs": 12.0,
+   "cost_usd": 0.00398678
+  }
+ },
+ "two_column_report__one_li_as_p": {
+  "doc": "two_column_report",
+  "defect": "one_li_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/two_column_report__one_li_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "list_structure",
+     "severity": "major",
+     "evidence": "Visual Findings list has 3 bullets, but only the first two are LI in L. The third item 'Reading order errors affect 1 in 5 multi-column pages.' is a P with Lbl outside the list, so AT announces a 2-item list followed by a paragraph."
+    },
+    {
+     "category": "missing_content",
+     "severity": "minor",
+     "evidence": "Visible word spaces are missing from the tag text: '1,240documents', 'Conformancerose', 'andmanual', 'beforeApril'. Screen readers will run these words together."
+    }
+   ],
+   "pass": false,
+   "secs": 15.5,
+   "cost_usd": 0.0044081
+  }
  }
 }

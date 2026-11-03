@@ -28,3 +28,10 @@ Date: 2026-11-02. Founder brief: Operation Zero. Output folder: startup-research
 - 24 candidates written (04-opportunity-longlist.md), scored (07-scoring-model.csv, tools/score.py). Base ranking: C01 73.5, C02 68.5, C07 65.5, C06 64.5, C03 63.5, C04 61.5, C05 60.0, C11 58.5. Hard rejects: C16 (CROA), C19, C20, C22, C23, C24.
 - CAUTION: C01 wins 100% of 222 weight perturbations. That is a sign the scorer (me) may be anchored; competitive analysis and red team must try to kill C01 specifically. Scores are subjective judgments; all justifications are in the CSV.
 - Top 8 for competitive analysis: C01, C02, C07, C06, C03, C04, C05, C11.
+
+## 2026-11-03 — Decision reached
+- Competition (8 agents): all top-8 "maybe leaning no" or worse. C01 survives only as a neutral verification layer.
+- Experiments (09): extraction is commodity (Sonnet 0.906 vs OpenDataLoader hybrid 0.892, n=31; Haiku 0.873 at $0.004/page). Semantic verifier catches what rule checks miss (27/27 vs 13/27 blanket; 13/15 vs 0/15 subtle; real pages 8/10 tables, 3/5 headings, 0/19 false flags). Closed loop leaves 13–29% of pages for human review.
+- Red team (independent agent): F1 VALIDATE FIRST, F2 KILL, F3 VALIDATE FIRST leaning KILL.
+- Decision: primary = independent verifier for document accessibility, VALIDATE FIRST. Next action for the founder: tests T1–T4 in 12.
+- All 17 artifacts written. Nothing sent externally; no money spent beyond subscription usage.

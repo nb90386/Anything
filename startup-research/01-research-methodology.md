@@ -8,7 +8,7 @@ Date: 2026-11-02 (session start). Founder brief: "Operation Zero".
 |---|---|---|
 | WebSearch (standard/extended) | Available | Primary discovery engine. Server-side; not subject to sandbox egress policy. |
 | WebFetch | Partial | Works for github.com and raw.githubusercontent.com. ycombinator.com, news.ycombinator.com, reddit.com, arxiv.org, hn.algolia.com, thielfellowship.org fail DNS (outside allowed domains). |
-| Raw HTTP (curl/node/python) | Blocked | CONNECT 403 from the policy proxy for all tested hosts except npm/pypi registries. |
+| Raw HTTP (curl/node/python) | Mostly blocked | CONNECT 403 for news/forum/government hosts. Allowed: npm and PyPI registries, raw.githubusercontent.com, and `git clone` of public GitHub repositories (discovered on day 2; used to obtain opendataloader-bench and the veraPDF corpus). |
 | GitHub API / gh CLI | Scoped | Only nb90386/anything. Cannot read other repos through the API. |
 | Perplexity / Sonar / Deep Research | Not available | No key, no MCP. Not used. No access invented. |
 | Brave / search API keys | None | — |
@@ -52,3 +52,10 @@ Source types: firsthand_complaint, primary_statistic, published_study, industry_
 - No Perplexity cross-check.
 - YC RFS and Thiel FAQ pages could not be fetched directly; reconstructed from secondary coverage and labeled as such.
 - No customer interviews occurred. All commercial validation is PENDING until the founder talks to real people.
+
+## 5. Changes during the session
+
+- Day 1: the shared per-turn WebSearch budget (200 calls across all agents) was exhausted by the first 14-agent fan-out. Later phases used fewer, better-briefed agents (8 competition agents, 1 red-team agent).
+- Day 1→2: the account's 5-hour usage limit interrupted one competition agent and the experiment; both resumed after reset. The model serving the session changed from Fable 5.1 to Opus 5.5 at the user's direction.
+- Day 2: discovering that public GitHub repos could be cloned made a real-document benchmark possible (09).
+- Scoring was run twice: pass 1 from desk research, pass 2 after competitive analysis and experiments (07). The winner's score fell from 73.5 to 66.0; the ranking of the top two did not change under any of 222 weightings in either pass, which reflects my scoring and should be read as judgment, not measurement.
