@@ -1,0 +1,486 @@
+{
+ "benefits_letter": [
+  {
+   "type": "H1",
+   "text": "County of Alameda \u2014 Social Services Agency"
+  },
+  {
+   "type": "P",
+   "text": "Notice of Action: CalFresh Recertification"
+  },
+  {
+   "type": "P",
+   "text": "Date: October 14, 2026Case Number: 1234567"
+  },
+  {
+   "type": "H2",
+   "text": "What you need to do"
+  },
+  {
+   "type": "P",
+   "text": "Your CalFresh benefits are scheduled to end on November 30, 2026 unless you complete recertification. You must completethe following steps:"
+  },
+  {
+   "type": "List",
+   "items": [
+    "Complete the attached recertification form (SAR 7).",
+    "Provide proof of income for the last 30 days.",
+    "Attend a phone interview on November 10, 2026 at 9:30 AM."
+   ]
+  },
+  {
+   "type": "H2",
+   "text": "Your household information"
+  },
+  {
+   "type": "Table",
+   "rows": [
+    [
+     {
+      "th": true,
+      "text": "Member"
+     },
+     {
+      "th": true,
+      "text": "Relationship"
+     },
+     {
+      "th": true,
+      "text": "Included"
+     }
+    ],
+    [
+     {
+      "th": false,
+      "text": "Maria L."
+     },
+     {
+      "th": false,
+      "text": "Self"
+     },
+     {
+      "th": false,
+      "text": "Yes"
+     }
+    ],
+    [
+     {
+      "th": false,
+      "text": "Jose L."
+     },
+     {
+      "th": false,
+      "text": "Child"
+     },
+     {
+      "th": false,
+      "text": "Yes"
+     }
+    ],
+    [
+     {
+      "th": false,
+      "text": "Ana L."
+     },
+     {
+      "th": false,
+      "text": "Child"
+     },
+     {
+      "th": false,
+      "text": "Yes"
+     }
+    ]
+   ]
+  },
+  {
+   "type": "H2",
+   "text": "Your rights"
+  },
+  {
+   "type": "P",
+   "text": "If you disagree with this action you may request a state hearing within 90 days. Call 1-800-952-5253 (TTY 1-800-952-8349)."
+  }
+ ],
+ "city_agenda": [
+  {
+   "type": "H1",
+   "text": "City of Manteca \u2014 City Council Regular Meeting Agenda"
+  },
+  {
+   "type": "P",
+   "text": "Tuesday, November 4, 2026, 7:00 PM \u00b7 Council Chambers, 1001 W. Center St."
+  },
+  {
+   "type": "H2",
+   "text": "1. Call to order"
+  },
+  {
+   "type": "P",
+   "text": "Pledge of Allegiance and roll call."
+  },
+  {
+   "type": "H2",
+   "text": "2. Public comment"
+  },
+  {
+   "type": "P",
+   "text": "Members of the public may address the Council on any item within its jurisdiction for up to three minutes."
+  },
+  {
+   "type": "H2",
+   "text": "3. Consent calendar"
+  },
+  {
+   "type": "List",
+   "items": [
+    "Approve minutes of October 21, 2026 meeting.",
+    "Accept the Public Records Request Annual Report (510 requests received in 2026).",
+    "Authorize purchase of redaction software not to exceed $48,000."
+   ]
+  },
+  {
+   "type": "H2",
+   "text": "4. Public hearings"
+  },
+  {
+   "type": "P",
+   "text": "4.1 Ordinance 2026-14 amending the Accessory Dwelling Unit standards to comply with SB 543 shot-clock requirements."
+  },
+  {
+   "type": "H2",
+   "text": "5. Adjournment"
+  },
+  {
+   "type": "Table",
+   "rows": [
+    [
+     {
+      "th": true,
+      "text": "Item"
+     },
+     {
+      "th": true,
+      "text": "Staff contact"
+     },
+     {
+      "th": true,
+      "text": "Phone"
+     }
+    ],
+    [
+     {
+      "th": false,
+      "text": "3.2"
+     },
+     {
+      "th": false,
+      "text": "City Clerk"
+     },
+     {
+      "th": false,
+      "text": "(209) 456-8000"
+     }
+    ],
+    [
+     {
+      "th": false,
+      "text": "4.1"
+     },
+     {
+      "th": false,
+      "text": "Planning Director"
+     },
+     {
+      "th": false,
+      "text": "(209) 456-8500"
+     }
+    ]
+   ]
+  }
+ ],
+ "form": [
+  {
+   "type": "H1",
+   "text": "Request for Alternative Format"
+  },
+  {
+   "type": "P",
+   "text": "Use this form to request documents in an accessible format."
+  },
+  {
+   "type": "P",
+   "text": "Full name"
+  },
+  {
+   "type": "P",
+   "text": "Email address"
+  },
+  {
+   "type": "P",
+   "text": "Document title"
+  },
+  {
+   "type": "P",
+   "text": "Braille"
+  },
+  {
+   "type": "P",
+   "text": "Large print"
+  },
+  {
+   "type": "P",
+   "text": "Tagged PDF"
+  },
+  {
+   "type": "P",
+   "text": "Additional comments"
+  },
+  {
+   "type": "H2",
+   "text": "Where to send"
+  },
+  {
+   "type": "P",
+   "text": "Mail to: ADA Coordinator, 1001 W. Center St., Manteca, CA 95337."
+  }
+ ],
+ "syllabus": [
+  {
+   "type": "H1",
+   "text": "CS 61A \u2014 Structure and Interpretation of ComputerPrograms"
+  },
+  {
+   "type": "P",
+   "text": "Fall 2026 \u00b7 Section 03 \u00b7 Instructor: Dr. R. Chen \u00b7 Office hours: Tue 2\u20134 PM"
+  },
+  {
+   "type": "H2",
+   "text": "Course description"
+  },
+  {
+   "type": "P",
+   "text": "This course introduces programming and computer science using Python, Scheme, and SQL. Students learn abstraction,recursion, and interpreters."
+  },
+  {
+   "type": "H2",
+   "text": "Grading"
+  },
+  {
+   "type": "Table",
+   "rows": [
+    [
+     {
+      "th": true,
+      "text": "Component"
+     },
+     {
+      "th": true,
+      "text": "Weight"
+     },
+     {
+      "th": true,
+      "text": "Notes"
+     }
+    ],
+    [
+     {
+      "th": false,
+      "text": "Homework"
+     },
+     {
+      "th": false,
+      "text": "15%"
+     },
+     {
+      "th": false,
+      "text": "Weekly, lowest two dropped"
+     }
+    ],
+    [
+     {
+      "th": false,
+      "text": "Projects"
+     },
+     {
+      "th": false,
+      "text": "35%"
+     },
+     {
+      "th": false,
+      "text": "Four projects"
+     }
+    ],
+    [
+     {
+      "th": false,
+      "text": "Midterms"
+     },
+     {
+      "th": false,
+      "text": "25%"
+     },
+     {
+      "th": false,
+      "text": "Two exams"
+     }
+    ],
+    [
+     {
+      "th": false,
+      "text": "Final"
+     },
+     {
+      "th": false,
+      "text": "25%"
+     },
+     {
+      "th": false,
+      "text": "Cumulative"
+     }
+    ]
+   ]
+  },
+  {
+   "type": "H2",
+   "text": "Weekly schedule"
+  },
+  {
+   "type": "Table",
+   "rows": [
+    [
+     {
+      "th": true,
+      "text": "Week"
+     },
+     {
+      "th": true,
+      "text": "Topic"
+     },
+     {
+      "th": true,
+      "text": "Reading"
+     }
+    ],
+    [
+     {
+      "th": false,
+      "text": "1"
+     },
+     {
+      "th": false,
+      "text": "Functions"
+     },
+     {
+      "th": false,
+      "text": "Ch. 1.1\u20131.3"
+     }
+    ],
+    [
+     {
+      "th": false,
+      "text": "2"
+     },
+     {
+      "th": false,
+      "text": "Higher-order functions"
+     },
+     {
+      "th": false,
+      "text": "Ch. 1.4\u20131.6"
+     }
+    ],
+    [
+     {
+      "th": false,
+      "text": "3"
+     },
+     {
+      "th": false,
+      "text": "Recursion"
+     },
+     {
+      "th": false,
+      "text": "Ch. 1.7"
+     }
+    ],
+    [
+     {
+      "th": false,
+      "text": "4"
+     },
+     {
+      "th": false,
+      "text": "Data abstraction"
+     },
+     {
+      "th": false,
+      "text": "Ch. 2.1\u20132.3"
+     }
+    ]
+   ]
+  },
+  {
+   "type": "H2",
+   "text": "Accommodations"
+  },
+  {
+   "type": "P",
+   "text": "Students with disabilities should contact the Disabled Students Program to arrange accommodations."
+  },
+  {
+   "type": "List",
+   "items": [
+    "Extended time on exams",
+    "Note-taking support",
+    "Accessible course materials"
+   ]
+  }
+ ],
+ "two_column_report": [
+  {
+   "type": "H1",
+   "text": "Quarterly Accessibility Report"
+  },
+  {
+   "type": "P",
+   "text": "Office of Digital Services \u00b7 Q3 2026"
+  },
+  {
+   "type": "H2",
+   "text": "Summary"
+  },
+  {
+   "type": "P",
+   "text": "During the third quarter the office remediated 1,240documents and reviewed 86 web properties. Conformancerose from 37% to 52% of top-viewed documents."
+  },
+  {
+   "type": "H2",
+   "text": "Methods"
+  },
+  {
+   "type": "P",
+   "text": "Documents were assessed with automated checks andmanual screen-reader review using NVDA and VoiceOver."
+  },
+  {
+   "type": "H2",
+   "text": "Findings"
+  },
+  {
+   "type": "List",
+   "items": [
+    "Scanned PDFs remain the largest category of failures.",
+    "Untagged forms announce unlabeled edit boxes.",
+    "Reading order errors affect 1 in 5 multi-column pages."
+   ]
+  },
+  {
+   "type": "H2",
+   "text": "Next steps"
+  },
+  {
+   "type": "P",
+   "text": "Prioritize benefits letters and forms for remediation beforeApril 2027."
+  }
+ ]
+}
