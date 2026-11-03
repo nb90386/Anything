@@ -1,0 +1,782 @@
+{
+ "benefits_letter__clean": {
+  "doc": "benefits_letter",
+  "defect": "clean",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/benefits_letter__clean.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "alt_text",
+     "severity": "minor",
+     "evidence": "Figure [Alt=\"County seal\"] at the bottom of the page: the rendered image is a plain solid dark rectangle with no seal or other recognizable content, so the alt text announces something a sighted reader cannot see."
+    }
+   ],
+   "pass": false,
+   "secs": 18.5,
+   "cost_usd": 0.00390774
+  }
+ },
+ "benefits_letter__heading_as_p": {
+  "doc": "benefits_letter",
+  "defect": "heading_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/benefits_letter__heading_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "\"What you need to do\" is tagged P but renders as a bold, larger section heading"
+    },
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "\"Your household information\" is tagged P but renders as a bold, larger section heading above the table"
+    },
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "\"Your rights\" is tagged P but renders as a bold, larger section heading"
+    }
+   ],
+   "pass": false,
+   "secs": 47.3,
+   "cost_usd": 0.003991050000000001
+  }
+ },
+ "benefits_letter__heading_level": {
+  "doc": "benefits_letter",
+  "defect": "heading_level",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/benefits_letter__heading_level.pdf",
+  "rule": [
+   "heading_level"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_level",
+     "severity": "major",
+     "evidence": "Three visually equal section headings (\"What you need to do\", \"Your household information\", \"Your rights\") are tagged H4 directly under the H1 title. H2 and H3 are skipped, so the heading hierarchy is wrong for screen-reader heading navigation."
+    },
+    {
+     "category": "alt_text",
+     "severity": "minor",
+     "evidence": "The Figure has alt text \"County seal\", but the rendered page shows only a solid navy rectangle with no seal, so the alt text does not match the visible image."
+    }
+   ],
+   "pass": false,
+   "secs": 13.5,
+   "cost_usd": 0.00414876
+  }
+ },
+ "benefits_letter__reading_order": {
+  "doc": "benefits_letter",
+  "defect": "reading_order",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/benefits_letter__reading_order.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "Tag tree places the 'Your rights' H2 after its own paragraph, and the 'Your rights' paragraph before any heading. Visually the heading precedes the paragraph."
+    },
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "The household table sits under the 'Your rights' H2. Visually it belongs under 'Your household information', whose H2 is tagged after the table."
+    },
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "The numbered list (L) is tagged after the 'Your household information' H2, but visually it sits under 'What you need to do'. The 'What you need to do' H2 and its paragraph come last, after the list."
+    },
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "'Date: October 14, 2026 / Case Number: 1234567' is tagged last in the document, but visually it sits directly below the 'Notice of Action' line near the top of the page."
+    },
+    {
+     "category": "alt_text",
+     "severity": "minor",
+     "evidence": "Figure alt text 'County seal' is attached to a plain solid dark rectangle with no visible seal, so the screen reader announces content that is not visible."
+    }
+   ],
+   "pass": false,
+   "secs": 59.2,
+   "cost_usd": 0.00443906
+  }
+ },
+ "benefits_letter__table_no_headers": {
+  "doc": "benefits_letter",
+  "defect": "table_no_headers",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/benefits_letter__table_no_headers.pdf",
+  "rule": [
+   "table_headers"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "table_headers",
+     "severity": "major",
+     "evidence": "The household table's header row (Member, Relationship, Included) is visibly bold but every cell is tagged TD, not TH, so a screen reader cannot announce column headers when reading the Maria L., Jose L. and Ana L. rows."
+    },
+    {
+     "category": "alt_text",
+     "severity": "minor",
+     "evidence": "The figure is tagged with Alt=\"County seal\", but the rendered page shows only a solid dark navy rectangle with no seal, so the announced description does not match what sighted readers see."
+    }
+   ],
+   "pass": false,
+   "secs": 19.3,
+   "cost_usd": 0.00411478
+  }
+ },
+ "benefits_letter__list_as_p": {
+  "doc": "benefits_letter",
+  "defect": "list_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/benefits_letter__list_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "list_structure",
+     "severity": "minor",
+     "evidence": "Steps 1-3 are visually a numbered list (\"1. Complete the attached recertification form...\" etc.) but are tagged as three separate P elements inside a Div with Lbl numbers, not as L/LI. Screen readers will not announce a list or item count."
+    }
+   ],
+   "pass": false,
+   "secs": 67.8,
+   "cost_usd": 0.00438175
+  }
+ },
+ "benefits_letter__untagged_content": {
+  "doc": "benefits_letter",
+  "defect": "untagged_content",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/benefits_letter__untagged_content.pdf",
+  "rule": [
+   "missing_content"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "missing_content",
+     "severity": "major",
+     "evidence": "Visible paragraph \"Your CalFresh benefits are scheduled to end on November 30, 2026 unless you complete recertification. You must complete the following steps:\" (under \"What you need to do\") has no corresponding text in the tag tree. This is the key deadline, and it goes unannounced to screen-reader users."
+    },
+    {
+     "category": "alt_text",
+     "severity": "minor",
+     "evidence": "Figure alt text is \"County seal\", but the rendered image is a plain solid dark-blue rectangle with no visible seal, so the announced description does not match what sighted users see."
+    }
+   ],
+   "pass": false,
+   "secs": 20.8,
+   "cost_usd": 0.00399449
+  }
+ },
+ "city_agenda__clean": {
+  "doc": "city_agenda",
+  "defect": "clean",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/city_agenda__clean.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [],
+   "pass": true,
+   "secs": 14.6,
+   "cost_usd": 0.0036835700000000006
+  }
+ },
+ "city_agenda__heading_as_p": {
+  "doc": "city_agenda",
+  "defect": "heading_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/city_agenda__heading_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "Five bold, larger section headings render visually as headings ('1. Call to order', '2. Public comment', '3. Consent calendar', '4. Public hearings', '5. Adjournment') but are tagged as P, so a screen-reader user hears them as body text."
+    }
+   ],
+   "pass": false,
+   "secs": 24.3,
+   "cost_usd": 0.00407706
+  }
+ },
+ "city_agenda__heading_level": {
+  "doc": "city_agenda",
+  "defect": "heading_level",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/city_agenda__heading_level.pdf",
+  "rule": [
+   "heading_level"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_level",
+     "severity": "major",
+     "evidence": "Section headings '1. Call to order' through '5. Adjournment' are tagged H4 directly under the H1 title, skipping H2 and H3. Visually they are one level below the title, so they should be H2."
+    }
+   ],
+   "pass": false,
+   "secs": 20.3,
+   "cost_usd": 0.00397139
+  }
+ },
+ "city_agenda__reading_order": {
+  "doc": "city_agenda",
+  "defect": "reading_order",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/city_agenda__reading_order.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "The Table (Item/Staff contact/Phone, rows 3.2 and 4.1) is tagged before H2 '1. Call to order'. Visually it sits after the '5. Adjournment' heading at the end of the page."
+    },
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "Sections are tagged in reverse order: 5, 4, 3, 2, 1. Visually the order is 1 through 5. Body text is also attached to the wrong heading in the tree: 'Members of the public may address...' follows '3. Consent calendar', and 'Pledge of Allegiance and roll call.' follows '2. Public comment'. The 4.1 ordinance paragraph follows '5. Adjournment'."
+    }
+   ],
+   "pass": false,
+   "secs": 22.8,
+   "cost_usd": 0.004377290000000001
+  }
+ },
+ "city_agenda__table_no_headers": {
+  "doc": "city_agenda",
+  "defect": "table_no_headers",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/city_agenda__table_no_headers.pdf",
+  "rule": [
+   "table_headers"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "table_headers",
+     "severity": "major",
+     "evidence": "Visible bold, centered header row (Item / Staff contact / Phone) is tagged as TD cells, not TH, so a screen reader will not announce column headers for the data rows."
+    }
+   ],
+   "pass": false,
+   "secs": 15.5,
+   "cost_usd": 0.0037588099999999996
+  }
+ },
+ "city_agenda__list_as_p": {
+  "doc": "city_agenda",
+  "defect": "list_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/city_agenda__list_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "list_structure",
+     "severity": "minor",
+     "evidence": "Consent calendar items 1-3 render as a visual numbered list, but the tag tree has them as Div > P (with Lbl '1.', '2.', '3.') instead of L > LI. A screen reader won't announce a list or item count."
+    }
+   ],
+   "pass": false,
+   "secs": 67.4,
+   "cost_usd": 0.00393308
+  }
+ },
+ "city_agenda__untagged_content": {
+  "doc": "city_agenda",
+  "defect": "untagged_content",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/city_agenda__untagged_content.pdf",
+  "rule": [
+   "missing_content"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "missing_content",
+     "severity": "major",
+     "evidence": "Visible body text under the heading '2. Public comment' (\"Members of the public may address the Council on any item within its jurisdiction for up to three minutes.\") has no corresponding P or text node in the tag tree; H2 '2. Public comment' is followed directly by H2 '3. Consent calendar'."
+    }
+   ],
+   "pass": false,
+   "secs": 9.7,
+   "cost_usd": 0.0039184400000000005
+  }
+ },
+ "form__clean": {
+  "doc": "form",
+  "defect": "clean",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/form__clean.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [],
+   "pass": true,
+   "secs": 9.8,
+   "cost_usd": 0.00402066
+  }
+ },
+ "form__heading_as_p": {
+  "doc": "form",
+  "defect": "heading_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/form__heading_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "\"Where to send\" is visibly a bold, larger section heading (matching the H1 style), but the tag tree has it as a plain P, so screen-reader heading navigation skips it."
+    }
+   ],
+   "pass": false,
+   "secs": 24.0,
+   "cost_usd": 0.00371599
+  }
+ },
+ "form__heading_level": {
+  "doc": "form",
+  "defect": "heading_level",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/form__heading_level.pdf",
+  "rule": [
+   "heading_level"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_level",
+     "severity": "major",
+     "evidence": "Visually, \"Where to send\" is a second-level section heading under the H1 \"Request for Alternative Format\", but the tag tree tags it H4. No H2 or H3 exists anywhere in the document, so the heading level is skipped."
+    }
+   ],
+   "pass": false,
+   "secs": 8.9,
+   "cost_usd": 0.0038579800000000004
+  }
+ },
+ "form__reading_order": {
+  "doc": "form",
+  "defect": "reading_order",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/form__reading_order.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "Tag tree puts H2 'Where to send' and the 'Mail to: ADA Coordinator...' paragraph before the form fields. Visually they sit at the bottom of the page, after 'Additional comments'."
+    }
+   ],
+   "pass": false,
+   "secs": 9.8,
+   "cost_usd": 0.00399808
+  }
+ },
+ "form__untagged_content": {
+  "doc": "form",
+  "defect": "untagged_content",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/form__untagged_content.pdf",
+  "rule": [
+   "missing_content"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "missing_content",
+     "severity": "major",
+     "evidence": "Visible paragraph 'Mail to: ADA Coordinator, 1001 W. Center St., Manteca, CA 95337.' under the 'Where to send' H2 has no matching text in the tag tree; the tree ends at H2 'Where to send'."
+    }
+   ],
+   "pass": false,
+   "secs": 8.4,
+   "cost_usd": 0.00375357
+  }
+ },
+ "syllabus__clean": {
+  "doc": "syllabus",
+  "defect": "clean",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/syllabus__clean.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [],
+   "pass": true,
+   "secs": 9.8,
+   "cost_usd": 0.0039128900000000005
+  }
+ },
+ "syllabus__heading_as_p": {
+  "doc": "syllabus",
+  "defect": "heading_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/syllabus__heading_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "\"Course description\" is visually a section heading (large bold, above the paragraph) but is tagged P."
+    },
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "\"Grading\" is visually a section heading above the grading table but is tagged P."
+    },
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "\"Weekly schedule\" is visually a section heading above the schedule table but is tagged P."
+    },
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "\"Accommodations\" is visually a section heading above the accommodations paragraph but is tagged P."
+    }
+   ],
+   "pass": false,
+   "secs": 10.6,
+   "cost_usd": 0.00421619
+  }
+ },
+ "syllabus__heading_level": {
+  "doc": "syllabus",
+  "defect": "heading_level",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/syllabus__heading_level.pdf",
+  "rule": [
+   "heading_level"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_level",
+     "severity": "major",
+     "evidence": "Visually, 'Course description', 'Grading', 'Weekly schedule' and 'Accommodations' are same-size section headings one level below the H1 title, but all four are tagged H4, so the tree goes H1 to H4 and skips H2 and H3."
+    }
+   ],
+   "pass": false,
+   "secs": 13.4,
+   "cost_usd": 0.00450181
+  }
+ },
+ "syllabus__reading_order": {
+  "doc": "syllabus",
+  "defect": "reading_order",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/syllabus__reading_order.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "Visual order is H2 Course description > P > H2 Grading > grading table > H2 Weekly schedule > schedule table > H2 Accommodations > P > bulleted list. Tag tree order is P > L (accommodations list) > P (Disabled Students Program) > H2 Accommodations > schedule table > H2 Weekly schedule > grading table > H2 Grading > course-description P > H2 Course description. Each H2 is read after its own content, and the tables and list are attached to the wrong headings."
+    }
+   ],
+   "pass": false,
+   "secs": 16.3,
+   "cost_usd": 0.005081510000000001
+  }
+ },
+ "syllabus__table_no_headers": {
+  "doc": "syllabus",
+  "defect": "table_no_headers",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/syllabus__table_no_headers.pdf",
+  "rule": [
+   "table_headers"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "table_headers",
+     "severity": "major",
+     "evidence": "Grading table: header row (Component / Weight / Notes) is tagged as TD cells, not TH, though it is visibly bold and centered."
+    },
+    {
+     "category": "table_headers",
+     "severity": "major",
+     "evidence": "Weekly schedule table: header row (Week / Topic / Reading) is tagged as TD cells, not TH, though it is visibly bold and centered."
+    }
+   ],
+   "pass": false,
+   "secs": 10.5,
+   "cost_usd": 0.0041350300000000005
+  }
+ },
+ "syllabus__list_as_p": {
+  "doc": "syllabus",
+  "defect": "list_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/syllabus__list_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "list_structure",
+     "severity": "minor",
+     "evidence": "Accommodations shows three bulleted items (Extended time on exams, Note-taking support, Accessible course materials), but the tag tree has them as a Div of three P elements with Lbl children and no L or LI structure, so a screen reader gives no list or item count."
+    }
+   ],
+   "pass": false,
+   "secs": 11.5,
+   "cost_usd": 0.0041886
+  }
+ },
+ "syllabus__untagged_content": {
+  "doc": "syllabus",
+  "defect": "untagged_content",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/syllabus__untagged_content.pdf",
+  "rule": [
+   "missing_content"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "missing_content",
+     "severity": "major",
+     "evidence": "Visible paragraph under 'Course description' ('This course introduces programming and computer science using Python, Scheme, and SQL. Students learn abstraction, recursion, and interpreters.') has no corresponding node in the tag tree; H2 'Course description' is followed directly by H2 'Grading'."
+    }
+   ],
+   "pass": false,
+   "secs": 8.8,
+   "cost_usd": 0.00392581
+  }
+ },
+ "two_column_report__clean": {
+  "doc": "two_column_report",
+  "defect": "clean",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/two_column_report__clean.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [],
+   "pass": true,
+   "secs": 13.6,
+   "cost_usd": 0.0042353600000000005
+  }
+ },
+ "two_column_report__heading_as_p": {
+  "doc": "two_column_report",
+  "defect": "heading_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/two_column_report__heading_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "Summary, Methods, Findings and Next steps are visibly bold, larger section headings in the render but are tagged as plain P elements, so a screen-reader user hears them as body text and cannot navigate by heading."
+    }
+   ],
+   "pass": false,
+   "secs": 10.9,
+   "cost_usd": 0.00409846
+  }
+ },
+ "two_column_report__heading_level": {
+  "doc": "two_column_report",
+  "defect": "heading_level",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/two_column_report__heading_level.pdf",
+  "rule": [
+   "heading_level"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_level",
+     "severity": "major",
+     "evidence": "Title is H1, then all four section headings (Summary, Methods, Findings, Next steps) are tagged H4, skipping H2 and H3. Visually they are equal-weight section headings directly under the title."
+    }
+   ],
+   "pass": false,
+   "secs": 12.0,
+   "cost_usd": 0.004188580000000001
+  }
+ },
+ "two_column_report__reading_order": {
+  "doc": "two_column_report",
+  "defect": "reading_order",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/two_column_report__reading_order.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "Tree has H2 'Next steps' followed by the Findings bullet list; visually the list sits under 'Findings' (right column, top). Screen reader announces the list under the wrong heading."
+    },
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "Body text is attached to the wrong headings: H2 'Findings' is followed by 'Documents were assessed...' (the Methods text), H2 'Methods' by 'During the third quarter...' (the Summary text), and H2 'Summary' has no body. The 'Prioritize benefits letters...' paragraph precedes the 'Next steps' heading it belongs to."
+    }
+   ],
+   "pass": false,
+   "secs": 11.5,
+   "cost_usd": 0.00415108
+  }
+ },
+ "two_column_report__list_as_p": {
+  "doc": "two_column_report",
+  "defect": "list_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/two_column_report__list_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "list_structure",
+     "severity": "major",
+     "evidence": "Findings shows three bulleted items, but the tag tree has them as Div > P > Lbl + text with no L or LI tags, so a screen reader does not announce a list or its item count."
+    }
+   ],
+   "pass": false,
+   "secs": 14.1,
+   "cost_usd": 0.004175170000000001
+  }
+ },
+ "two_column_report__untagged_content": {
+  "doc": "two_column_report",
+  "defect": "untagged_content",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/two_column_report__untagged_content.pdf",
+  "rule": [
+   "missing_content"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "missing_content",
+     "severity": "major",
+     "evidence": "Visible Methods paragraph (\"Documents were assessed with automated checks and manual screen-reader review using NVDA and VoiceOver.\") is absent from the tag tree; H2 Methods is followed directly by H2 Findings."
+    }
+   ],
+   "pass": false,
+   "secs": 11.3,
+   "cost_usd": 0.00414207
+  }
+ },
+ "benefits_letter__odl_output": {
+  "doc": "benefits_letter",
+  "defect": "odl_output",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/out/odl/benefits_letter.untagged_tagged.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "\"Your household information\" is visually a section heading (same style as \"What you need to do\") but is tagged P"
+    },
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "\"Your rights\" is visually a section heading (same style as \"What you need to do\") but is tagged P"
+    }
+   ],
+   "pass": false,
+   "secs": 11.8,
+   "cost_usd": 0.00420548
+  }
+ },
+ "city_agenda__odl_output": {
+  "doc": "city_agenda",
+  "defect": "odl_output",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/out/odl/city_agenda.untagged_tagged.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "Visually bold section headings \"1. Call to order\", \"2. Public comment\", \"3. Consent calendar\", \"4. Public hearings\" and \"5. Adjournment\" are tagged as LI/LBody list items (e.g. \"LI Lbl: 1 LBody: . Call to order\"), not as H2 or other heading tags. Only the H1 title is a heading."
+    },
+    {
+     "category": "list_structure",
+     "severity": "major",
+     "evidence": "\"4. Public hearings\" is tagged as the fourth LI inside the \"3. Consent calendar\" list (\"Lbl: 4. LBody: Public hearings\"), so a screen reader announces it as consent item 4. Visually it is a top-level section heading."
+    },
+    {
+     "category": "list_structure",
+     "severity": "minor",
+     "evidence": "The visible paragraph \"4.1 Ordinance 2026-14 amending the Accessory Dwelling Unit standards...\" is tagged as a list item with label \".1\" in the agenda list (\"Lbl: 4 LBody: .1Ordinance...\"), not as a plain paragraph under the Public hearings heading."
+    }
+   ],
+   "pass": false,
+   "secs": 15.3,
+   "cost_usd": 0.004637779999999999
+  }
+ },
+ "form__odl_output": {
+  "doc": "form",
+  "defect": "odl_output",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/out/odl/form.untagged_tagged.pdf",
+  "rule": [
+   "missing_content"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "missing_content",
+     "severity": "major",
+     "evidence": "Visible label \"Additional comments\" (above the comments text box) does not appear anywhere in the tag tree; the tree goes from the Art block straight to H2 \"Where to send\"."
+    },
+    {
+     "category": "list_structure",
+     "severity": "minor",
+     "evidence": "The visible checkbox options Braille, Large print, Tagged PDF are stacked as a choice group under the \"Requested format\" legend but are tagged as three separate P elements inside an Art node, with no list or list-item structure grouping them."
+    }
+   ],
+   "pass": false,
+   "secs": 14.0,
+   "cost_usd": 0.00427124
+  }
+ },
+ "syllabus__odl_output": {
+  "doc": "syllabus",
+  "defect": "odl_output",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/out/odl/syllabus.untagged_tagged.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "\"Grading\" is visually an H2 (same size as \"Course description\") but is tagged P"
+    },
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "\"Weekly schedule\" is visually an H2 but is tagged P"
+    },
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "\"Accommodations\" is visually an H2 but is tagged P"
+    },
+    {
+     "category": "list_structure",
+     "severity": "minor",
+     "evidence": "The three bulleted items (Extended time on exams, Note-taking support, Accessible course materials) are tagged as separate P elements, not an L with LI items"
+    }
+   ],
+   "pass": false,
+   "secs": 11.1,
+   "cost_usd": 0.0040857
+  }
+ },
+ "two_column_report__odl_output": {
+  "doc": "two_column_report",
+  "defect": "odl_output",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/out/odl/two_column_report.untagged_tagged.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "list_structure",
+     "severity": "minor",
+     "evidence": "Findings column shows three bulleted items (\"Scanned PDFs remain\u2026\", \"Untagged forms announce\u2026\", \"Reading order errors affect\u2026\"), but the tag tree has them as three plain P elements with no L/LI structure."
+    }
+   ],
+   "pass": false,
+   "secs": 11.8,
+   "cost_usd": 0.004148590000000001
+  }
+ }
+}

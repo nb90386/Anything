@@ -1,0 +1,266 @@
+{
+ "benefits_letter__one_heading_as_p": {
+  "doc": "benefits_letter",
+  "defect": "one_heading_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/benefits_letter__one_heading_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "\"Your household information\" is visually a large bold heading, the same style as the other H2s, but it is tagged as P."
+    }
+   ],
+   "pass": false,
+   "secs": 6.2,
+   "cost_usd": 0.0603258
+  }
+ },
+ "benefits_letter__one_swap": {
+  "doc": "benefits_letter",
+  "defect": "one_swap",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/benefits_letter__one_swap.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [],
+   "pass": true,
+   "secs": 7.2,
+   "cost_usd": 0.06071470000000001
+  }
+ },
+ "benefits_letter__one_th_as_td": {
+  "doc": "benefits_letter",
+  "defect": "one_th_as_td",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/benefits_letter__one_th_as_td.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "table_headers",
+     "severity": "major",
+     "evidence": "The 'Relationship' column header is tagged TD, while 'Member' and 'Included' are TH. The header row is inconsistent, so screen readers won't announce 'Relationship' as a column header for its cells."
+    }
+   ],
+   "pass": false,
+   "secs": 7.7,
+   "cost_usd": 0.0619628
+  }
+ },
+ "benefits_letter__one_li_as_p": {
+  "doc": "benefits_letter",
+  "defect": "one_li_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/benefits_letter__one_li_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "list_structure",
+     "severity": "major",
+     "evidence": "The third item of the numbered list (\"3. Attend a phone interview on November 10, 2026 at 9:30 AM.\") is tagged P inside L instead of LI. A screen reader will announce a list of 2 items, and the third step is outside the list structure."
+    }
+   ],
+   "pass": false,
+   "secs": 7.4,
+   "cost_usd": 0.0615696
+  }
+ },
+ "city_agenda__one_heading_as_p": {
+  "doc": "city_agenda",
+  "defect": "one_heading_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/city_agenda__one_heading_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "\"3. Consent calendar\" is visually an H2-style section heading but is tagged P, while sections 1, 2, 4 and 5 are H2."
+    }
+   ],
+   "pass": false,
+   "secs": 7.4,
+   "cost_usd": 0.0607389
+  }
+ },
+ "city_agenda__one_swap": {
+  "doc": "city_agenda",
+  "defect": "one_swap",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/city_agenda__one_swap.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "Tag order is H2 '1. Call to order', H2 '2. Public comment', then 'Pledge of Allegiance and roll call.', then 'Members of the public...'. Visually the Pledge paragraph sits under 'Call to order', before the '2. Public comment' heading. A screen reader would read the Pledge as part of Public comment."
+    }
+   ],
+   "pass": false,
+   "secs": 8.0,
+   "cost_usd": 0.0622638
+  }
+ },
+ "city_agenda__one_th_as_td": {
+  "doc": "city_agenda",
+  "defect": "one_th_as_td",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/city_agenda__one_th_as_td.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "table_headers",
+     "severity": "major",
+     "evidence": "Header cell 'Staff contact' is tagged TD while 'Item' and 'Phone' are TH, so a screen reader won't announce it as a column header for its column."
+    }
+   ],
+   "pass": false,
+   "secs": 7.5,
+   "cost_usd": 0.0610434
+  }
+ },
+ "city_agenda__one_li_as_p": {
+  "doc": "city_agenda",
+  "defect": "one_li_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/city_agenda__one_li_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "list_structure",
+     "severity": "major",
+     "evidence": "Consent calendar item 3 ('Authorize purchase of redaction software...') is tagged P inside the L instead of LI. The list reads as 2 items to a screen reader, and the third is announced outside the list structure."
+    }
+   ],
+   "pass": false,
+   "secs": 8.1,
+   "cost_usd": 0.061929700000000004
+  }
+ },
+ "syllabus__one_heading_as_p": {
+  "doc": "syllabus",
+  "defect": "one_heading_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/syllabus__one_heading_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "\"Weekly schedule\" is tagged P, but it is a section heading like the other H2s (Grading, Accommodations). It sits between the grading table and the schedule table, so screen-reader users can't jump to it by heading."
+    }
+   ],
+   "pass": false,
+   "secs": 6.7,
+   "cost_usd": 0.04616529999999999
+  }
+ },
+ "syllabus__one_swap": {
+  "doc": "syllabus",
+  "defect": "one_swap",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/syllabus__one_swap.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "Tag order is H2 'Course description', H2 'Grading', then the description paragraph. Visually the paragraph follows 'Course description' and comes before 'Grading'. A screen reader would read the description under 'Grading'."
+    }
+   ],
+   "pass": false,
+   "secs": 7.6,
+   "cost_usd": 0.0620042
+  }
+ },
+ "syllabus__one_th_as_td": {
+  "doc": "syllabus",
+  "defect": "one_th_as_td",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/syllabus__one_th_as_td.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "table_headers",
+     "severity": "major",
+     "evidence": "Grading table header row: 'Weight' is tagged TD while 'Component' and 'Notes' are TH, so screen readers won't announce it as a column header."
+    }
+   ],
+   "pass": false,
+   "secs": 7.0,
+   "cost_usd": 0.0464788
+  }
+ },
+ "syllabus__one_li_as_p": {
+  "doc": "syllabus",
+  "defect": "one_li_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/syllabus__one_li_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "list_structure",
+     "severity": "minor",
+     "evidence": "The third bullet, 'Accessible course materials', is tagged P (with an Lbl) inside the L instead of LI. A screen reader will announce the list as having 2 items instead of 3."
+    }
+   ],
+   "pass": false,
+   "secs": 6.6,
+   "cost_usd": 0.0457207
+  }
+ },
+ "two_column_report__one_heading_as_p": {
+  "doc": "two_column_report",
+  "defect": "one_heading_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/two_column_report__one_heading_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "\"Findings\" is a visual H2 section heading (same size and weight as Summary, Methods and Next steps) but is tagged P, so screen-reader users can't navigate to it as a heading."
+    }
+   ],
+   "pass": false,
+   "secs": 7.8,
+   "cost_usd": 0.060214199999999996
+  }
+ },
+ "two_column_report__one_swap": {
+  "doc": "two_column_report",
+  "defect": "one_swap",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/two_column_report__one_swap.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "The tag order is Summary, Methods, Summary paragraph, Methods paragraph. Visually the Summary paragraph follows the Summary heading and comes before Methods. A screen reader reads Summary and Methods back to back, so the Summary paragraph ends up under the Methods heading."
+    }
+   ],
+   "pass": false,
+   "secs": 8.8,
+   "cost_usd": 0.06076960000000001
+  }
+ },
+ "two_column_report__one_li_as_p": {
+  "doc": "two_column_report",
+  "defect": "one_li_as_p",
+  "path": "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/two_column_report__one_li_as_p.pdf",
+  "rule": [],
+  "semantic": {
+   "defects": [
+    {
+     "category": "list_structure",
+     "severity": "major",
+     "evidence": "The third bullet, 'Reading order errors affect 1 in 5 multi-column pages.', is tagged as a P with an Lbl and sits outside the list. The list is announced as 2 items instead of 3."
+    }
+   ],
+   "pass": false,
+   "secs": 8.3,
+   "cost_usd": 0.060868000000000005
+  }
+ }
+}

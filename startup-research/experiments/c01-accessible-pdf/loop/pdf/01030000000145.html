@@ -1,0 +1,17 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><title>01030000000145</title><style>body{font-family:Arial,sans-serif;font-size:11pt;margin:40px} table{border-collapse:collapse} th,td{border:1px solid #555;padding:3px 6px}</style></head><body><h1>Chapter 4</h1>
+<h1>Nonlinear equations</h1>
+<h2>4.1 Introduction</h2>
+<p>The pressure drop in a fluid in motion is examined. For a flow in a pipe with a circular cross section of diameter <em>D</em> (meter), the Reynolds number, <em>Re</em>, is given by</p>
+<p>$$Re = \frac{Dv}{\nu},$$</p>
+<p>in which <em>v</em> (<em>m/s</em>) is the average flow velocity and <em>ν</em> (<em>m²/s</em>) is the viscosity of the fluid. The flow is called <em>laminar</em> if <em>Re</em> &lt; 2100 (low flow velocity) and <em>turbulent</em> if <em>Re</em> &gt; 3000. For 2100 ≤ <em>Re</em> ≤ 3000, the flow is neither laminar nor turbulent.</p>
+<p>For turbulent flows, the pressure drop between inflow and outflow is given by</p>
+<p>$$P_{\text{out}} - P_{\text{in}} = \frac{\rho w L v^2}{2gD},$$</p>
+<p>in which <em>w</em> is a friction coefficient, <em>ρ</em> (<em>kg/m³</em>) is the fluid density, <em>L</em> (<em>m</em>) is the length and <em>g</em> (<em>m/s²</em>) is the acceleration of gravity. If the fluid contains particles (sand, paper fibers), then the friction coefficient <em>w</em> satisfies the equation</p>
+<p>$$\frac{1}{\sqrt{w}} = \frac{\ln(Re\sqrt{w}) + 14 - \frac{5.6}{k}}{k},$$</p>
+<p>in which <em>k</em> is a parameter known from experiments.</p>
+<p>In this chapter, numerical methods will be discussed that can be used to determine <em>w</em> if the values of <em>Re</em> and <em>k</em> are known.</p>
+<h2>4.2 Definitions</h2>
+<p>In this chapter, various iterative methods will be considered to solve nonlinear equations of the form <em>f</em>(<em>p</em>) = 0. The point <em>p</em> is called a <em>zero</em> of the function <em>f</em>, or a <em>root</em> of the equation <em>f</em>(<em>x</em>) = 0. First, some useful definitions and concepts are introduced.</p>
+<h3>Convergence</h3>
+<p>Each numerical method generates a sequence {<em>p</em>ₙ} = <em>p</em>₀, <em>p</em>₁, <em>p</em>₂, . . . which should converge to <em>p</em>: lim_{n→∞} <em>p</em>ₙ = <em>p</em>. Assume that the sequence indeed converges, with <em>p</em>ₙ ≠ <em>p</em> for all <em>n</em>. If there exist positive constants <em>λ</em> and <em>α</em> satisfying</p>
+<p>$$\lim_{n\to\infty} \frac{|p - p_{n+1}|}{|p - p_n|^{\alpha}} = \lambda, \tag{4.1}$$</p></body></html>

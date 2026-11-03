@@ -1,0 +1,916 @@
+{
+ "01030000000001": {
+  "mhs": 0.9720158187970592,
+  "teds": null,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "reading_order",
+     "severity": "minor",
+     "evidence": "The running header (page number '314' and 'YARROW') is merged into the first body paragraph as '3\ufffd4Yarrow1999 such iterations\u2026'. It is garbled and not marked as an artifact, so a screen reader reads it as body text."
+    }
+   ],
+   "pass": true,
+   "secs": 8.4,
+   "cost_usd": 0.059280799999999995
+  }
+ },
+ "01030000000004": {
+  "mhs": 0.9892017730969204,
+  "teds": null,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [],
+   "pass": true,
+   "secs": 9.2,
+   "cost_usd": 0.0602622
+  }
+ },
+ "01030000000041": {
+  "mhs": null,
+  "teds": null,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "The first paragraph starts with the running footer text 'Gender Analysis of Violent Extremism... in ASEAN' fused to the body text ('tweets, videos)...'). The footer is read before the body."
+    },
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "The chart title 'Figure 3' and the pull-quote (labeled 'P: There were instances...') come in the wrong order. The quote is read before the paragraph that introduces it, and the chart data is interleaved with it."
+    },
+    {
+     "category": "alt_text",
+     "severity": "major",
+     "evidence": "The Figure 3 bar chart has no alt text or data table. It is exposed as about 10 duplicated garbage paragraphs ('Gender Analysis... 7,7%35,7%53,9%...'). The legend ('MaleFemale') and the OFTEN/SOMETIMES/RARELY/NEVER labels are separate, unconnected paragraphs."
+    },
+    {
+     "category": "missing_content",
+     "severity": "major",
+     "evidence": "The chart values are garbled. The bars show 7.7/35.7, 53.9/30.4, 30.8/28.6 and 7.7/5.4 for Male/Female, and the tags give no usable mapping of values to category and gender. The page number and footer are repeated as noise."
+    },
+    {
+     "category": "heading_missing",
+     "severity": "minor",
+     "evidence": "'Figure 3: Frequency of viewing...' is a visually distinct caption/heading but is tagged as a plain P (no Caption/Figure tag)."
+    },
+    {
+     "category": "reading_order",
+     "severity": "minor",
+     "evidence": "A paragraph is split mid-sentence into separate P tags ('...from which most' / 'respondents had seen...') because of the column break."
+    }
+   ],
+   "pass": false,
+   "secs": 11.1,
+   "cost_usd": 0.0705835
+  }
+ },
+ "01030000000045": {
+  "mhs": null,
+  "teds": 0.28274765774765775,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "table_headers",
+     "severity": "major",
+     "evidence": "Data rows 1-7 are collapsed into one TR with three TDs. Each column is a single cell, so row/column header associations are lost and a screen reader cannot read a row as 'No. 2, Cambodian Women..., 9,835'."
+    },
+    {
+     "category": "list_structure",
+     "severity": "major",
+     "evidence": "Row numbers 1-7 are tagged as an L/LI list with only Lbl and no body inside a table cell. The numbers are separated from their organization names and counts."
+    },
+    {
+     "category": "missing_content",
+     "severity": "major",
+     "evidence": "Cell text is merged: 'Our Friends AssociationCOMFRELTraditional and Modern Mental Health Organization' is one paragraph, and the counts '27','26','15' are run together as '272615'. Rows 5-7 are unreadable as separate values."
+    },
+    {
+     "category": "reading_order",
+     "severity": "minor",
+     "evidence": "The running header 'Civil Society Engagement' is concatenated into the body paragraph ('Civil Society Engagementelection integrity...'). That paragraph is also duplicated, first truncated and then complete."
+    },
+    {
+     "category": "heading_level",
+     "severity": "minor",
+     "evidence": "The table caption is tagged H1 and merged with footnote marker 15 ('...202215'). The superscript reads as part of the year. A caption is not a top-level heading, and no real document heading exists above it."
+    },
+    {
+     "category": "reading_order",
+     "severity": "minor",
+     "evidence": "The footnote and page number are merged with the URL ('15https://...') and are not separated from the page content."
+    }
+   ],
+   "pass": false,
+   "secs": 12.1,
+   "cost_usd": 0.061234
+  }
+ },
+ "01030000000046": {
+  "mhs": null,
+  "teds": 0.0547882813743954,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "table_headers",
+     "severity": "major",
+     "evidence": "The sub-header row (Number of commune/sangkat, Number of candidates) is tagged TD, not TH. The header cells are also mis-spanned: the 'Provisional' and 'Official' group headers have no colspan, so the sub-headers don't map to them."
+    },
+    {
+     "category": "table_headers",
+     "severity": "major",
+     "evidence": "The data is tagged by column, not by row. One TR holds the whole 'No.' column as a list, and one TD holds all ten party names run together. Another TD holds all ten values of '1,6521,649715...'. A screen reader can't tell which number belongs to which party. The first column (No. / Political party) is also not tagged as row headers."
+    },
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "The values for the Official columns are jumbled. The 'Number of commune/sangkat' cell for Official contains '1,6521,623680596315245114' followed by a stray list ('58', '59', '38'). Those values are really the Provisional column's last rows and the Official column's last rows, so they are split from the other values in their columns."
+    },
+    {
+     "category": "list_structure",
+     "severity": "minor",
+     "evidence": "The row numbers 1\u201310 are tagged as a list (L/LI/Lbl) inside a table cell. A stray L/LI with Lbl 58, 59 and LBody 38 also appears inside a data cell. These are table values, not lists."
+    },
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "The running page header 'Political Parties, Candidates Registration and Election Campaign' is merged with the table title text 'Table: Provisional Results...' in a P tag. The same text is repeated and run together in the H1: '...CampaignTable: Provisional Results ... 202221 and Official Results ... 202222'. The superscript footnote markers 21 and 22 are fused into the year as '202221' and '202222'."
+    }
+   ],
+   "pass": false,
+   "secs": 14.2,
+   "cost_usd": 0.0635391
+  }
+ },
+ "01030000000047": {
+  "mhs": null,
+  "teds": 0.17371084568969264,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "table_headers",
+     "severity": "major",
+     "evidence": "The first TH holds the page header text 'ANFREL Pre-Election Assessment Mission Report' plus 'No.' (the header is merged into the No. column header). The sub-header row (Number of commune/sangkat, Number of candidates) is tagged TD, not TH, and it is not associated with the parent 'Provisional'/'Official' headers."
+    },
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "Table data is tagged by column, not by row. All party names are in one cell and all numbers are concatenated in another, e.g. '35322519' and '498435425194'. Each row's values cannot be read together. The page number '24' sits after the table, which is fine."
+    },
+    {
+     "category": "list_structure",
+     "severity": "major",
+     "evidence": "The row numbers 11\u201317 are tagged as a list whose items hold only Lbl, with no body. The difference column is tagged as lists with misplaced items ('-' labels, '+46' nested inside the 41 body), and the values are scrambled. This is table data wrongly tagged as lists."
+    },
+    {
+     "category": "missing_content",
+     "severity": "major",
+     "evidence": "The Difference column values are garbled. '-41' appears as Lbl '-' with body '41', and '+46' is out of place. '+8', '+3', '+9' and '-1' are split across Lbl and P, and '-33' is split with a '-' label and body '33'. The Khmer party names and numbers are merged into single strings, so rows cannot be matched. 'Total' is separated from its row, and 'Cambodian Indigeneous' is spelled differently from the visible text."
+    },
+    {
+     "category": "missing_content",
+     "severity": "minor",
+     "evidence": "Header text is mangled: 'Officialregistrationresulton29 April' and 'Differenceinthe number of candidates' have no spaces. The running header is duplicated inside the TH."
+    }
+   ],
+   "pass": false,
+   "secs": 11.5,
+   "cost_usd": 0.061147
+  }
+ },
+ "01030000000053": {
+  "mhs": 0.9644908653990611,
+  "teds": 0.9937178973095797,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "table_headers",
+     "severity": "minor",
+     "evidence": "The first row (IX - Zamboanga Peninsula, 4, 2, 4) is tagged TH but is a data row. This is a continuation table with no visible header row, so a screen reader announces the row's cells as column headers for every row below."
+    }
+   ],
+   "pass": false,
+   "secs": 8.2,
+   "cost_usd": 0.0591272
+  }
+ },
+ "01030000000064": {
+  "mhs": null,
+  "teds": 0.0,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "table_headers",
+     "severity": "major",
+     "evidence": "The Port/Shipcalls/Foreign/Domestic table is tagged as plain paragraphs (P: 'ForeignDomestic', then one P holding all the rows). It has no Table, TR, TH or TD tags, so header cells and row/column relationships are lost and the numbers run together."
+    },
+    {
+     "category": "heading_level",
+     "severity": "minor",
+     "evidence": "'PORT' and 'SHIPCALLS' are the table's column headers. 'SHIPCALLS' is tagged H1 and 'PORT' is merged into it as 'PORTSHIPCALLS', which makes a table header look like a top-level document heading."
+    },
+    {
+     "category": "reading_order",
+     "severity": "minor",
+     "evidence": "The 'Foreign/Domestic' sub-headers are read before the row data, with 'PORT' and 'SHIPCALLS' ahead of them. The table caption sits after the table, which matches the visual order."
+    }
+   ],
+   "pass": false,
+   "secs": 9.3,
+   "cost_usd": 0.06369469999999999
+  }
+ },
+ "01030000000065": {
+  "mhs": 0.9517543859649122,
+  "teds": null,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "alt_text",
+     "severity": "major",
+     "evidence": "Figure alt is \"image 1\", which says nothing about the photo. The photo shows bamboo mussel-farm poles covered in green mussels in Manila Bay."
+    }
+   ],
+   "pass": false,
+   "secs": 7.0,
+   "cost_usd": 0.0602035
+  }
+ },
+ "01030000000071": {
+  "mhs": 0.9342739990352147,
+  "teds": null,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "alt_text",
+     "severity": "major",
+     "evidence": "The bar chart (Instagram content 2019 vs 2020) is tagged as an Art container holding loose paragraphs of numbers and axis labels (81, 21, 9, 00, 76, ... 20192020). It has no alt text or data summary, so the values can't be matched to categories or years."
+    },
+    {
+     "category": "reading_order",
+     "severity": "minor",
+     "evidence": "The chart's numbers are read as a jumble (81, 21, 9, 00, 76, 56, 47...) before the category labels (Events, Information...). The pairing of values with categories and years is lost."
+    },
+    {
+     "category": "reading_order",
+     "severity": "minor",
+     "evidence": "The footnotes 94-96 come after the 'following contents' paragraph at the end of the tag tree, though they belong to the first paragraphs. This is conventional for footnotes, so it is minor."
+    }
+   ],
+   "pass": false,
+   "secs": 8.7,
+   "cost_usd": 0.0646735
+  }
+ },
+ "01030000000072": {
+  "mhs": null,
+  "teds": null,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "alt_text",
+     "severity": "major",
+     "evidence": "The Figure 4 screenshot of the Komnas HAM YouTube channel has the alt text \"image 1\", which describes nothing. The Diagram 5 bar chart has no Figure or alt text at all. It exists only as loose paragraphs of axis labels and values."
+    },
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "The chart data is read as scrambled fragments: \"31\", \"10\", \"2\", \"23\", \"2220\", \"5\", \"10\"\u2026, then \"EventCelebrationInformationVideograph\" and \"20192020\". The values 31/23, 1/2, 0/2 and 2/2 are never paired with their categories (Event, Celebration, Information, Videograph) or years (2019, 2020), so the chart is unintelligible."
+    }
+   ],
+   "pass": false,
+   "secs": 11.8,
+   "cost_usd": 0.0659391
+  }
+ },
+ "01030000000077": {
+  "mhs": 0.9658234126984127,
+  "teds": null,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "alt_text",
+     "severity": "major",
+     "evidence": "Figure 1.9b bar chart has no Figure tag or alt text. It is exposed as loose paragraphs of bare numbers (400, 350, ... 374, 331 ...) with no link between each value, its year and its sex."
+    },
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "Chart labels are out of order. Axis ticks come first, then the data values in one run (374, 331, 319, 335, 187, 128 ...), which interleaves the Female and Male series. The 'MaleFemale' and year-legend labels follow, so the data cannot be reconstructed."
+    },
+    {
+     "category": "reading_order",
+     "severity": "minor",
+     "evidence": "The running footer 'ASEAN Migration Outlook' is merged into the first body paragraph ('ASEAN Migration Outlookdecline in 2020...'). It is also repeated at the end with the page number. The footer is not marked as an artifact."
+    },
+    {
+     "category": "missing_content",
+     "severity": "minor",
+     "evidence": "The visible chart legend text '2020 (to September)' is run together as '20162017201820192020(toSeptember)'. The text is present but unintelligible."
+    }
+   ],
+   "pass": false,
+   "secs": 11.1,
+   "cost_usd": 0.0673142
+  }
+ },
+ "01030000000078": {
+  "mhs": null,
+  "teds": 0.0,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "'Figure 1.10. Migrant remittances inflows (in US$ billion)' is a visible heading, but it is a P merged with the running header 'ASEAN Migration Outlook'. Only Table 1.4 is tagged H1."
+    },
+    {
+     "category": "table_headers",
+     "severity": "major",
+     "evidence": "Table 1.4 has no Table, TR, TH or TD tags. Every row is one P with the numbers run together ('Cambodia7.5%-0.7%...'). The header row (AMS, Average Annual Growth periods, Remittance inflows) and the country row headers are not marked up."
+    },
+    {
+     "category": "alt_text",
+     "severity": "major",
+     "evidence": "The Figure 1.10 chart is not tagged as a Figure and has no alt text. It is exposed as dozens of fragmented P tags for axis ticks and data labels ('800', '700', '610602597', '2014201520162017201820192020'). That gives a screen reader no usable chart data."
+    },
+    {
+     "category": "reading_order",
+     "severity": "minor",
+     "evidence": "The running header 'ASEAN Migration Outlook' comes first, before the figure title. The page number and footer text ('26ASEAN Migration Outlook') come last as content rather than artifacts."
+    },
+    {
+     "category": "heading_level",
+     "severity": "minor",
+     "evidence": "Table 1.4 is tagged H1, but the figure title is not a heading. The caption hierarchy is inconsistent and H1 is not the right level."
+    }
+   ],
+   "pass": false,
+   "secs": 10.6,
+   "cost_usd": 0.06646930000000001
+  }
+ },
+ "01030000000081": {
+  "mhs": null,
+  "teds": 1.0,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_level",
+     "severity": "major",
+     "evidence": "Page number '78' is tagged H1, so it appears as a top-level heading. It is not a heading."
+    },
+    {
+     "category": "heading_level",
+     "severity": "major",
+     "evidence": "The running header 'Jailed for Doing Business' is merged into the Table 22 H1: 'Jailed for Doing BusinessTABLE 22: ...'. The heading text is wrong and has no space between the two parts."
+    },
+    {
+     "category": "reading_order",
+     "severity": "minor",
+     "evidence": "A duplicate P with the same merged text ('Jailed for Doing BusinessTABLE 22: ... MORE THAN 100') comes right before the H1. A screen reader reads the heading text twice, and the P is truncated."
+    },
+    {
+     "category": "heading_level",
+     "severity": "minor",
+     "evidence": "The Table 22 and Table 23 headings are both H1, and the running title and page number are also marked up as headings. The page has no coherent hierarchy."
+    }
+   ],
+   "pass": false,
+   "secs": 9.1,
+   "cost_usd": 0.0654864
+  }
+ },
+ "01030000000090": {
+  "mhs": null,
+  "teds": 0.9996863940097521,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [],
+   "pass": true,
+   "secs": 8.1,
+   "cost_usd": 0.0629542
+  }
+ },
+ "01030000000092": {
+  "mhs": 0.9930074858974898,
+  "teds": null,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [],
+   "pass": true,
+   "secs": 6.2,
+   "cost_usd": 0.0629484
+  }
+ },
+ "01030000000095": {
+  "mhs": null,
+  "teds": null,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "alt_text",
+     "severity": "major",
+     "evidence": "Both figures have alt text \"image 1\" and \"image 2\". These are meaningless. Each figure is a line chart of the share of women (W) and men (M) choosing the tournament scheme by Task 1 rank, and the surrounding text relies on those charts."
+    }
+   ],
+   "pass": false,
+   "secs": 8.1,
+   "cost_usd": 0.06612780000000001
+  }
+ },
+ "01030000000110": {
+  "mhs": null,
+  "teds": 0.0,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "alt_text",
+     "severity": "major",
+     "evidence": "The table is a Figure with alt text 'image 1'. That is meaningless. The table of temperature vs kinematic viscosity values (0\u201385 \u00b0C) is not available to screen-reader users."
+    },
+    {
+     "category": "missing_content",
+     "severity": "major",
+     "evidence": "The equation Re = vd/\u03bd (1) is not in the tag tree. The text goes straight from 'It is defined as:' to 'where () is...', and the \u03bd symbol is missing from that sentence too."
+    }
+   ],
+   "pass": false,
+   "secs": 8.2,
+   "cost_usd": 0.061121299999999996
+  }
+ },
+ "01030000000117": {
+  "mhs": 0.5904377024514443,
+  "teds": 0.0,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "table_headers",
+     "severity": "major",
+     "evidence": "The Saccharometer / DI Water / Glucose Solution / Yeast Suspension table is tagged as an H2 heading plus a list. It has no table, header cells or row structure, and the cell values are run together (e.g. '24 ml0 ml4 ml')."
+    },
+    {
+     "category": "heading_level",
+     "severity": "major",
+     "evidence": "The table's column-header row is tagged H2, so it reads as a section heading and the table has no real headers."
+    },
+    {
+     "category": "list_structure",
+     "severity": "major",
+     "evidence": "The table rows (2, 3, 4) are tagged as an ordered list with Lbl numbers. They are table rows with a Saccharometer ID column and three data columns."
+    },
+    {
+     "category": "missing_content",
+     "severity": "minor",
+     "evidence": "The table's row 1 (saccharometer #1 values) is not visible in the render, so it may be missing from the source. The tree starts at row 2."
+    },
+    {
+     "category": "heading_level",
+     "severity": "minor",
+     "evidence": "The title 'MOHAVE COMMUNITY COLLEGE BIO181' is tagged H1. It is a running page header and merges the course code into the heading. Section headings are H2, which is acceptable."
+    }
+   ],
+   "pass": false,
+   "secs": 8.8,
+   "cost_usd": 0.065208
+  }
+ },
+ "01030000000134": {
+  "mhs": null,
+  "teds": null,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "alt_text",
+     "severity": "major",
+     "evidence": "Both figures have alt text 'image 1' and 'image 2'. These are meaningless. The charts show length and weight of Alligator Gar by age, and the weight chart marks a 279 lb Texas record."
+    },
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "The body paragraph is tagged as a Caption. Figure 1 follows it directly, and the Figure 8.6 caption is tagged after Figure 1 instead of beside its own figure."
+    },
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "Figure 2 (the weight chart) is nested inside the Figure 8.6 LBody. It comes before the Figure 8.7 label and caption. The chart is therefore attached to the wrong caption."
+    },
+    {
+     "category": "list_structure",
+     "severity": "minor",
+     "evidence": "The figure captions are tagged as a list (L/LI with Lbl and LBody). Visually they are two captions, not a list. Fig 8.6 and Fig 8.7 text are merged into one LBody."
+    },
+    {
+     "category": "missing_content",
+     "severity": "minor",
+     "evidence": "The chart text is absent from the tag tree: titles ('Length of Gar Fish by Age', 'Weight of Gar Fish by Age'), axis labels, and the 'Texas rod & reel record alligator gar (279 lbs)' annotation. No alt text carries it either."
+    }
+   ],
+   "pass": false,
+   "secs": 9.2,
+   "cost_usd": 0.0619913
+  }
+ },
+ "01030000000141": {
+  "mhs": 0.14919911577230416,
+  "teds": null,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "missing_content",
+     "severity": "major",
+     "evidence": "All body content is absent from the tag tree: the title '10 THINGS YOU SHOULD KNOW ABOUT COPYRIGHT', both column headings, and all 10 numbered items with their text."
+    },
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "The main title and the two column headings ('COPYRIGHT PROTECTS CREATIVE WORK \u2014 YOURS, MINE, EVERYONE'S!' and 'BUT COPYRIGHT DOESN'T COVER EVERYTHING') are not tagged as headings. The only H1 is the footer URL 'and.org', which is a fragment of 'CopyrightandCreativity.org'."
+    },
+    {
+     "category": "list_structure",
+     "severity": "major",
+     "evidence": "The 10 numbered items, and the bulleted examples inside item 5, are not tagged as lists."
+    },
+    {
+     "category": "alt_text",
+     "severity": "major",
+     "evidence": "The single Figure has the alt text 'image 1', which is meaningless. The page's icons and the QR code have no alt text or tags."
+    },
+    {
+     "category": "reading_order",
+     "severity": "minor",
+     "evidence": "The tree has the footer URL fragment as the only text, so the logical order of title, then left column items 1-5, then right column items 6-10, is not represented."
+    }
+   ],
+   "pass": false,
+   "secs": 10.1,
+   "cost_usd": 0.06493650000000001
+  }
+ },
+ "01030000000145": {
+  "mhs": 0.8053416947139902,
+  "teds": null,
+  "rule": [
+   "missing_content",
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "alt_text",
+     "severity": "major",
+     "evidence": "Eight Figures have alt text 'image 1' to 'image 8'. They are the display equations (Re=Dv/\u03bd, the pressure-drop formula, the friction-coefficient equation, the limit definition). The alt text carries no equation content."
+    },
+    {
+     "category": "reading_order",
+     "severity": "major",
+     "evidence": "The Reynolds equation is read as 'Dv\u03bd', then 'Re=', then ','. The correct order is 'Re = Dv/\u03bd'. The friction equation is also scrambled: 'ln(Re\u221aw)+14\u22125.6kk', then '1\u221aw', then '='. The visual order is 1/\u221aw = (ln(Re\u221aw)+14\u22125.6/k)/k."
+    },
+    {
+     "category": "reading_order",
+     "severity": "minor",
+     "evidence": "Equation 4.1 is read as '|p\u2212pn+1| |p\u2212pn|\u03b1', then '=\u03bb,(4.1)', then 'lim', then 'n\u2192\u221e'. The 'lim' and 'n\u2192\u221e' parts should come before the fraction."
+    },
+    {
+     "category": "list_structure",
+     "severity": "minor",
+     "evidence": "Ordinary paragraphs beginning 'in which v\u2026' and 'in which w\u2026' are tagged as L/LI with Lbl/LBody. They are not a visual list. The tagging splits a sentence and puts the display equation inside the list item."
+    },
+    {
+     "category": "reading_order",
+     "severity": "minor",
+     "evidence": "The paragraph 'in which k is a parameter\u2026' is correctly placed after the equation. The equation fragments before it, however, are out of order and include stray Figure elements."
+    }
+   ],
+   "pass": false,
+   "secs": 12.8,
+   "cost_usd": 0.0705906
+  }
+ },
+ "01030000000147": {
+  "mhs": 0.0,
+  "teds": 0.77517548365006,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "heading_missing",
+     "severity": "major",
+     "evidence": "'3. RECOLLECTION OF NATIONAL INITIATIVES' is a visible section heading, but it is tagged as a P and merged with the intro sentence ('...INITIATIVESPartners were also asked...'). No H1/H2 tag exists."
+    },
+    {
+     "category": "alt_text",
+     "severity": "major",
+     "evidence": "Figures have placeholder alt text: 'image 1' (Eco Circle logo), 'image 2' (EU co-funded logo), 'image 3' (French flag). These are meaningless to a screen-reader user."
+    }
+   ],
+   "pass": false,
+   "secs": 7.4,
+   "cost_usd": 0.0653881
+  }
+ },
+ "01030000000157": {
+  "mhs": 0.9987496874218554,
+  "teds": null,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [],
+   "pass": true,
+   "secs": 6.5,
+   "cost_usd": 0.0549694
+  }
+ },
+ "01030000000166": {
+  "mhs": 0.6191984364960377,
+  "teds": 0.0,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "table_headers",
+     "severity": "major",
+     "evidence": "Table 13.4 has no Table/TR/TH/TD tags. The header row 'Mineral or colloid type | CEC of pure colloid' is tagged H2, and the data rows are one flat P ('cmolc/kg kaolinite 10 illite 30 ...'), so the row and column relationships are lost."
+    },
+    {
+     "category": "heading_level",
+     "severity": "minor",
+     "evidence": "The table caption 'Table 13.4...' is tagged H1, the same level as the page title. It should be a Caption or a lower-level heading. The table header 'Mineral or colloid type CEC of pure colloid' is wrongly tagged H2."
+    },
+    {
+     "category": "missing_content",
+     "severity": "major",
+     "evidence": "The displayed equation 'Total CEC of the soil = 10 cmolc/kg clay \u00d7 10 kg clay/100 kg soil = 1.0 cmolc/kg soil' is not in the tag tree."
+    },
+    {
+     "category": "reading_order",
+     "severity": "minor",
+     "evidence": "The paragraph 'A prairie soil contains 30% clay...' is tagged as a Caption in a Sect, followed by the figure. Visually it is body text after the equation, and the shovel-icon figure sits beside the question paragraph. The question comes after the icon visually but before it in the tags."
+    },
+    {
+     "category": "alt_text",
+     "severity": "minor",
+     "evidence": "The shovel icon has the alt text 'image 1' and a link whose alt is a URL. The icon is decorative and should be marked as an artifact, or given meaningful alt text."
+    }
+   ],
+   "pass": false,
+   "secs": 10.3,
+   "cost_usd": 0.0659045
+  }
+ },
+ "01030000000168": {
+  "mhs": 0.9250100149378274,
+  "teds": null,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "missing_content",
+     "severity": "major",
+     "evidence": "The two worked equations (15 cmolc/kg \u00d7 20% increase = 3 cmolc/kg basic cations required from lime, and the 40 \u2192 8 one) are visible between paragraphs 1 and 2 but absent from the tag tree."
+    },
+    {
+     "category": "alt_text",
+     "severity": "minor",
+     "evidence": "The shovel icons have the alt text 'image 1' and 'image 2', which is meaningless. They are decorative and should be marked as artifacts or given a real description. Link alts are raw URLs, and there are two stray trailing Link tags with the same URL."
+    }
+   ],
+   "pass": false,
+   "secs": 10.4,
+   "cost_usd": 0.06646740000000001
+  }
+ },
+ "01030000000171": {
+  "mhs": 0.987009612886464,
+  "teds": null,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "list_structure",
+     "severity": "minor",
+     "evidence": "The Part IV sections (4.1\u20134.3) are in a separate top-level L, not nested in the Part IV LI as Parts I\u2013III are. The nesting is inconsistent and the sections are detached from their chapter."
+    },
+    {
+     "category": "list_structure",
+     "severity": "minor",
+     "evidence": "The five front-matter entries (Acknowledgment of Country \u2026 Introduction) are a single P of links, not list items. The other entries in the same contents list are tagged as L/LI."
+    }
+   ],
+   "pass": false,
+   "secs": 8.9,
+   "cost_usd": 0.0763866
+  }
+ },
+ "01030000000176": {
+  "mhs": 0.9579621454221988,
+  "teds": null,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "alt_text",
+     "severity": "major",
+     "evidence": "Figure alt is \"image 1\". It doesn't describe the three infrared images (Flame nebula, Cassiopeia A, Helix nebula). The nested Link alt is a raw cnx.org URL."
+    },
+    {
+     "category": "missing_content",
+     "severity": "major",
+     "evidence": "The paragraph text has no word spaces (\"Thefirstorbitinginfraredobservatory,launchedin1983...\"). A screen reader will read it as garbled run-together words."
+    },
+    {
+     "category": "missing_content",
+     "severity": "minor",
+     "evidence": "The image labels \"Flame nebula\", \"Cassiopeia A\" and \"Helix nebula\" are visible but not in the tag tree."
+    },
+    {
+     "category": "alt_text",
+     "severity": "minor",
+     "evidence": "The in-text link to Figure 2 has alt \"Annotation\", which is meaningless. A stray empty Link, whose alt is the image URL, follows the page footer."
+    },
+    {
+     "category": "reading_order",
+     "severity": "minor",
+     "evidence": "The page footer \"336 | Chapter 6...\" and a stray image Link come after the figure, outside the Sect. Both are page artifacts and should be marked as such."
+    }
+   ],
+   "pass": false,
+   "secs": 10.6,
+   "cost_usd": 0.0612959
+  }
+ },
+ "01030000000179": {
+  "mhs": 0.9629140204043806,
+  "teds": null,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "alt_text",
+     "severity": "major",
+     "evidence": "Photo of stacked open textbooks and boxes has Alt=\"image 1\", which is meaningless. The caption partly describes it, but the alt text itself conveys nothing."
+    },
+    {
+     "category": "alt_text",
+     "severity": "minor",
+     "evidence": "The Figure contains a Link whose Alt is the raw image URL. A second stray Link with the same URL sits at the end of the tree after the footer, and no link is visible on the page. Screen readers will announce the URL."
+    },
+    {
+     "category": "heading_level",
+     "severity": "minor",
+     "evidence": "The two visual subsection headings are tagged H1. This looks like a mid-chapter page, so they should probably sit below the chapter heading (H2 or lower)."
+    },
+    {
+     "category": "reading_order",
+     "severity": "minor",
+     "evidence": "The page footer \"164|SUPPORTING OER ADOPTION\" is tagged as a body P. It is a running footer and should be an artifact. It is read as content, and the stray image Link follows it."
+    }
+   ],
+   "pass": false,
+   "secs": 10.4,
+   "cost_usd": 0.064538
+  }
+ },
+ "01030000000180": {
+  "mhs": 0.9652392947103274,
+  "teds": 1.0,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "missing_content",
+     "severity": "minor",
+     "evidence": "The tag text reads 'pleaselet us know'. The page shows 'please let us know', so the space is missing and a screen reader will say it as one word."
+    }
+   ],
+   "pass": true,
+   "secs": 9.3,
+   "cost_usd": 0.06284819999999999
+  }
+ },
+ "01030000000191": {
+  "mhs": 0.9944578016988832,
+  "teds": null,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [],
+   "pass": true,
+   "secs": 8.9,
+   "cost_usd": 0.069019
+  }
+ },
+ "01030000000197": {
+  "mhs": 0.9534606205250596,
+  "teds": 0.0,
+  "rule": [
+   "missing_lang"
+  ],
+  "semantic": {
+   "defects": [
+    {
+     "category": "table_headers",
+     "severity": "major",
+     "evidence": "Table 8 (Filtered Task Name) is tagged as P plus a list. 'Filtered Task Name' is a plain P, not a table header cell, and the task names are run together into LBody text."
+    },
+    {
+     "category": "table_headers",
+     "severity": "major",
+     "evidence": "Table 9 (ARC, HellaSwag, MMLU, TruthfulQA, Winogrande, GSM8K and their values) is a single P nested inside a caption list item. There is no table structure, so header cells are not associated with the values 0.06, N/A, 0.15 and so on."
+    },
+    {
+     "category": "list_structure",
+     "severity": "major",
+     "evidence": "The table captions 'Table 8:' and 'Table 9:' are tagged as list items (Lbl/LBody) in a list. The task names are also tagged as a list (task228/task229 as labels), but they are table rows or cells, not a list."
+    },
+    {
+     "category": "heading_missing",
+     "severity": "minor",
+     "evidence": "The run-in headings 'Filtered task names.' and 'Results on data contamination.' are bold paragraph leads, tagged as plain P text."
+    }
+   ],
+   "pass": false,
+   "secs": 10.9,
+   "cost_usd": 0.0673452
+  }
+ }
+}

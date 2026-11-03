@@ -1,0 +1,29 @@
+{
+ "claude-haiku-5-5 / blanket": {
+  "defects_detected": "24/27",
+  "clean_false_flags": "0/5",
+  "cases_with_extra_wrong_categories": 0,
+  "rule_checker_detected": "13/27",
+  "errors": 0,
+  "mean_cost_usd": 0.0041,
+  "mean_secs": 19.9
+ },
+ "claude-sonnet-5-5 / blanket": {
+  "defects_detected": "27/27",
+  "clean_false_flags": "0/5",
+  "cases_with_extra_wrong_categories": 0,
+  "rule_checker_detected": "13/27",
+  "errors": 0,
+  "mean_cost_usd": 0.0591,
+  "mean_secs": 7.3
+ },
+ "claude-sonnet-5-5 / subtle": {
+  "defects_detected": "13/15",
+  "clean_false_flags": "0/0",
+  "cases_with_extra_wrong_categories": 0,
+  "rule_checker_detected": "0/15",
+  "errors": 0,
+  "mean_cost_usd": 0.0582,
+  "mean_secs": 7.5
+ }
+}

@@ -1,0 +1,374 @@
+{
+ "01030000000004": {
+  "defects": [
+   {
+    "category": "missing_content",
+    "severity": "minor",
+    "evidence": "Footnote 23's text '<TwoAFCSimultaneity_3PEq_Multistart_rawdata>' is not in the tag tree. The last P holds only '23' and '.', so the file name the body text points to is lost."
+   }
+  ],
+  "cost_usd": 0.0589466,
+  "rule": [
+   "heading_level"
+  ]
+ },
+ "01030000000041": {
+  "defects": [],
+  "cost_usd": 0.06395580000000001,
+  "rule": [
+   "heading_level"
+  ]
+ },
+ "01030000000045": {
+  "defects": [
+   {
+    "category": "table_headers",
+    "severity": "minor",
+    "evidence": "The Total row has only 2 TD cells for a 3-column table, with no empty first cell. A screen reader would announce 'Total' under 'No.' and '27,926' under 'Name of organization'."
+   }
+  ],
+  "cost_usd": 0.0580362,
+  "rule": [
+   "heading_level"
+  ]
+ },
+ "01030000000046": {
+  "defects": [],
+  "cost_usd": 0.0577622,
+  "rule": [
+   "heading_level"
+  ]
+ },
+ "01030000000047": {
+  "defects": [
+   {
+    "category": "table_headers",
+    "severity": "major",
+    "evidence": "The Total row has only 4 cells, and the empty cells are not tagged. 84,208 therefore lands under 'Political party', 86,092 under 'Provisional registration: number of candidates', and +1,884 under 'Official registration: number of commune/sangkat'. Each total is read with the wrong column header."
+   },
+   {
+    "category": "table_headers",
+    "severity": "minor",
+    "evidence": "The two-level header (Provisional/Official registration result spanning Number of commune/sangkat and Number of candidates) is flattened into single TH cells with no spans or scope. Header text also has dropped spaces, e.g. 'Politicalparty', 'Provisionalregistrationresult'."
+   }
+  ],
+  "cost_usd": 0.0600825,
+  "rule": []
+ },
+ "01030000000053": {
+  "defects": [
+   {
+    "category": "table_headers",
+    "severity": "minor",
+    "evidence": "The table starts with a TR of four empty TH cells. No header row is visible on this page, since the table is continued from the previous page. A screen reader would announce blank column headers. The row-label cells (IX - Zamboanga Peninsula, etc.) are TD, not row headers."
+   }
+  ],
+  "cost_usd": 0.059526,
+  "rule": [
+   "heading_level"
+  ]
+ },
+ "01030000000064": {
+  "defects": [
+   {
+    "category": "table_headers",
+    "severity": "minor",
+    "evidence": "The port names (MANILA, CEBU, etc.) are bold row headers in the original but are tagged TD, not TH with row scope. The tree shows a single header row, while the original has two tiers: 'SHIPCALLS' spanning 'Foreign' and 'Domestic'."
+   }
+  ],
+  "cost_usd": 0.0641728,
+  "rule": []
+ },
+ "01030000000065": {
+  "defects": [
+   {
+    "category": "alt_text",
+    "severity": "major",
+    "evidence": "The large photo of mussel-fouled bamboo poles at the top of the page has no Figure tag and no alt text. The tree starts with the caption paragraph."
+   }
+  ],
+  "cost_usd": 0.0608693,
+  "rule": [
+   "heading_level"
+  ]
+ },
+ "01030000000071": {
+  "defects": [],
+  "cost_usd": 0.062234199999999996,
+  "rule": [
+   "heading_level"
+  ]
+ },
+ "01030000000072": {
+  "defects": [
+   {
+    "category": "alt_text",
+    "severity": "minor",
+    "evidence": "The YouTube channel screenshot (Figure 4) has no Figure tag or alt text in the tree. Only its caption is present. The visible uploads list is not conveyed."
+   },
+   {
+    "category": "alt_text",
+    "severity": "minor",
+    "evidence": "The bar chart (Diagram 5) has no Figure tag or alt text. It appears only as a plain table, with no chart description or link to the 'Diagram 5' caption, which follows the table."
+   }
+  ],
+  "cost_usd": 0.0626558,
+  "rule": []
+ },
+ "01030000000077": {
+  "defects": [],
+  "cost_usd": 0.06269720000000001,
+  "rule": [
+   "heading_level"
+  ]
+ },
+ "01030000000078": {
+  "defects": [
+   {
+    "category": "alt_text",
+    "severity": "major",
+    "evidence": "Figure 1.10 combo chart (ASEAN and World remittance inflows 2014-2020, with data labels like 61, 63, 66... and 610, 602, 597...) has no Figure tag or alt text. Screen-reader users hear only the caption."
+   },
+   {
+    "category": "missing_content",
+    "severity": "major",
+    "evidence": "The chart's data (years 2014-2020, ASEAN values 61-78, World values 597-719, axes and legend) is absent from the tag tree."
+   },
+   {
+    "category": "table_headers",
+    "severity": "minor",
+    "evidence": "The spanning header 'Average Annual Growth' above the five period columns is not in the header row. The period columns are not tied to it. The first column (country names) is TD, not row-header TH."
+   }
+  ],
+  "cost_usd": 0.066661,
+  "rule": []
+ },
+ "01030000000081": {
+  "defects": [],
+  "cost_usd": 0.0612124,
+  "rule": [
+   "heading_level"
+  ]
+ },
+ "01030000000090": {
+  "defects": [
+   {
+    "category": "missing_content",
+    "severity": "minor",
+    "evidence": "The running header 'Restrictions on Land Ownership by Foreigners in Selected Jurisdictions' and the footer 'The Law Library of Congress / 7' are not in the tag tree. They are probably page artifacts, so this has little impact."
+   }
+  ],
+  "cost_usd": 0.0623392,
+  "rule": []
+ },
+ "01030000000092": {
+  "defects": [],
+  "cost_usd": 0.06448300000000001,
+  "rule": [
+   "heading_level"
+  ]
+ },
+ "01030000000095": {
+  "defects": [
+   {
+    "category": "alt_text",
+    "severity": "major",
+    "evidence": "The first line chart (W vs M, quartile 4=Worst to 1=Best) has no Figure tag or alt text. A screen-reader user gets only the '(Niederle and Vesterlund 2007)' caption."
+   },
+   {
+    "category": "alt_text",
+    "severity": "major",
+    "evidence": "The second line chart (W vs M by rank, 4=Worst rank to 1=Best rank) has no Figure tag or alt text. The body text says 'As the figure below shows', and the figure is not available to the user."
+   }
+  ],
+  "cost_usd": 0.063003,
+  "rule": []
+ },
+ "01030000000110": {
+  "defects": [],
+  "cost_usd": 0.0670923,
+  "rule": []
+ },
+ "01030000000117": {
+  "defects": [],
+  "cost_usd": 0.062835,
+  "rule": [
+   "heading_level"
+  ]
+ },
+ "01030000000134": {
+  "defects": [
+   {
+    "category": "alt_text",
+    "severity": "major",
+    "evidence": "The page has two charts, 'Length of Gar Fish by Age' and 'Weight of Gar Fish by Age'. The tag tree has no Figure elements and no alt text for either. A screen-reader user gets only the captions and a 'Long description' link."
+   },
+   {
+    "category": "missing_content",
+    "severity": "minor",
+    "evidence": "The chart content is absent from the tags: the axes, the growth curves, and the 'Texas rod & reel record alligator gar (279 lbs)' annotation. The first caption also merges Figure 8.6 and 8.7 text into one paragraph, so Figure 8.7 is repeated."
+   }
+  ],
+  "cost_usd": 0.0600221,
+  "rule": []
+ },
+ "01030000000141": {
+  "defects": [
+   {
+    "category": "list_structure",
+    "severity": "major",
+    "evidence": "The two bullet examples under item 5 (downloading and uploading) are tagged as list items numbered 6 and 7 in the first list. The right column is numbered 1-5 in the tree, but the page shows it as 6-10. The numbers are wrong and the sub-bullets are not a nested list."
+   },
+   {
+    "category": "list_structure",
+    "severity": "major",
+    "evidence": "The second list's labels read 1-5, but the page numbers those items 6-10. A screen reader announces the wrong numbers."
+   },
+   {
+    "category": "reading_order",
+    "severity": "minor",
+    "evidence": "The closing line 'Copyright infringement is illegal...' is tagged after the sub-bullets as a standalone P. That matches the visual order, but it sits outside the list item it belongs to."
+   },
+   {
+    "category": "missing_content",
+    "severity": "minor",
+    "evidence": "The footer 'CopyrightandCreativity.org' and the QR code are missing from the tree."
+   },
+   {
+    "category": "alt_text",
+    "severity": "minor",
+    "evidence": "The icon row, the per-item icons and the QR code have no figure tags or alt text. Most icons are decorative and could be marked as artifacts, but the QR code and logo carry meaning."
+   },
+   {
+    "category": "heading_level",
+    "severity": "minor",
+    "evidence": "The 'THINGS YOU SHOULD KNOW ABOUT' and 'COPYRIGHT' title is a single H1, which is fine. The two column headings are H2, which is fine."
+   }
+  ],
+  "cost_usd": 0.06978559999999999,
+  "rule": []
+ },
+ "01030000000145": {
+  "defects": [
+   {
+    "category": "missing_content",
+    "severity": "minor",
+    "evidence": "Words run together in the tag text: 'norturbulent', 'accelerationof', 'Thepoint', 'andconcepts'. A screen reader will mispronounce them."
+   },
+   {
+    "category": "heading_level",
+    "severity": "minor",
+    "evidence": "'Chapter 4' and 'Nonlinear equations' are both H1. They are one visual chapter title, so a second H1 is slightly off."
+   }
+  ],
+  "cost_usd": 0.0667748,
+  "rule": []
+ },
+ "01030000000147": {
+  "defects": [
+   {
+    "category": "alt_text",
+    "severity": "minor",
+    "evidence": "The French flag image marks the country the table covers. It has no Figure tag or alt text in the tree, so a screen-reader user never learns the initiatives are from France."
+   }
+  ],
+  "cost_usd": 0.0633536,
+  "rule": []
+ },
+ "01030000000157": {
+  "defects": [],
+  "cost_usd": 0.055611600000000004,
+  "rule": [
+   "heading_level"
+  ]
+ },
+ "01030000000166": {
+  "defects": [
+   {
+    "category": "table_headers",
+    "severity": "minor",
+    "evidence": "The 'cmolc/kg' units row has a single TD with no empty first cell. A screen reader may read the units under the wrong column."
+   }
+  ],
+  "cost_usd": 0.06370239999999999,
+  "rule": []
+ },
+ "01030000000168": {
+  "defects": [],
+  "cost_usd": 0.0620456,
+  "rule": [
+   "heading_level"
+  ]
+ },
+ "01030000000171": {
+  "defects": [
+   {
+    "category": "missing_content",
+    "severity": "minor",
+    "evidence": "Missing spaces in the tagged text: \"Confidence Intervalsand Effect Sizes\" and \"Between TwoVariables\". A screen reader will read \"Intervalsand\" and \"TwoVariables\" as run-together words."
+   }
+  ],
+  "cost_usd": 0.0638512,
+  "rule": []
+ },
+ "01030000000176": {
+  "defects": [
+   {
+    "category": "alt_text",
+    "severity": "major",
+    "evidence": "The three Spitzer images (Flame nebula, Cassiopeia A, Helix nebula) have no Figure tags or alt text. The tree only has a P with the captions 'Flame nebula Cassiopeia A Helix nebula'."
+   }
+  ],
+  "cost_usd": 0.0561276,
+  "rule": [
+   "heading_level"
+  ]
+ },
+ "01030000000179": {
+  "defects": [
+   {
+    "category": "alt_text",
+    "severity": "major",
+    "evidence": "The large photo of stacked textbooks and boxes at the top of the page has no Figure tag and no alt text in the tree. Only the caption paragraph is present, so a screen-reader user gets no description of the image."
+   }
+  ],
+  "cost_usd": 0.061032600000000006,
+  "rule": [
+   "heading_level"
+  ]
+ },
+ "01030000000180": {
+  "defects": [
+   {
+    "category": "table_headers",
+    "severity": "minor",
+    "evidence": "The first data row has only 3 cells. The empty 'Affected Sections' cell is missing from the tag tree, so the row has one fewer cell than the 4-column header row."
+   }
+  ],
+  "cost_usd": 0.061429199999999996,
+  "rule": []
+ },
+ "01030000000191": {
+  "defects": [
+   {
+    "category": "missing_content",
+    "severity": "major",
+    "evidence": "Third reference (Aram Bahrini et al. 2023, 'Chatgpt: Applications, opportunities, and threats', SIEDS, pp. 274\u2013279) is visible on the page but absent from the tag tree."
+   },
+   {
+    "category": "reading_order",
+    "severity": "major",
+    "evidence": "The tree ends with a stray P that repeats the 'Acknowledgements' heading text and the full acknowledgements paragraph, then 'Limitations'. The paragraph is wrongly wrapped in Em. This is duplicated, misplaced content after the references, where the real content should be."
+   }
+  ],
+  "cost_usd": 0.0715954,
+  "rule": [
+   "heading_level"
+  ]
+ },
+ "01030000000197": {
+  "defects": [],
+  "cost_usd": 0.0617445,
+  "rule": []
+ }
+}
