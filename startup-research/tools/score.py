@@ -3,7 +3,10 @@
 import csv, os, itertools, random, sys
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 W = {"severity":20,"mvp_feasibility":15,"defensibility":15,"why_now":10,"insight":10,"scale":10,"distribution":10,"founder_fit":5,"risk":5}
-rows = list(csv.DictReader(open(os.path.join(root,"07-scoring-model.csv"))))
+ALL = list(csv.DictReader(open(os.path.join(root,"07-scoring-model.csv"))))
+STAGE = sys.argv[1] if len(sys.argv)>1 else "pass2-post-competition-and-experiment"
+rows = [r for r in ALL if r.get("stage","pass1-desk")==STAGE]
+print("STAGE:", STAGE)
 def total(r, w):
     return sum(float(r[k])*w[k] for k in w)/10.0
 def rank(w):

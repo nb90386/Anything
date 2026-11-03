@@ -1,0 +1,40 @@
+====================================================================================================
+F1 VERIFIED ACCESSIBILITY — new-document flow, US public sector (pages/yr x price/page)
+  bear  price $0.40/page -> US public-sector TAM $24.5M/yr  | Cities >=50k pop: $2.6M; Counties >=50k pop: $4.0M; Public colleges, non-LMS documents: $1.9M; State agencies: $10.0M; Smaller local governments: $3.5M; K-12 districts: $2.5M
+  base  price $0.75/page -> US public-sector TAM $193.1M/yr  | Cities >=50k pop: $12.0M; Counties >=50k pop: $22.5M; Public colleges, non-LMS documents: $12.0M; State agencies: $75.0M; Smaller local governments: $52.8M; K-12 districts: $18.8M
+  bull  price $1.25/page -> US public-sector TAM $775.6M/yr  | Cities >=50k pop: $40.0M; Counties >=50k pop: $75.0M; Public colleges, non-LMS documents: $50.0M; State agencies: $312.5M; Smaller local governments: $220.0M; K-12 districts: $78.1M
+  SAM (cities+counties>=50k + public colleges non-LMS): {'bear': '$8.5M', 'base': '$46.5M', 'bull': '$165.0M'}
+  SOM by month 24 (bear): 8 entities x $6K ACV = $48K ARR   [A]
+  SOM by month 24 (base): 25 entities x $12K ACV = $300K ARR   [A]
+  SOM by month 24 (bull): 60 entities x $20K ACV = $1.2M ARR   [A]
+
+  Unit economics per verified page (A unless noted):
+    base: Sonnet verify, 25% flagged, 4 min review @$30/h   price $0.40: COGS $0.577/page, gross margin -44.1%
+    base: Sonnet verify, 25% flagged, 4 min review @$30/h   price $0.75: COGS $0.577/page, gross margin  23.1%
+    base: Sonnet verify, 25% flagged, 4 min review @$30/h   price $1.25: COGS $0.577/page, gross margin  53.9%
+    cheap verify (Haiku), 15% flagged                       price $0.40: COGS $0.314/page, gross margin  21.4%
+    cheap verify (Haiku), 15% flagged                       price $0.75: COGS $0.314/page, gross margin  58.1%
+    cheap verify (Haiku), 15% flagged                       price $1.25: COGS $0.314/page, gross margin  74.8%
+    bad case: 50% flagged, 8 min review                     price $0.40: COGS $2.084/page, gross margin -421.0%
+    bad case: 50% flagged, 8 min review                     price $0.75: COGS $2.084/page, gross margin -177.9%
+    bad case: 50% flagged, 8 min review                     price $1.25: COGS $2.084/page, gross margin -66.7%
+    worst: 70% flagged, 10 min review                       price $0.40: COGS $3.590/page, gross margin -797.5%
+    worst: 70% flagged, 10 min review                       price $0.75: COGS $3.590/page, gross margin -378.7%
+    worst: 70% flagged, 10 min review                       price $1.25: COGS $3.590/page, gross margin -187.2%
+
+  Verification-only API (for remediation vendors/auditors): price $0.05-0.15/page; COGS $0.005-0.065 (V: measured model costs)
+
+  Billion-dollar check: $1B valuation at ~10x ARR needs ~$100M ARR. US public-sector base TAM above is the ceiling for the wedge;
+  reaching $100M requires private-sector documents (EAA, ADA Title III, HHS 504 recipients), web/app semantic QA, and becoming the default verifier.
+====================================================================================================
+F2 INTAKE-FLOOD DEFENSE (public-records add-on)
+  bear: 2000 agencies with material request volume [A] x $3K add-on ACV [A; anchor: portals $9.5K-$40K/yr V] = TAM $6.0M
+  base: 5000 agencies with material request volume [A] x $6K add-on ACV [A; anchor: portals $9.5K-$40K/yr V] = TAM $30.0M
+  bull: 9000 agencies with material request volume [A] x $10K add-on ACV [A; anchor: portals $9.5K-$40K/yr V] = TAM $90.0M
+  CA first (SB 1159/AB 1821 effective 2027-01-01): 482 cities + 58 counties [I] x $5K = SAM $2.7M
+====================================================================================================
+F3 PHARMACY FLOOR-LAW EVIDENCE ENGINE
+  bear: 2000 stores in floor-law states [A] x $79/mo [A; anchors RxDelta $199-799, nadaclookup $29 V] = $1.9M/yr
+  base: 4000 stores in floor-law states [A] x $149/mo [A; anchors RxDelta $199-799, nadaclookup $29 V] = $7.2M/yr
+  bull: 8000 stores in floor-law states [A] x $249/mo [A; anchors RxDelta $199-799, nadaclookup $29 V] = $23.9M/yr
+  Whole US independent channel: ~18.5k stores [V: NCPA 18-19k] x $149/mo = $33.1M
