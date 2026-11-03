@@ -22,10 +22,9 @@ Date: 2026-11-03. About 21 web searches. Facts come only from the cited results.
 | Proof x401 | Open HTTP protocol proving who an agent represents and what it is authorized to do. Visa/Circle/Okta contributors | Low. Identity and authorization, not state | Proof is an established company |
 | Invariant Labs (now Snyk) | Guardrails and trace analyzer with assertions | Medium, on traces rather than live state | Acquired Jun 2025 |
 | LangSmith / Braintrust / Arize / Galileo / Patronus / AgentOps | Evals and observability. Custom code scorers can query a DB after a run [GK] | Medium, offline or eval-time. Anthropic's eval guide and tau-bench/WebArena already define "outcome = final environment state" | Well funded [GK] |
-| Guardrails AI | Validates LLM inputs and outputs [GK] | Low | [GK] |
 | "Intended" | **Not found** in two searches | Unknown | UNVERIFIED that it exists |
 
-Other money nearby: AIR ($50M seed, Sep 2026) vets agent skills and intercepts actions. Asymptote Labs ($5.5M seed, Oct 2026) does runtime control. Pramaana Labs ($27M seed) builds a "verification layer" for model outputs.
+Also funded: AIR ($50M, Sep 2026, action interception), Asymptote Labs ($5.5M, Oct 2026, runtime control), Pramaana Labs ($27M, output "verification layer").
 
 ### Claims checked
 
@@ -38,7 +37,7 @@ Other money nearby: AIR ($50M seed, Sep 2026) vets agent skills and intercepts a
 | Agent incidents are rising | TRUE but off-target | PocketOS: a Cursor agent deleted a production DB and its backups in 9 s (Apr 2026). Replit (Jul 2025). An 88% "incident" survey stat is second-hand. These are destructive coding-agent failures, which call for prevention before the action, not read-back afterward. No documented duplicate-refund case was found |
 
 ### Why it dies for this founder
-1. **It's a feature.** A postcondition is a few lines inside a Temporal activity or an eval scorer. Arcade already holds the authenticated connectors and can ship "verify after write" as a checkbox. Microsoft gives invariant enforcement away under MIT.
+1. **It's a feature.** A postcondition is a few lines in a Temporal activity or eval scorer. Arcade holds the connectors and can ship "verify after write" as a checkbox. Microsoft gives invariants away under MIT.
 2. **Integration treadmill.** Read-back needs a maintained, authenticated connector for every SaaS. That is Arcade's, Composio's and Nango's whole business.
 3. **Buyer mismatch.** The buyers are platform and security teams at companies running production agents. They buy on trust, SOC 2 and vendor longevity. A 17-year-old behind a parent's LLC is a hard sell for something on the payment path.
 4. **No 60-90 day money.** Even the funded peers are pre-revenue or free (Action State).
@@ -69,9 +68,9 @@ Other money nearby: AIR ($50M seed, Sep 2026) vets agent skills and intercepts a
 | CivicPlus DocAccess | AI converts PDFs to accessible HTML. Integrated with Diligent Community (agenda software), Sep 2026. Cities approving contracts (Jurupa Valley, Harvard IL, Okeechobee County) | High. Bundled. But CivicPlus told Harvard "the liability still does fall onto Harvard" |
 | Adobe Acrobat | Cloud auto-tagging plus Auto-Tag API. Adobe's own help still recommends manual touch-up | Medium (the baseline everyone builds on) |
 | Accessible.org | $4.00-$11.50/page | Shows the human-heavy end still holds |
-| Microsoft / Google native | No native AI tagged-PDF feature found. Third-party Docs add-ons (Kayabyte, Inkable, Accessibility Checker) export tagged PDFs | Low-medium |
+| Microsoft / Google native | None found; only third-party Docs add-ons (e.g., Kayabyte) | Low-medium |
 
-I found no specific late-Oct 2026 launch. The dates on the AoD and CASO pages are unclear, so treat their $0.30 as current but not newly announced.
+No specific late-Oct 2026 launch found. The AoD and CASO page dates are unclear, so their $0.30 is current but not new.
 
 ### Deletion instead of paying
 TRUE and documented. Axios (Jan 22, 2026) reported that Ankeny, Urbandale (about 3,000 docs, "a significant number" to be removed) and Johnston, Iowa are purging old files and offering them on request. I found no later wave of reporting. Expect it to recur as the 2027 date nears.
