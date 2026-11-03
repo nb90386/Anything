@@ -1,0 +1,29 @@
+{
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixtures/benefits_letter.tagged.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixtures/city_agenda.tagged.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixtures/form.tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-3"
+  ],
+  "failed_checks": 3
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixtures/syllabus.tagged.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixtures/two_column_report.tagged.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ }
+}

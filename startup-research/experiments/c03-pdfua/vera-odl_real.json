@@ -1,0 +1,339 @@
+{
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000001_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.21.4.2-2",
+   "7.1-8",
+   "7.2-24",
+   "7.2-22",
+   "7.18.3-1",
+   "7.1-10",
+   "7.2-34"
+  ],
+  "failed_checks": 84
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000004_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-10",
+   "7.2-24",
+   "7.2-34",
+   "7.18.3-1",
+   "7.2-22",
+   "7.1-8"
+  ],
+  "failed_checks": 90
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000041_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.2-34",
+   "7.21.4.2-2",
+   "7.1-10",
+   "7.1-8"
+  ],
+  "failed_checks": 91
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000045_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.2-34",
+   "7.1-10",
+   "7.21.4.2-2",
+   "7.1-8"
+  ],
+  "failed_checks": 46
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000046_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.2-34",
+   "7.1-10",
+   "7.1-8",
+   "7.21.4.2-2"
+  ],
+  "failed_checks": 116
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000047_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.1-10",
+   "7.21.4.2-2",
+   "7.2-34"
+  ],
+  "failed_checks": 90
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000053_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-10",
+   "7.21.4.2-2",
+   "7.2-34",
+   "7.1-8"
+  ],
+  "failed_checks": 66
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000064_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.2-34",
+   "7.1-10"
+  ],
+  "failed_checks": 138
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000065_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.2-22",
+   "7.2-34",
+   "7.21.4.1-1",
+   "7.1-10",
+   "7.1-8"
+  ],
+  "failed_checks": 65
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000071_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.21.4.1-1",
+   "7.2-34",
+   "7.1-8",
+   "7.1-10"
+  ],
+  "failed_checks": 177
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000072_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.21.4.1-1",
+   "7.1-8",
+   "7.2-34",
+   "7.1-10",
+   "7.2-22"
+  ],
+  "failed_checks": 94
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000077_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-10",
+   "7.1-8",
+   "7.2-34"
+  ],
+  "failed_checks": 107
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000078_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.2-34",
+   "7.1-8",
+   "7.1-10",
+   "7.2-33"
+  ],
+  "failed_checks": 235
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000081_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.2-34",
+   "7.1-10",
+   "7.21.4.2-2"
+  ],
+  "failed_checks": 52
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000090_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.2-34",
+   "7.1-10"
+  ],
+  "failed_checks": 126
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000092_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.2-34",
+   "7.1-8",
+   "7.1-10"
+  ],
+  "failed_checks": 299
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000095_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.2-34",
+   "7.2-24",
+   "7.1-8",
+   "7.2-22",
+   "7.1-10"
+  ],
+  "failed_checks": 180
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000110_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-10",
+   "7.2-34",
+   "7.1-8",
+   "7.2-22"
+  ],
+  "failed_checks": 129
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000117_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.1-10",
+   "7.2-34"
+  ],
+  "failed_checks": 127
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000134_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.2-24",
+   "7.2-34",
+   "7.2-22",
+   "7.1-10",
+   "7.1-8"
+  ],
+  "failed_checks": 150
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000141_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.2-33",
+   "7.2-34",
+   "7.1-10",
+   "5-1",
+   "7.2-22"
+  ],
+  "failed_checks": 6
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000145_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.1-10",
+   "7.21.7-1",
+   "7.2-34",
+   "7.2-22"
+  ],
+  "failed_checks": 233
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000147_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-10",
+   "7.2-22",
+   "7.2-24",
+   "7.2-34",
+   "7.21.4.1-1",
+   "7.1-8"
+  ],
+  "failed_checks": 189
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000157_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.2-24",
+   "7.2-22",
+   "7.2-34",
+   "7.1-10"
+  ],
+  "failed_checks": 284
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000166_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.2-22",
+   "7.2-24",
+   "7.2-34",
+   "7.1-10"
+  ],
+  "failed_checks": 262
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000168_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.2-22",
+   "7.1-8",
+   "7.2-34",
+   "7.1-10",
+   "7.2-24"
+  ],
+  "failed_checks": 373
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000171_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.1-10",
+   "7.2-34",
+   "7.2-24",
+   "7.2-22"
+  ],
+  "failed_checks": 487
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000176_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.1-10",
+   "7.2-34",
+   "7.2-22",
+   "7.18.3-1",
+   "7.2-24"
+  ],
+  "failed_checks": 460
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000179_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.1-10",
+   "7.2-24",
+   "7.2-34",
+   "7.2-22"
+  ],
+  "failed_checks": 115
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000180_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.1-10",
+   "7.2-34",
+   "7.2-24",
+   "7.2-22"
+  ],
+  "failed_checks": 114
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000191_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.2-34",
+   "7.1-10",
+   "7.1-8"
+  ],
+  "failed_checks": 123
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/real/odl/01030000000197_tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.2-22",
+   "7.2-34",
+   "7.1-10",
+   "7.1-8",
+   "7.18.3-1",
+   "7.2-24"
+  ],
+  "failed_checks": 64
+ }
+}

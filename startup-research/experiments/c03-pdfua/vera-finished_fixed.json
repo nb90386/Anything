@@ -1,0 +1,189 @@
+{
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000001_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000004_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000041_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000045_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000046_fixed.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.2-8"
+  ],
+  "failed_checks": 4
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000047_fixed.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.2-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000053_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000064_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000065_fixed.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.21.4.1-1"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000071_fixed.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.21.4.1-1"
+  ],
+  "failed_checks": 2
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000072_fixed.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.21.4.1-1"
+  ],
+  "failed_checks": 2
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000077_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000078_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000081_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000090_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000092_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000095_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000110_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000117_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000134_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000141_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000145_fixed.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.3-1",
+   "7.21.7-1"
+  ],
+  "failed_checks": 9
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000147_fixed.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.21.4.1-1"
+  ],
+  "failed_checks": 3
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000157_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000166_fixed.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.3-1",
+   "7.18.5-1"
+  ],
+  "failed_checks": 3
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000168_fixed.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.18.5-1",
+   "7.3-1"
+  ],
+  "failed_checks": 6
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000171_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000176_fixed.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.18.5-1"
+  ],
+  "failed_checks": 2
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000179_fixed.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.18.5-1"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000180_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000191_fixed.pdf": {
+  "compliant": true,
+  "failed_rules": [],
+  "failed_checks": 0
+ },
+ "/home/user/Anything/startup-research/experiments/c03-pdfua/out/finished_fixed/01030000000197_fixed.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.2-20"
+  ],
+  "failed_checks": 2
+ }
+}

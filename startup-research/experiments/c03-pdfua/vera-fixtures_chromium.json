@@ -1,0 +1,38 @@
+{
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/fixtures/benefits_letter.tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/fixtures/city_agenda.tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/fixtures/form.tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-3",
+   "7.1-8"
+  ],
+  "failed_checks": 4
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/fixtures/syllabus.tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/fixtures/two_column_report.tagged.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ }
+}

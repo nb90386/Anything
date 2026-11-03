@@ -1,0 +1,345 @@
+{
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/benefits_letter__clean.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/benefits_letter__heading_as_p.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/benefits_letter__heading_level.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.4.2-1",
+   "7.1-8"
+  ],
+  "failed_checks": 2
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/benefits_letter__list_as_p.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/benefits_letter__reading_order.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/benefits_letter__table_no_headers.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/benefits_letter__untagged_content.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/city_agenda__clean.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/city_agenda__heading_as_p.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/city_agenda__heading_level.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.4.2-1"
+  ],
+  "failed_checks": 2
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/city_agenda__list_as_p.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/city_agenda__reading_order.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/city_agenda__table_no_headers.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/city_agenda__untagged_content.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/form__clean.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-3",
+   "7.1-8"
+  ],
+  "failed_checks": 4
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/form__heading_as_p.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-3",
+   "7.1-8"
+  ],
+  "failed_checks": 4
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/form__heading_level.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.4.2-1",
+   "7.1-3",
+   "7.1-8"
+  ],
+  "failed_checks": 5
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/form__reading_order.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.1-3"
+  ],
+  "failed_checks": 4
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/form__untagged_content.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.1-3"
+  ],
+  "failed_checks": 4
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/syllabus__clean.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/syllabus__heading_as_p.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/syllabus__heading_level.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.4.2-1"
+  ],
+  "failed_checks": 2
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/syllabus__list_as_p.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/syllabus__reading_order.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/syllabus__table_no_headers.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/syllabus__untagged_content.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/two_column_report__clean.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/two_column_report__heading_as_p.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/two_column_report__heading_level.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.4.2-1"
+  ],
+  "failed_checks": 2
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/two_column_report__list_as_p.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/two_column_report__reading_order.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases/two_column_report__untagged_content.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/benefits_letter__one_heading_as_p.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/benefits_letter__one_li_as_p.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.2-19"
+  ],
+  "failed_checks": 2
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/benefits_letter__one_swap.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/benefits_letter__one_th_as_td.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/city_agenda__one_heading_as_p.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/city_agenda__one_li_as_p.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.2-19"
+  ],
+  "failed_checks": 2
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/city_agenda__one_swap.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/city_agenda__one_th_as_td.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/syllabus__one_heading_as_p.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/syllabus__one_li_as_p.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8",
+   "7.2-19"
+  ],
+  "failed_checks": 2
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/syllabus__one_swap.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/syllabus__one_th_as_td.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/two_column_report__one_heading_as_p.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/two_column_report__one_li_as_p.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.2-19",
+   "7.1-8"
+  ],
+  "failed_checks": 2
+ },
+ "/home/user/Anything/startup-research/experiments/c01-accessible-pdf/verify/cases_subtle/two_column_report__one_swap.pdf": {
+  "compliant": false,
+  "failed_rules": [
+   "7.1-8"
+  ],
+  "failed_checks": 1
+ }
+}

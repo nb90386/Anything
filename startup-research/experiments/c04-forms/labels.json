@@ -1,0 +1,485 @@
+{
+ "labels": [
+  {
+   "i": 0,
+   "tu": "Tax year beginning (if not calendar year 2010), month and day"
+  },
+  {
+   "i": 1,
+   "tu": "Tax year ending, month and day"
+  },
+  {
+   "i": 2,
+   "tu": "Tax year ending, 2-digit year (20__)"
+  },
+  {
+   "i": 3,
+   "tu": "Your first name and middle initial"
+  },
+  {
+   "i": 4,
+   "tu": "Your last name"
+  },
+  {
+   "i": 5,
+   "tu": "Your social security number"
+  },
+  {
+   "i": 6,
+   "tu": "If a joint return, spouse's first name and initial"
+  },
+  {
+   "i": 7,
+   "tu": "Spouse's last name"
+  },
+  {
+   "i": 8,
+   "tu": "Spouse's social security number"
+  },
+  {
+   "i": 9,
+   "tu": "Home address (number and street); if you have a P.O. box, see instructions"
+  },
+  {
+   "i": 10,
+   "tu": "Apartment number"
+  },
+  {
+   "i": 11,
+   "tu": "City, town or post office, state, and ZIP code; if foreign address, see instructions"
+  },
+  {
+   "i": 12,
+   "tu": "Presidential Election Campaign: You want $3 to go to this fund"
+  },
+  {
+   "i": 13,
+   "tu": "Presidential Election Campaign: Spouse wants $3 to go to this fund"
+  },
+  {
+   "i": 14,
+   "tu": "Filing status: Single"
+  },
+  {
+   "i": 15,
+   "tu": "Filing status: Married filing jointly (even if only one had income)"
+  },
+  {
+   "i": 16,
+   "tu": "Filing status: Married filing separately; enter spouse's SSN above and full name"
+  },
+  {
+   "i": 17,
+   "tu": "Married filing separately: spouse's full name"
+  },
+  {
+   "i": 18,
+   "tu": "Filing status: Head of household (with qualifying person)"
+  },
+  {
+   "i": 19,
+   "tu": "Head of household: qualifying child's name, if not your dependent"
+  },
+  {
+   "i": 20,
+   "tu": "Filing status: Qualifying widow(er) with dependent child"
+  },
+  {
+   "i": 21,
+   "tu": "Line 6a: Yourself. Check unless someone can claim you as a dependent"
+  },
+  {
+   "i": 22,
+   "tu": "Line 6b: Spouse"
+  },
+  {
+   "i": 23,
+   "tu": "Boxes checked on lines 6a and 6b"
+  },
+  {
+   "i": 24,
+   "tu": "Line 6c, dependent 1: first and last name"
+  },
+  {
+   "i": 25,
+   "tu": "Line 6c, dependent 1: social security number"
+  },
+  {
+   "i": 26,
+   "tu": "Line 6c, dependent 1: relationship to you"
+  },
+  {
+   "i": 27,
+   "tu": "Line 6c, dependent 1: qualifies for child tax credit (child under age 17)"
+  },
+  {
+   "i": 28,
+   "tu": "Line 6c, dependent 2: first and last name"
+  },
+  {
+   "i": 29,
+   "tu": "Line 6c, dependent 2: social security number"
+  },
+  {
+   "i": 30,
+   "tu": "Line 6c, dependent 2: relationship to you"
+  },
+  {
+   "i": 31,
+   "tu": "Line 6c, dependent 2: qualifies for child tax credit (child under age 17)"
+  },
+  {
+   "i": 32,
+   "tu": "Line 6c, dependent 3: first and last name"
+  },
+  {
+   "i": 33,
+   "tu": "Line 6c, dependent 3: social security number"
+  },
+  {
+   "i": 34,
+   "tu": "Line 6c, dependent 3: relationship to you"
+  },
+  {
+   "i": 35,
+   "tu": "Line 6c, dependent 3: qualifies for child tax credit (child under age 17)"
+  },
+  {
+   "i": 36,
+   "tu": "Line 6c, dependent 4: first and last name"
+  },
+  {
+   "i": 37,
+   "tu": "Line 6c, dependent 4: social security number"
+  },
+  {
+   "i": 38,
+   "tu": "Line 6c, dependent 4: relationship to you"
+  },
+  {
+   "i": 39,
+   "tu": "Line 6c, dependent 4: qualifies for child tax credit (child under age 17)"
+  },
+  {
+   "i": 40,
+   "tu": "Check here if more than four dependents"
+  },
+  {
+   "i": 41,
+   "tu": "Line 6c: Number of children who lived with you"
+  },
+  {
+   "i": 42,
+   "tu": "Line 6c: Number of children who did not live with you due to divorce or separation"
+  },
+  {
+   "i": 43,
+   "tu": "Line 6c: Number of dependents not entered above"
+  },
+  {
+   "i": 44,
+   "tu": "Line 6d: Total number of exemptions claimed"
+  },
+  {
+   "i": 45,
+   "tu": "Line 7, Wages, salaries, tips, etc. (Form W-2): dollars"
+  },
+  {
+   "i": 46,
+   "tu": "Line 7, Wages, salaries, tips, etc. (Form W-2): cents"
+  },
+  {
+   "i": 47,
+   "tu": "Line 8a, Taxable interest: dollars"
+  },
+  {
+   "i": 48,
+   "tu": "Line 8a, Taxable interest: cents"
+  },
+  {
+   "i": 49,
+   "tu": "Line 8b, Tax-exempt interest: dollars"
+  },
+  {
+   "i": 50,
+   "tu": "Line 8b, Tax-exempt interest: cents"
+  },
+  {
+   "i": 51,
+   "tu": "Line 9a, Ordinary dividends: dollars"
+  },
+  {
+   "i": 52,
+   "tu": "Line 9a, Ordinary dividends: cents"
+  },
+  {
+   "i": 53,
+   "tu": "Line 9b, Qualified dividends: dollars"
+  },
+  {
+   "i": 54,
+   "tu": "Line 9b, Qualified dividends: cents"
+  },
+  {
+   "i": 55,
+   "tu": "Line 10, Taxable refunds, credits, or offsets of state and local income taxes: dollars"
+  },
+  {
+   "i": 56,
+   "tu": "Line 10, Taxable refunds, credits, or offsets of state and local income taxes: cents"
+  },
+  {
+   "i": 57,
+   "tu": "Line 11, Alimony received: dollars"
+  },
+  {
+   "i": 58,
+   "tu": "Line 11, Alimony received: cents"
+  },
+  {
+   "i": 59,
+   "tu": "Line 12, Business income or (loss): dollars"
+  },
+  {
+   "i": 60,
+   "tu": "Line 12, Business income or (loss): cents"
+  },
+  {
+   "i": 61,
+   "tu": "Line 13, Capital gain or (loss): check if Schedule D not required"
+  },
+  {
+   "i": 62,
+   "tu": "Line 13, Capital gain or (loss): dollars"
+  },
+  {
+   "i": 63,
+   "tu": "Line 13, Capital gain or (loss): cents"
+  },
+  {
+   "i": 64,
+   "tu": "Line 14, Other gains or (losses), Form 4797: dollars"
+  },
+  {
+   "i": 65,
+   "tu": "Line 14, Other gains or (losses), Form 4797: cents"
+  },
+  {
+   "i": 66,
+   "tu": "Line 15a, IRA distributions: dollars"
+  },
+  {
+   "i": 67,
+   "tu": "Line 15a, IRA distributions: cents"
+  },
+  {
+   "i": 68,
+   "tu": "Line 15b, IRA distributions, taxable amount: dollars"
+  },
+  {
+   "i": 69,
+   "tu": "Line 15b, IRA distributions, taxable amount: cents"
+  },
+  {
+   "i": 70,
+   "tu": "Line 16a, Pensions and annuities: dollars"
+  },
+  {
+   "i": 71,
+   "tu": "Line 16a, Pensions and annuities: cents"
+  },
+  {
+   "i": 72,
+   "tu": "Line 16b, Pensions and annuities, taxable amount: dollars"
+  },
+  {
+   "i": 73,
+   "tu": "Line 16b, Pensions and annuities, taxable amount: cents"
+  },
+  {
+   "i": 74,
+   "tu": "Line 17, Rental real estate, royalties, partnerships, S corporations, trusts, etc.: dollars"
+  },
+  {
+   "i": 75,
+   "tu": "Line 17, Rental real estate, royalties, partnerships, S corporations, trusts, etc.: cents"
+  },
+  {
+   "i": 76,
+   "tu": "Line 18, Farm income or (loss): dollars"
+  },
+  {
+   "i": 77,
+   "tu": "Line 18, Farm income or (loss): cents"
+  },
+  {
+   "i": 78,
+   "tu": "Line 19, Unemployment compensation: dollars"
+  },
+  {
+   "i": 79,
+   "tu": "Line 19, Unemployment compensation: cents"
+  },
+  {
+   "i": 80,
+   "tu": "Line 20a, Social security benefits: dollars"
+  },
+  {
+   "i": 81,
+   "tu": "Line 20a, Social security benefits: cents"
+  },
+  {
+   "i": 82,
+   "tu": "Line 20b, Social security benefits, taxable amount: dollars"
+  },
+  {
+   "i": 83,
+   "tu": "Line 20b, Social security benefits, taxable amount: cents"
+  },
+  {
+   "i": 84,
+   "tu": "Line 21, Other income: list type and amount"
+  },
+  {
+   "i": 85,
+   "tu": "Line 21, Other income: dollars"
+  },
+  {
+   "i": 86,
+   "tu": "Line 21, Other income: cents"
+  },
+  {
+   "i": 87,
+   "tu": "Line 22, Total income: dollars"
+  },
+  {
+   "i": 88,
+   "tu": "Line 22, Total income: cents"
+  },
+  {
+   "i": 89,
+   "tu": "Line 23, Educator expenses: dollars"
+  },
+  {
+   "i": 90,
+   "tu": "Line 23, Educator expenses: cents"
+  },
+  {
+   "i": 91,
+   "tu": "Line 24, Certain business expenses of reservists, performing artists, and fee-basis government officials: dollars"
+  },
+  {
+   "i": 92,
+   "tu": "Line 24, Certain business expenses of reservists, performing artists, and fee-basis government officials: cents"
+  },
+  {
+   "i": 93,
+   "tu": "Line 25, Health savings account deduction: dollars"
+  },
+  {
+   "i": 94,
+   "tu": "Line 25, Health savings account deduction: cents"
+  },
+  {
+   "i": 95,
+   "tu": "Line 26, Moving expenses: dollars"
+  },
+  {
+   "i": 96,
+   "tu": "Line 26, Moving expenses: cents"
+  },
+  {
+   "i": 97,
+   "tu": "Line 27, One-half of self-employment tax: dollars"
+  },
+  {
+   "i": 98,
+   "tu": "Line 27, One-half of self-employment tax: cents"
+  },
+  {
+   "i": 99,
+   "tu": "Line 28, Self-employed SEP, SIMPLE, and qualified plans: dollars"
+  },
+  {
+   "i": 100,
+   "tu": "Line 28, Self-employed SEP, SIMPLE, and qualified plans: cents"
+  },
+  {
+   "i": 101,
+   "tu": "Line 29, Self-employed health insurance deduction: dollars"
+  },
+  {
+   "i": 102,
+   "tu": "Line 29, Self-employed health insurance deduction: cents"
+  },
+  {
+   "i": 103,
+   "tu": "Line 30, Penalty on early withdrawal of savings: dollars"
+  },
+  {
+   "i": 104,
+   "tu": "Line 30, Penalty on early withdrawal of savings: cents"
+  },
+  {
+   "i": 105,
+   "tu": "Line 31b, Alimony paid: recipient's social security number"
+  },
+  {
+   "i": 106,
+   "tu": "Line 31a, Alimony paid: dollars"
+  },
+  {
+   "i": 107,
+   "tu": "Line 31a, Alimony paid: cents"
+  },
+  {
+   "i": 108,
+   "tu": "Line 32, IRA deduction: dollars"
+  },
+  {
+   "i": 109,
+   "tu": "Line 32, IRA deduction: cents"
+  },
+  {
+   "i": 110,
+   "tu": "Line 33, Student loan interest deduction: dollars"
+  },
+  {
+   "i": 111,
+   "tu": "Line 33, Student loan interest deduction: cents"
+  },
+  {
+   "i": 112,
+   "tu": "Line 34, Tuition and fees (Form 8917): dollars"
+  },
+  {
+   "i": 113,
+   "tu": "Line 34, Tuition and fees (Form 8917): cents"
+  },
+  {
+   "i": 114,
+   "tu": "Line 35, Domestic production activities deduction (Form 8903): dollars"
+  },
+  {
+   "i": 115,
+   "tu": "Line 35, Domestic production activities deduction (Form 8903): cents"
+  },
+  {
+   "i": 116,
+   "tu": "Line 36, Total adjustments, add lines 23 through 31a and 32 through 35: dollars"
+  },
+  {
+   "i": 117,
+   "tu": "Line 36, Total adjustments, add lines 23 through 31a and 32 through 35: cents"
+  },
+  {
+   "i": 118,
+   "tu": "Line 37, Adjusted gross income, subtract line 36 from line 22: dollars"
+  },
+  {
+   "i": 119,
+   "tu": "Line 37, Adjusted gross income, subtract line 36 from line 22: cents"
+  }
+ ],
+ "cost_usd": 0.10708299999999998
+}

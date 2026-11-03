@@ -1,0 +1,223 @@
+{
+ "01030000000041": {
+  "v1_after": [
+   "reading_order"
+  ],
+  "edits": 17,
+  "semantic_after": [
+   "reading_order"
+  ],
+  "pdfua_compliant": true,
+  "pdfua_failed": [],
+  "unfixable": [
+   "Element 1 merges the first left-column paragraph text with chart and footer text; it cannot be split without inventing or editing text.",
+   "The running footer ('Gender Analysis of Violent Extremism...' and page number 29) has no separate element, so it cannot be marked as an artifact.",
+   "The pull quote (element 6) is tagged as a plain paragraph and no quote role is available."
+  ],
+  "cost_usd": 0.1383,
+  "secs": 28.0
+ },
+ "01030000000045": {
+  "v1_after": [
+   "reading_order",
+   "table_headers"
+  ],
+  "edits": 3,
+  "semantic_after": [
+   "list_structure",
+   "missing_content",
+   "reading_order"
+  ],
+  "pdfua_compliant": true,
+  "pdfua_failed": [],
+  "unfixable": [
+   "Element 1 is a truncated duplicate of the start of element 2, so I marked it as an artifact. Element 2 also appears to be cut off mid-sentence, and its missing text can't be recovered from the tag tree.",
+   "The table body is one row with three cells, each holding a whole column. The seven numbers are in one list, the organization names in 5 paragraphs, and the counts in 5 paragraphs. The allowed edits can't split these into one row per organization.",
+   "Some of the text is merged and can't be split without inventing text: 'Our Friends AssociationCOMFRELTraditional and Modern Mental Health Organization' in element 34, and '272615' in element 40, which looks like the values 272 and 615 run together.",
+   "Seven numbered rows have only 5 name paragraphs and 5 value paragraphs, so organizations and values are missing or merged.",
+   "The row-number list inside the first TD can't be turned into proper table rows.",
+   "Element 47 combines the footnote number '15' with its URL. I can't separate them without editing text."
+  ],
+  "cost_usd": 0.1137,
+  "secs": 29.7
+ },
+ "01030000000046": {
+  "v1_after": [
+   "list_structure",
+   "missing_content",
+   "reading_order",
+   "table_headers"
+  ],
+  "edits": 5,
+  "semantic_after": [
+   "list_structure",
+   "missing_content",
+   "table_headers"
+  ],
+  "pdfua_compliant": false,
+  "pdfua_failed": [
+   "7.2-8"
+  ],
+  "unfixable": [
+   "Table 3 is irregular: the sub-header row has 4 cells under a 5-column header, and the data rows are merged into a few cells, each holding a run-together string of values. This can't be rebuilt into a proper grid without inventing or splitting text.",
+   "The list in cell 26 has number labels (Lbl) with no LBody, and the list in cell 55 has mixed items (Lbl 58, and Lbl 59 with LBody 38). The label-to-content structure can't be repaired without moving or creating elements.",
+   "Element 1 (a P) duplicates the H1 title text, and the H1 text looks garbled. Cleaning them up would need text changes.",
+   "Header cells 10, 12 and 14 have spaces missing from their text (e.g. 'Officialregistrationresulton29 April'). This can't be fixed without editing text."
+  ],
+  "cost_usd": 0.114,
+  "secs": 25.4
+ },
+ "01030000000047": {
+  "v1_after": [
+   "list_structure",
+   "reading_order",
+   "table_headers"
+  ],
+  "edits": 7,
+  "semantic_after": [
+   "list_structure",
+   "table_headers"
+  ],
+  "pdfua_compliant": true,
+  "pdfua_failed": [],
+  "unfixable": [
+   "The second header row (ids 15, 17, 19, 21) sits in a different row from the first header cells. It is also offset from the columns it sub-labels. make_table needs all cells to be siblings, so I can't merge the two header rows or add row/column spans.",
+   "The data cells are not one cell per value. For example, ids 43, 44, 46, 47, 49, 50, 52 and 53 each hold several values run together, such as '35322519' and '498435425194'. The 'Difference' column (id 54) also holds nested lists. Splitting them needs text edits, and I can't invent text.",
+   "Header cell id 5 contains the running-header text 'ANFREL Pre-Election Assessment Mission ReportNo.' in place of the real 'No.' header. I can't change the text.",
+   "The row numbers 11-17 (id 25) are marked up as a list, and the party names (id 41) are one merged paragraph. They can't be split into one cell per row without text edits.",
+   "The table has no consistent grid of one cell per row and column. Without that, header associations between TH cells and data cells can't be set correctly."
+  ],
+  "cost_usd": 0.1224,
+  "secs": 28.6
+ },
+ "01030000000064": {
+  "v1_after": [
+   "table_headers"
+  ],
+  "edits": 1,
+  "semantic_after": [
+   "table_headers"
+  ],
+  "pdfua_compliant": true,
+  "pdfua_failed": [],
+  "unfixable": [
+   "Table 1 can't be rebuilt with header cells. Its text is merged into a few elements: [3] holds 'ForeignDomestic' and [4] holds every port name and count as one run. make_table needs one existing element per cell, and splitting that text would mean inventing new elements. Fixing it needs the table re-tagged at source, with a row per port and a Port / Foreign / Domestic header row.",
+   "The H1 on [2] ('PORTSHIPCALLS') looks like the table's column header text rather than a real page heading. I changed it to P so it doesn't create a false heading. It should become TH cells once the table is split."
+  ],
+  "cost_usd": 0.1099,
+  "secs": 20.7
+ },
+ "01030000000071": {
+  "v1_after": [
+   "alt_text"
+  ],
+  "edits": 4,
+  "semantic_after": [],
+  "pdfua_compliant": false,
+  "pdfua_failed": [
+   "7.21.4.1-1"
+  ],
+  "unfixable": [
+   "The chart's child paragraphs (ids 7-28) are loose text fragments from the chart's labels and values. I can't delete them or hide them from screen readers with the allowed edits, so they may still be read out alongside the alt text.",
+   "The footnotes (ids 32-41) are tagged as a list, and I left that as is. The footnote text sits after the body text in the tree, and the footnote markers in the body paragraphs are not tagged separately."
+  ],
+  "cost_usd": 0.1306,
+  "secs": 22.7
+ },
+ "01030000000072": {
+  "v1_after": [
+   "alt_text"
+  ],
+  "edits": 2,
+  "semantic_after": [
+   "alt_text",
+   "reading_order"
+  ],
+  "pdfua_compliant": false,
+  "pdfua_failed": [
+   "7.21.4.1-1"
+  ],
+  "unfixable": [
+   "The Diagram 5 bar chart (Event 31 in 2019 and 23 in 2020, Celebration 1 and 2, Information 0 and 2, Videograph 2 and 2) is not a Figure element. Its axis labels and values are loose paragraphs (ids 2-15). Those fragments cannot be tagged as a Figure with alt text using the allowed edits. I did not mark them as artifacts because they carry the chart data."
+  ],
+  "cost_usd": 0.1277,
+  "secs": 23.5
+ },
+ "01030000000078": {
+  "v1_after": [
+   "alt_text",
+   "table_headers"
+  ],
+  "edits": 32,
+  "semantic_after": [
+   "table_headers"
+  ],
+  "pdfua_compliant": true,
+  "pdfua_failed": [],
+  "unfixable": [
+   "Table 1.4 headers: the table's header and body content is merged into a single paragraph (id 34), with the column headers in id 32 and the row label in id 33. There are no separate cell elements, so a table with TH cells cannot be built without splitting or inventing text.",
+   "Element 1 combines the 'ASEAN Migration Outlook' running header, the figure caption and the chart in one paragraph. Making it a Figure also tags the caption text as part of the figure, and the running header cannot be separated from it.",
+   "Element 37 mixes the page number 26 with the running header and a stray 'Figure 1.10.' fragment. I marked it as an artifact, which also hides that fragment."
+  ],
+  "cost_usd": 0.1357,
+  "secs": 27.4
+ },
+ "01030000000110": {
+  "v1_after": [
+   "missing_content"
+  ],
+  "edits": 2,
+  "semantic_after": [
+   "alt_text",
+   "missing_content"
+  ],
+  "pdfua_compliant": true,
+  "pdfua_failed": [],
+  "unfixable": [
+   "The equation Re = vd/\u03bd (1) is missing from the tag tree. I can't add it because I can't invent text or elements.",
+   "The table in the figure is an image, so its cell values can't be rebuilt as a real table. The alt text only summarizes it."
+  ],
+  "cost_usd": 0.1235,
+  "secs": 20.7
+ },
+ "01030000000117": {
+  "v1_after": [
+   "list_structure",
+   "table_headers"
+  ],
+  "edits": 2,
+  "semantic_after": [
+   "list_structure",
+   "table_headers"
+  ],
+  "pdfua_compliant": true,
+  "pdfua_failed": [],
+  "unfixable": [
+   "Table 1 (saccharometer, DI water, glucose solution, yeast suspension) cannot be rebuilt as a table with header cells. The four column headers are merged into one text run in element 2, and the row values are split across list items that aren't siblings of it. I changed element 2 from a heading to a paragraph so it no longer breaks the heading hierarchy, but the table headers are still not fixed.",
+   "The text in element 2 and in LBody elements 6, 9 and 12 is run together without separators, so it can't be split into cells without inventing text."
+  ],
+  "cost_usd": 0.1172,
+  "secs": 24.3
+ },
+ "01030000000141": {
+  "v1_after": [
+   "heading_missing",
+   "list_structure",
+   "missing_content"
+  ],
+  "edits": 2,
+  "semantic_after": [
+   "heading_missing",
+   "missing_content"
+  ],
+  "pdfua_compliant": true,
+  "pdfua_failed": [],
+  "unfixable": [
+   "The tag tree contains no text for the poster title, the two column headings, or the ten numbered points. They exist only in the page image, so I could not tag them as headings or as a list without inventing text. The Figure alt text summarizes them as a stopgap, but the real content needs retagging from the source document or OCR.",
+   "The only existing H1 is 'and.org', a fragment of the footer logo. I marked it as an artifact and found no existing element that could serve as the page heading.",
+   "The two column headings and the ten numbered items cannot be turned into headings or a list, because no matching elements exist to promote."
+  ],
+  "cost_usd": 0.1351,
+  "secs": 52.0
+ }
+}
