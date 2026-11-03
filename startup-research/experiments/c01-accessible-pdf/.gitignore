@@ -1,0 +1,7 @@
+# Regenerable artifacts (page renders, copies of third-party benchmark PDFs and their derived outputs)
+verify/img/
+verify/real/in/
+verify/real/odl/
+loop/pdf/
+out/*.png
+__pycache__/

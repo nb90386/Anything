@@ -18,7 +18,7 @@ Research period: November 2–3, 2026. Evidence base: 102 problems from 13 domai
 
 **The actual invention:** A semantic verification engine. It compares the rendered page with the tag tree in screen-reader order, combines deterministic PDF/UA checks with a model judge, and is calibrated against a corpus labeled by blind users completing real tasks. That corpus is the part that does not exist and takes longest to copy.
 
-**Why it can start with one founder:** It is pure software on the founder's existing stack. The prototype was built and tested on real documents in one day for about $9 of model usage. The target documents are public, so the founder can show value on a buyer's own documents without asking permission. The founder's college is itself a Title II entity, and Bay Area blind-user organizations are reachable for paid testing.
+**Why it can start with one founder:** It is pure software on the founder's existing stack. The prototype was built and tested on real documents in one day for about $10 of model usage (241 calls). The target documents are public, so the founder can show value on a buyer's own documents without asking permission. The founder's college is itself a Title II entity, and Bay Area blind-user organizations are reachable for paid testing.
 
 **Why now:** Title II dates are fixed for 2027/2028, extended once but not removed. HHS Section 504 was not extended, and the EU Accessibility Act has applied since June 2025. Free auto-tagging floods the market with unverified output. Model judging now costs $0.004–$0.06 per page (measured).
 

@@ -119,4 +119,4 @@ Dependencies: Python 3.13 (pikepdf, pdfplumber, pypdfium2, rapidfuzz, apted, lxm
 
 ## 9. Total experiment cost
 
-Roughly 230 model calls, about $9 at the CLI-reported API-equivalent rate, all within the existing subscription. No paid accounts were created.
+241 model calls, $10.04 at the CLI-reported API-equivalent rate, all within the existing subscription. No paid accounts were created.
